@@ -1,0 +1,1454 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Colégio Aclimação: 40 anos educando com amor, construindo confiança e preparando futuros. Berçário ao Fundamental I, ensino bilíngue com Cambridge, Viva Escola e projetos pedagógicos no Cambuci, São Paulo. Vagas abertas 2027." />
+<meta name="theme-color" content="#071B45" />
+<title>Colégio Aclimação | Educação bilíngue e acolhedora em São Paulo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560;9..144,650&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="assets/logo-ca.png" />
+<link rel="preload" as="image" href="assets/hero-banner.jpg" fetchpriority="high" />
+<style>
+  :root {
+    --blue-950: #040F2A;
+    --blue-900: #071B45;
+    --blue-800: #0A2A6C;
+    --blue-700: #0B3C9E;
+    --blue-500: #1F6FE0;
+    --sky: #BFD8FF;
+    --gold: #E6BE6A;
+    --gold-light: #F6E2B0;
+    --gold-deep: #B98A2E;
+    --ink: #0E1E3F;
+    --muted: #4F5F7F;
+    --line: rgba(14, 30, 63, 0.1);
+    --paper: #F6F8FD;
+    --orange: #F7961E;
+    --teal: #1B8A80;
+    --teal-dark: #136359;
+    --radius: 14px;
+    --radius-sm: 10px;
+    --max: 1240px;
+    --header-h: 84px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --section-pad: clamp(72px, 11vw, 148px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body.menu-open { overflow: hidden; }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  button { font: inherit; cursor: pointer; }
+
+  h1, h2, h3, h4 {
+    margin: 0;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 560;
+    letter-spacing: -0.02em;
+    color: var(--blue-900);
+  }
+  h1 { font-size: clamp(2.5rem, 6.2vw, 5.2rem); line-height: 1.02; }
+  h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1.06; }
+  h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.15; }
+
+  .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+  .section { padding: var(--section-pad) 0; position: relative; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--gold-deep);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px; height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+  }
+  .on-dark .eyebrow, .eyebrow.on-dark { color: var(--gold); }
+  .on-dark h2, .on-dark h3 { color: #fff; }
+
+  .section-head { max-width: 780px; margin-bottom: clamp(36px, 5vw, 64px); }
+  .section-head.center { margin-inline: auto; text-align: center; }
+  .section-head.center .eyebrow { justify-content: center; }
+  .section-head p { margin-top: 18px; color: var(--muted); font-size: 1.12rem; max-width: 640px; }
+  .section-head.center p { margin-inline: auto; }
+  .on-dark .section-head p { color: rgba(255, 255, 255, 0.78); }
+
+  .grad {
+    font-style: normal;
+    background: linear-gradient(100deg, #F6E2B0 0%, #E6BE6A 55%, #FFF3C9 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    position: relative;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 54px; padding: 0 30px;
+    border-radius: 999px; border: 0;
+    font-weight: 600; font-size: 1rem; letter-spacing: 0.01em;
+    transition: transform 240ms var(--ease), box-shadow 240ms var(--ease), background 240ms ease, color 240ms ease, border-color 240ms ease;
+    overflow: hidden;
+  }
+  .btn:hover { transform: translateY(-3px); }
+  .btn-gold {
+    color: var(--blue-950);
+    background: linear-gradient(135deg, #F6E2B0 0%, #E6BE6A 48%, #C99A3B 100%);
+    box-shadow: 0 12px 32px rgba(230, 190, 106, 0.32);
+  }
+  .btn-gold:hover { box-shadow: 0 18px 40px rgba(230, 190, 106, 0.5); }
+  .btn-gold::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 700ms var(--ease);
+  }
+  .btn-gold:hover::after { transform: translateX(120%); }
+  .btn-ghost { color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.45); background: rgba(255, 255, 255, 0.06); }
+  .btn-ghost:hover { background: rgba(255, 255, 255, 0.16); border-color: #fff; }
+  .btn-navy { color: #fff; background: var(--blue-900); }
+  .btn-navy:hover { background: var(--blue-700); }
+  .btn svg { flex: none; }
+
+  /* ---------- scroll reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(34px); transition: opacity 900ms var(--ease), transform 900ms var(--ease); transition-delay: calc(var(--i, 0) * 90ms); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    height: var(--header-h);
+    display: flex; align-items: center;
+    background: linear-gradient(180deg, rgba(4, 15, 42, 0.72), rgba(4, 15, 42, 0.35));
+    -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 400ms ease, box-shadow 400ms ease, height 300ms var(--ease);
+  }
+  .site-header.is-solid { background: rgba(7, 27, 69, 0.9); box-shadow: 0 10px 40px rgba(4, 15, 42, 0.35); }
+  .header-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; }
+  .brand-mark { width: 64px; height: 64px; object-fit: contain; transition: transform 400ms var(--ease); }
+  .brand:hover .brand-mark { transform: scale(1.06) rotate(-2deg); }
+
+  .main-nav { display: flex; align-items: center; gap: 2px; color: #fff; font-size: 0.95rem; font-weight: 500; }
+  .main-nav a:not(.nav-cta) { position: relative; padding: 10px 14px; border-radius: 999px; transition: background 300ms ease, color 300ms ease; opacity: 0.88; }
+  .main-nav a:not(.nav-cta):hover { background: rgba(255, 255, 255, 0.12); opacity: 1; }
+  .main-nav a.is-current:not(.nav-cta) { color: var(--gold); opacity: 1; }
+  .main-nav a.is-current:not(.nav-cta)::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 18px; height: 2px; margin-left: -9px; border-radius: 2px; background: var(--gold); }
+  .nav-cta { margin-left: 10px; min-height: 46px; padding: 0 22px; font-size: 0.92rem; }
+
+  .menu-toggle { display: none; width: 46px; height: 46px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.06); }
+  .menu-toggle span { display: block; width: 18px; height: 2px; margin: 4px auto; border-radius: 2px; background: #fff; transition: transform 300ms var(--ease), opacity 200ms ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .progress { position: absolute; left: 0; bottom: -1px; height: 3px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--gold-deep), var(--gold), #FFF3C9); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative; overflow: hidden; isolation: isolate;
+    padding-top: var(--header-h);
+    background: linear-gradient(180deg, #040F2A 0%, #0A2A6C 52%, #071B45 100%);
+    color: #fff;
+  }
+  .aurora { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; will-change: transform; }
+  .blob.b1 { width: 560px; height: 560px; left: -140px; top: 10%; background: radial-gradient(circle, #1F6FE0, transparent 70%); animation: drift-a 20s ease-in-out infinite alternate; }
+  .blob.b2 { width: 460px; height: 460px; right: -100px; bottom: -80px; background: radial-gradient(circle, rgba(230, 190, 106, 0.85), transparent 70%); opacity: 0.45; animation: drift-b 24s ease-in-out infinite alternate; }
+  .blob.b3 { width: 520px; height: 520px; left: 38%; top: -160px; background: radial-gradient(circle, #3B8BF0, transparent 70%); opacity: 0.4; animation: drift-c 28s ease-in-out infinite alternate; }
+  @keyframes drift-a { to { transform: translate3d(180px, 90px, 0) scale(1.18); } }
+  @keyframes drift-b { to { transform: translate3d(-220px, -70px, 0) scale(1.25); } }
+  @keyframes drift-c { to { transform: translate3d(-200px, 120px, 0) scale(0.9); } }
+  .aurora::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.2px); background-size: 34px 34px; mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); }
+
+  .sparkles { position: absolute; inset: 0; overflow: hidden; }
+  .sp { position: absolute; bottom: -24px; left: 50%; width: var(--s, 5px); height: var(--s, 5px); border-radius: 50%; background: radial-gradient(circle, #FFF3C9 0%, #E6BE6A 55%, rgba(230, 190, 106, 0) 72%); opacity: 0; animation: rise var(--d, 16s) linear var(--dl, 0s) infinite; }
+  .sp.rb { width: calc(var(--s, 5px) * 3.2); height: calc(var(--s, 5px) * 0.9); border-radius: 3px; background: linear-gradient(90deg, #B98A2E, #F6E2B0, #C99A3B); animation: rise var(--d, 16s) linear var(--dl, 0s) infinite, spin 7s linear infinite; }
+  @keyframes rise {
+    0% { transform: translate3d(0, 0, 0); opacity: 0; }
+    10% { opacity: 0.95; }
+    90% { opacity: 0.5; }
+    100% { transform: translate3d(var(--x, 0px), -105vh, 0); opacity: 0; }
+  }
+  @keyframes spin { to { rotate: 360deg; } }
+
+  .hero-banner { position: relative; margin: 0; overflow: hidden; }
+  .hero-banner img { width: 100%; height: auto; aspect-ratio: 2000 / 679; object-fit: cover; will-change: transform; transform-origin: 50% 40%; }
+  .hero-banner::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(105deg, transparent 38%, rgba(255, 243, 201, 0.28) 50%, transparent 62%);
+    transform: translateX(-130%); animation: shine 7s ease-in-out 1.6s infinite;
+  }
+  @keyframes shine { 0%, 55% { transform: translateX(-130%); } 100% { transform: translateX(130%); } }
+  .hero-banner::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 1; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  .hero-copy { position: relative; text-align: center; padding: clamp(40px, 6vw, 84px) 0 clamp(96px, 11vw, 150px); }
+  .chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 18px; margin-bottom: 26px;
+    border-radius: 999px; border: 1px solid rgba(230, 190, 106, 0.45);
+    background: rgba(230, 190, 106, 0.1);
+    color: var(--gold-light); font-size: 0.86rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 rgba(230, 190, 106, 0.7); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 12px rgba(230, 190, 106, 0); } 100% { box-shadow: 0 0 0 0 rgba(230, 190, 106, 0); } }
+  .hero h1 { color: #fff; max-width: 17ch; margin-inline: auto; }
+  .hero .lead { max-width: 640px; margin: 26px auto 0; font-size: clamp(1.05rem, 1.6vw, 1.28rem); color: rgba(255, 255, 255, 0.82); font-weight: 300; }
+  .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 38px; }
+
+  .scroll-down {
+    position: absolute; left: 50%; bottom: 26px; z-index: 2;
+    display: grid; place-items: center; width: 50px; height: 50px; margin-left: -25px;
+    border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.45); color: #fff;
+    animation: bob 2.2s ease-in-out infinite; transition: background 260ms ease, border-color 260ms ease;
+  }
+  .scroll-down:hover { background: rgba(255, 255, 255, 0.16); border-color: var(--gold); color: var(--gold); }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+  /* ---------- ribbon (valores) ---------- */
+  .ribbon { overflow: hidden; background: linear-gradient(90deg, #C99A3B, #F6E2B0 50%, #C99A3B); border-block: 1px solid rgba(7, 27, 69, 0.25); }
+  .ribbon-track { display: flex; width: max-content; animation: slide 46s linear infinite; }
+  .ribbon:hover .ribbon-track { animation-play-state: paused; }
+  .ribbon-group { display: flex; flex-shrink: 0; align-items: center; padding: 16px 0; }
+  .ribbon-group > * { margin-right: 34px; white-space: nowrap; }
+  .ribbon-group span { color: var(--blue-900); font-weight: 600; font-size: 0.98rem; letter-spacing: 0.22em; text-transform: uppercase; }
+  .ribbon-group i { font-style: normal; color: var(--blue-700); font-size: 0.8rem; }
+  @keyframes slide { to { transform: translate3d(-50%, 0, 0); } }
+
+  /* ---------- manifesto ---------- */
+  .manifesto { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 80% 0%, rgba(31, 111, 224, 0.35), transparent 70%), radial-gradient(700px 400px at 0% 100%, rgba(230, 190, 106, 0.16), transparent 70%), linear-gradient(180deg, #071B45, #040F2A); padding: clamp(96px, 14vw, 200px) 0; }
+  .manifesto-text { max-width: 22ch; margin: 0 auto; text-align: center; font-family: "Fraunces", Georgia, serif; font-weight: 450; letter-spacing: -0.02em; line-height: 1.14; font-size: clamp(2rem, 5.2vw, 4.2rem); color: #fff; max-width: 24ch; }
+  .manifesto-text .w { opacity: 0.2; transition: opacity 420ms ease, color 420ms ease; }
+  .manifesto-text .w.on { opacity: 1; }
+  .manifesto-text b .w.on { color: var(--gold); }
+  .manifesto-foot { margin-top: 40px; text-align: center; color: rgba(255, 255, 255, 0.7); font-size: 1.05rem; }
+
+  /* ---------- tiles / stats ---------- */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .tile { position: relative; overflow: hidden; padding: clamp(26px, 3vw, 40px); border-radius: var(--radius); background: #fff; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(14, 30, 63, 0.04), 0 20px 50px -30px rgba(14, 30, 63, 0.28); transition: transform 500ms var(--ease), box-shadow 500ms var(--ease); }
+  .tile:hover { transform: translateY(-6px); box-shadow: 0 30px 70px -30px rgba(14, 30, 63, 0.4); }
+  .tile .big { font-variant-numeric: lining-nums; display: block; font-family: "Fraunces", Georgia, serif; font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; font-size: clamp(2.6rem, 5vw, 4.4rem); color: var(--blue-900); }
+  .tile p { margin-top: 14px; color: var(--muted); font-size: 1rem; }
+  .tile-blue { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; color: #fff; border: 0; background: radial-gradient(500px 300px at 85% 0%, rgba(230, 190, 106, 0.38), transparent 70%), linear-gradient(150deg, #0B3C9E, #071B45); }
+  .tile-blue .big { font-size: clamp(6rem, 15vw, 12rem); background: linear-gradient(120deg, #FFF3C9, #E6BE6A 60%, #B98A2E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tile-blue .unit { font-family: "Fraunces", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: #fff; margin-top: 6px; display: block; }
+  .tile-blue p { color: rgba(255, 255, 255, 0.8); max-width: 34ch; }
+  .tile-gold { border: 0; background: linear-gradient(145deg, #F6E2B0, #E6BE6A 55%, #C99A3B); }
+  .tile-gold .big, .tile-gold p { color: var(--blue-950); }
+  .tile-gold p { opacity: 0.85; }
+  .tile-dark { grid-column: span 2; border: 0; color: #fff; background: radial-gradient(400px 220px at 0% 100%, rgba(31, 111, 224, 0.5), transparent 70%), linear-gradient(160deg, #0A2A6C, #040F2A); }
+  .tile-dark .big { color: #fff; }
+  .tile-dark p { color: rgba(255, 255, 255, 0.78); }
+  .tile .big.sm { font-size: clamp(2.2rem, 3.6vw, 3.2rem); }
+
+  /* ---------- jornada (tabs) ---------- */
+  .tabs { display: flex; gap: 10px; overflow-x: auto; padding: 6px 4px 14px; margin: 0 -4px 30px; scroll-snap-type: x proximity; scrollbar-width: none; justify-content: center; flex-wrap: wrap; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; scroll-snap-align: center; padding: 13px 22px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); font-weight: 500; font-size: 0.98rem; transition: all 280ms var(--ease); }
+  .tab:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .tab[aria-selected="true"] { color: #fff; background: linear-gradient(135deg, #0B3C9E, #071B45); border-color: transparent; box-shadow: 0 14px 30px -10px rgba(11, 60, 158, 0.55); }
+  .tab .n { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 50%; background: rgba(14, 30, 63, 0.08); font-size: 0.78rem; font-weight: 600; }
+  .tab[aria-selected="true"] .n { background: var(--gold); color: var(--blue-950); }
+
+  .panel { display: none; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 5vw, 72px); align-items: center; padding: clamp(18px, 2.4vw, 30px); border-radius: calc(var(--radius) + 8px); background: #fff; border: 1px solid var(--line); box-shadow: 0 40px 90px -50px rgba(14, 30, 63, 0.45); }
+  .panel.is-active { display: grid; animation: panel-in 700ms var(--ease) both; }
+  @keyframes panel-in { from { opacity: 0; transform: translateY(24px) scale(0.985); } to { opacity: 1; transform: none; } }
+  .panel-photo { position: relative; margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 4.6; background: var(--blue-900); }
+  .panel-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1400ms var(--ease); }
+  .panel.is-active .panel-photo img { animation: kenburns 14s ease-out both; }
+  @keyframes kenburns { from { transform: scale(1.12); } to { transform: scale(1); } }
+  .panel-photo figcaption { position: absolute; left: 14px; bottom: 14px; padding: 8px 14px; border-radius: 999px; background: rgba(4, 15, 42, 0.7); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: #fff; font-size: 0.82rem; font-weight: 500; }
+  .panel-photo figcaption::before { content: "● "; color: var(--gold); }
+  .panel-body { padding: clamp(4px, 1.6vw, 20px) clamp(4px, 2vw, 28px) clamp(4px, 1.6vw, 20px) 0; }
+  .panel-body .q { display: block; margin-bottom: 16px; color: var(--gold-deep); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+  .panel-body h3 { font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.08; }
+  .panel-body .answer { margin-top: 18px; color: var(--muted); font-size: 1.12rem; }
+  .checks { display: grid; gap: 12px; margin-top: 26px; }
+  .checks li { position: relative; padding-left: 36px; color: var(--ink); font-weight: 400; }
+  .checks li::before { content: ""; position: absolute; left: 0; top: 2px; width: 24px; height: 24px; border-radius: 50%; background: var(--gold) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23040F2A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>") center / 13px no-repeat; }
+  .panel-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 34px; }
+  .link-next { display: inline-flex; align-items: center; gap: 8px; padding: 12px 6px; border: 0; background: none; color: var(--blue-700); font-weight: 600; }
+  .link-next:hover { color: var(--blue-900); }
+  .link-next svg { transition: transform 260ms var(--ease); }
+  .link-next:hover svg { transform: translateX(5px); }
+
+  /* ---------- segmentos ---------- */
+  .seg-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 270px; gap: 18px; }
+  .seg { position: relative; overflow: hidden; border-radius: var(--radius); color: #fff; background: var(--blue-900); isolation: isolate; }
+  .seg:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+  .seg:nth-child(2) { grid-column: span 7; }
+  .seg:nth-child(3) { grid-column: span 4; }
+  .seg:nth-child(4) { grid-column: span 3; }
+  .seg > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1200ms var(--ease); }
+  .seg::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(4, 15, 42, 0) 30%, rgba(4, 15, 42, 0.88) 100%); transition: opacity 400ms ease; }
+  .seg::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 2px rgba(230, 190, 106, 0); transition: box-shadow 400ms ease; pointer-events: none; }
+  .seg:hover > img { transform: scale(1.07); }
+  .seg:hover::after { box-shadow: inset 0 0 0 2px rgba(230, 190, 106, 0.9); }
+  .seg-body { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(20px, 2.4vw, 32px); }
+  .seg .ico { display: grid; place-items: center; width: 50px; height: 50px; margin-bottom: 14px; border-radius: 16px; background: rgba(255, 255, 255, 0.16); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: var(--gold); transition: background 300ms ease, color 300ms ease, transform 400ms var(--ease); }
+  .seg:hover .ico { background: var(--gold); color: var(--blue-950); transform: rotate(-6deg) scale(1.06); }
+  .seg h3 { color: #fff; font-size: clamp(1.5rem, 2.4vw, 2.1rem); }
+  .seg p { margin-top: 8px; max-width: 38ch; color: rgba(255, 255, 255, 0.85); font-size: 0.98rem; }
+  .seg .tag { position: absolute; top: 18px; left: 18px; padding: 7px 14px; border-radius: 999px; background: rgba(4, 15, 42, 0.6); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: var(--gold-light); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ---------- bilingue ---------- */
+  .bilingue { position: relative; overflow: hidden; background: radial-gradient(700px 500px at 100% 0%, rgba(31, 111, 224, 0.4), transparent 70%), linear-gradient(160deg, #0A2A6C, #040F2A); color: #fff; }
+  .split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .bilingue h2 { color: #fff; }
+  .bilingue .lead { margin-top: 22px; color: rgba(255, 255, 255, 0.82); font-size: 1.18rem; font-weight: 300; max-width: 50ch; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .pill { padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(230, 190, 106, 0.5); background: rgba(230, 190, 106, 0.09); color: var(--gold-light); font-size: 0.95rem; font-weight: 500; }
+  .bilingue .btn { margin-top: 36px; }
+  .photo-frame { position: relative; margin: 0; }
+  .photo-frame { max-width: 400px; justify-self: end; width: 100%; }
+  .photo-frame img { width: 100%; aspect-ratio: 4 / 4.6; max-height: 70vh; object-fit: cover; border-radius: var(--radius); box-shadow: 0 50px 100px -40px rgba(0, 0, 0, 0.7); }
+  .photo-frame::before { content: ""; position: absolute; inset: -14px 14px 14px -14px; border: 2px solid rgba(230, 190, 106, 0.55); border-radius: calc(var(--radius) + 6px); z-index: -1; }
+  .photo-frame { z-index: 0; isolation: isolate; }
+  .photo-frame figcaption { margin-top: 16px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+
+  /* ---------- viva escola ---------- */
+  .viva-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .viva-card { position: relative; padding: clamp(28px, 3.6vw, 48px); border-radius: var(--radius); background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--orange); box-shadow: 0 30px 70px -45px rgba(14, 30, 63, 0.5); transition: transform 500ms var(--ease), background 400ms ease, border-color 400ms ease, color 400ms ease, box-shadow 500ms var(--ease); cursor: pointer; }
+  .viva-card.tempo { border-top-color: var(--teal); }
+  .viva-logo { width: auto; height: clamp(86px, 9vw, 120px); margin: 0 auto 22px; border-radius: 14px; transition: background 400ms ease, padding 400ms ease; }
+  .viva-card h3 { text-align: center; font-size: clamp(1.25rem, 2vw, 1.6rem); transition: color 400ms ease; }
+  .viva-card .sub { margin-top: 10px; text-align: center; color: var(--muted); transition: color 400ms ease; }
+  .viva-card ul { display: grid; gap: 12px; margin-top: 26px; }
+  .viva-card li { position: relative; padding-left: 26px; color: var(--muted); transition: color 400ms ease; }
+  .viva-card li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 9px; border-radius: 50%; background: var(--orange); transition: background 400ms ease; }
+  .viva-card.tempo li::before { background: var(--teal); }
+  .viva-card:hover, .viva-card.is-active { transform: translateY(-8px); box-shadow: 0 40px 80px -40px rgba(14, 30, 63, 0.6); }
+  .viva-card:hover { background: var(--orange); border-color: var(--orange); }
+  .viva-card.is-active { background: var(--orange); border-color: var(--orange); }
+  .viva-card.tempo:hover, .viva-card.tempo.is-active { background: var(--teal); border-color: var(--teal); }
+  .viva-card:hover .viva-logo, .viva-card.is-active .viva-logo { background: #fff; padding: 10px 18px; }
+  .viva-card:hover h3, .viva-card.is-active h3 { color: #fff; }
+  .viva-card:hover .sub, .viva-card:hover li, .viva-card.is-active .sub, .viva-card.is-active li { color: rgba(255, 255, 255, 0.92); }
+  .viva-card:hover li::before, .viva-card.is-active li::before { background: #fff; }
+
+  .schedule { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .sch { padding: 22px 24px; border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--line); }
+  .sch strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.7rem; font-weight: 560; letter-spacing: -0.02em; color: var(--blue-900); }
+  .sch span { display: block; margin-top: 4px; color: var(--muted); font-size: 0.95rem; }
+  .sch.star { background: linear-gradient(145deg, #0B3C9E, #071B45); border: 0; }
+  .sch.star strong { color: var(--gold); } .sch.star span { color: rgba(255, 255, 255, 0.8); }
+  .meals { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
+  .meals b { margin-right: 6px; font-weight: 600; color: var(--blue-900); }
+  .meal { padding: 9px 16px; border-radius: 999px; background: rgba(230, 190, 106, 0.22); color: var(--blue-900); font-size: 0.94rem; font-weight: 500; }
+  .fine { margin-top: 16px; color: var(--muted); font-size: 0.92rem; }
+
+  /* ---------- projetos ---------- */
+  .proj-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 18px; }
+  .proj { position: relative; overflow: hidden; border-radius: var(--radius); color: #fff; background: var(--blue-900); isolation: isolate; }
+  .proj > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1200ms var(--ease); }
+  .proj::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(4, 15, 42, 0) 35%, rgba(4, 15, 42, 0.9) 100%); }
+  .proj:hover > img { transform: scale(1.07); }
+  .proj-body { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(18px, 2vw, 28px); }
+  .proj h3 { color: #fff; font-size: clamp(1.3rem, 2vw, 1.8rem); }
+  .proj p { margin-top: 6px; color: rgba(255, 255, 255, 0.84); font-size: 0.95rem; max-width: 40ch; }
+  .proj .badge { position: absolute; top: 16px; left: 16px; padding: 7px 14px; border-radius: 999px; background: var(--gold); color: var(--blue-950); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .p-a { grid-column: span 2; grid-row: span 2; }
+  .p-b { grid-row: span 2; }
+  .proj.text { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(22px, 2.4vw, 32px); }
+  .proj.text::before { display: none; }
+  .proj.gold { background: linear-gradient(145deg, #F6E2B0, #E6BE6A 55%, #C99A3B); color: var(--blue-950); }
+  .proj.gold h3 { color: var(--blue-950); } .proj.gold p { color: rgba(4, 15, 42, 0.8); }
+  .proj.insta { background: radial-gradient(300px 200px at 100% 0%, rgba(31, 111, 224, 0.6), transparent 70%), linear-gradient(160deg, #0A2A6C, #040F2A); }
+  .proj .round { width: 108px; height: 108px; margin-bottom: 18px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(4, 15, 42, 0.85); box-shadow: 0 12px 30px rgba(4, 15, 42, 0.35); }
+  .proj.insta .btn { margin-top: 16px; align-self: flex-start; min-height: 46px; padding: 0 22px; font-size: 0.94rem; }
+
+  .chips-wrap { margin-top: clamp(34px, 5vw, 60px); display: grid; gap: 14px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .chips-track { display: flex; width: max-content; animation: slide 60s linear infinite; }
+  .chips-wrap .chips-track:nth-child(2) { animation-direction: reverse; animation-duration: 72s; }
+  .chips-group { display: flex; flex-shrink: 0; }
+  .pj { margin-right: 12px; padding: 13px 24px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--blue-900); font-weight: 500; white-space: nowrap; box-shadow: 0 8px 24px -16px rgba(14, 30, 63, 0.4); }
+  .pj.g { background: linear-gradient(135deg, #F6E2B0, #E6BE6A); border-color: transparent; }
+  .pj.b { background: linear-gradient(135deg, #0B3C9E, #071B45); border-color: transparent; color: #fff; }
+
+  .extra { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: clamp(64px, 9vw, 120px); }
+  .extra-photo { margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 4.8; box-shadow: 0 40px 80px -40px rgba(14, 30, 63, 0.55); }
+  .extra-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .extra h3 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
+  .extra .lead { margin-top: 14px; color: var(--muted); font-size: 1.1rem; }
+  .extra-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+  .ex { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--line); transition: transform 360ms var(--ease), border-color 300ms ease, box-shadow 360ms var(--ease); }
+  .ex:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 18px 40px -24px rgba(14, 30, 63, 0.45); }
+  .ex .ico { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(145deg, #0B3C9E, #071B45); color: var(--gold); }
+  .ex strong { display: block; font-weight: 600; color: var(--blue-900); line-height: 1.2; }
+  .ex small { display: block; margin-top: 2px; color: var(--muted); font-size: 0.82rem; line-height: 1.25; }
+
+  /* ---------- vitrine ---------- */
+  .vitrine-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .arrows { display: flex; gap: 10px; }
+  .arrow { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; color: var(--blue-900); transition: all 260ms var(--ease); }
+  .arrow:hover { background: var(--blue-900); color: var(--gold); border-color: var(--blue-900); transform: translateY(-2px); }
+  .scroller { display: flex; gap: 16px; overflow-x: auto; padding: 6px max(20px, calc((100vw - var(--max)) / 2)) 26px; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: 8px; }
+  .scroller::-webkit-scrollbar { display: none; }
+  .shot { position: relative; flex: none; width: clamp(240px, 26vw, 340px); aspect-ratio: 3 / 4; margin: 0; overflow: hidden; border-radius: var(--radius); scroll-snap-align: start; background: var(--blue-900); }
+  .shot.wide { width: clamp(300px, 36vw, 470px); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 1200ms var(--ease); }
+  .shot:hover img { transform: scale(1.07); }
+  .shot figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 16px; background: linear-gradient(180deg, transparent, rgba(4, 15, 42, 0.85)); color: #fff; font-weight: 500; font-size: 0.95rem; }
+
+  /* ---------- visita (qualifier) ---------- */
+  .visita { position: relative; overflow: hidden; background: radial-gradient(800px 500px at 0% 0%, rgba(31, 111, 224, 0.45), transparent 70%), radial-gradient(700px 500px at 100% 100%, rgba(230, 190, 106, 0.22), transparent 70%), linear-gradient(170deg, #0A2A6C, #040F2A); color: #fff; }
+  .visita h2 { color: #fff; }
+  .visita .lead { margin-top: 20px; color: rgba(255, 255, 255, 0.82); font-size: 1.15rem; font-weight: 300; }
+  .steps { display: grid; gap: 16px; margin-top: 34px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step b { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--gold); color: var(--blue-950); font-weight: 700; }
+  .step span { color: rgba(255, 255, 255, 0.88); padding-top: 5px; }
+  .qualifier { padding: clamp(24px, 3.4vw, 42px); border-radius: calc(var(--radius) + 6px); background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.16); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.7); }
+  .qualifier fieldset { margin: 0 0 26px; padding: 0; border: 0; }
+  .qualifier legend { margin-bottom: 14px; padding: 0; font-weight: 600; font-size: 1.02rem; color: #fff; }
+  .opts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .opt { position: relative; }
+  .opt input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; cursor: pointer; margin: 0; }
+  .opt span { display: inline-block; padding: 11px 20px; border-radius: 999px; border: 1.5px solid rgba(255, 255, 255, 0.3); color: rgba(255, 255, 255, 0.92); font-size: 0.96rem; transition: all 240ms var(--ease); }
+  .opt:hover span { border-color: var(--gold); }
+  .opt input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--blue-950); font-weight: 600; }
+  .opt input:focus-visible + span { outline: 2px solid #fff; outline-offset: 3px; }
+  .field label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 1.02rem; }
+  .field input { width: 100%; min-height: 52px; padding: 0 20px; border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.08); color: #fff; font: inherit; }
+  .field input::placeholder { color: rgba(255, 255, 255, 0.5); }
+  .field input:focus { outline: none; border-color: var(--gold); background: rgba(255, 255, 255, 0.14); }
+  .preview { margin: 22px 0; padding: 16px 18px; border-radius: 16px; border-left: 3px solid var(--gold); background: rgba(4, 15, 42, 0.45); color: rgba(255, 255, 255, 0.85); font-size: 0.96rem; }
+  .preview small { display: block; margin-bottom: 4px; color: var(--gold); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.72rem; }
+  .qualifier .btn { width: 100%; }
+  .qualifier .fine { margin-top: 14px; text-align: center; color: rgba(255, 255, 255, 0.6); }
+
+  /* ---------- faq ---------- */
+  .faq { max-width: 860px; margin-inline: auto; display: grid; gap: 12px; }
+  .faq details { border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--line); overflow: hidden; transition: box-shadow 300ms ease, border-color 300ms ease; }
+  .faq details[open] { border-color: var(--gold); box-shadow: 0 24px 50px -32px rgba(14, 30, 63, 0.5); }
+  .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 26px; list-style: none; cursor: pointer; font-weight: 600; font-size: 1.08rem; color: var(--blue-900); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(14, 30, 63, 0.06); font-size: 1.4rem; line-height: 1; font-weight: 400; transition: transform 300ms var(--ease), background 300ms ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); background: var(--gold); }
+  .faq .a { padding: 0 26px 24px; color: var(--muted); }
+
+  /* ---------- closing banner ---------- */
+  .closing { position: relative; overflow: hidden; background: var(--blue-950); }
+  .closing img { width: 100%; aspect-ratio: 3750 / 1174; object-fit: cover; will-change: transform; transform-origin: 50% 50%; }
+  .closing-cta { position: absolute; inset: auto 0 clamp(16px, 4vw, 52px) 0; display: flex; justify-content: center; z-index: 1; }
+
+  /* ---------- footer ---------- */
+  .site-footer { padding: 72px 0 36px; background: #fff; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-brand img { width: 96px; height: 96px; object-fit: contain; filter: none; }
+  .footer-brand p { margin-top: 14px; max-width: 30ch; color: var(--muted); }
+  .site-footer h4 { margin-bottom: 14px; font-family: "Outfit", sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
+  .site-footer address { font-style: normal; color: var(--muted); }
+  .site-footer a:not(.btn) { display: block; padding: 3px 0; color: var(--muted); transition: color 200ms ease; }
+  .site-footer a:not(.btn):hover { color: var(--blue-700); }
+  .footer-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 0.92rem; }
+
+  /* ---------- floating ---------- */
+  .floating-actions { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; flex-direction: column; gap: 12px; opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 300ms ease, transform 300ms var(--ease), visibility 300ms; }
+  .floating-actions.is-visible { opacity: 1; visibility: visible; transform: none; }
+  .fab { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; border: 0; box-shadow: 0 14px 30px rgba(4, 15, 42, 0.35); transition: transform 240ms var(--ease), background 240ms ease; }
+  .fab:hover { transform: translateY(-4px) scale(1.05); }
+  .fab-whatsapp { background: #25d366; color: #fff; }
+  .fab-top { background: var(--blue-900); color: var(--gold); border: 1px solid rgba(230, 190, 106, 0.5); }
+
+  .decor-diamond { position: fixed; top: 110px; right: -250px; width: 500px; height: 500px; z-index: -1; opacity: 0; mix-blend-mode: multiply; pointer-events: none; will-change: transform, opacity; transition: opacity 500ms ease; }
+  .decor-diamond.is-visible { opacity: 0.22; }
+
+  /* ---------- ajuste: mais natural (animações preservadas) ---------- */
+  .ph { display: block; overflow: hidden; border-radius: 2px; }
+  .ph img { display: block; width: 100%; height: auto; }
+
+  .stats-grid { gap: 0; }
+  .tile, .tile-blue, .tile-gold, .tile-dark { grid-column: auto; grid-row: auto; min-height: 0; display: block; padding: 6px clamp(18px, 2.4vw, 34px); border: 0; border-left: 1px solid var(--line); border-radius: 0; background: none; box-shadow: none; color: var(--ink); overflow: visible; }
+  .tile:first-child { border-left: 0; padding-left: 0; }
+  .tile:hover { transform: none; box-shadow: none; }
+  .tile .big, .tile-gold .big, .tile-dark .big { font-size: clamp(2.4rem, 4.4vw, 3.6rem); color: var(--blue-900); background: none; }
+  .tile-blue .big { font-size: clamp(4.4rem, 9vw, 7.4rem); background: linear-gradient(120deg, #B98A2E, #E6BE6A 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tile-blue .unit { color: var(--blue-900); font-size: clamp(1.3rem, 2.2vw, 1.8rem); }
+  .tile p, .tile-blue p, .tile-gold p, .tile-dark p { color: var(--muted); opacity: 1; max-width: 28ch; }
+
+  .panel { padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; grid-template-columns: 0.8fr 1.2fr; }
+  .panel-photo { aspect-ratio: auto; overflow: visible; background: #fff; padding: 10px 10px 8px; border-radius: 3px; box-shadow: 0 24px 50px -22px rgba(14, 30, 63, 0.5), 0 2px 6px rgba(14, 30, 63, 0.12); rotate: -1.6deg; max-width: 420px; width: 100%; justify-self: center; }
+  .panel-photo .ph img { max-height: 520px; object-fit: cover; }
+  .panel-photo figcaption { position: static; margin: 0; padding: 10px 6px 4px; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; color: var(--ink); font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: 1.35rem; text-align: center; line-height: 1.1; }
+  .panel-photo figcaption::before { content: none; }
+  .panel-body .q { font-family: "Caveat", "Segoe Script", cursive; font-size: 1.6rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--gold-deep); margin-bottom: 8px; }
+  .checks { gap: 10px; }
+  .checks li { padding-left: 24px; }
+  .checks li::before { top: 0.72em; width: 12px; height: 2px; border-radius: 2px; background: var(--gold-deep); }
+
+  .seg-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: auto; gap: clamp(16px, 2vw, 28px); align-items: start; }
+  .seg { overflow: visible; border-radius: 0; background: none; color: var(--ink); isolation: auto; }
+  .seg:nth-child(n) { grid-column: auto; grid-row: auto; }
+  .seg:nth-child(even) { margin-top: clamp(24px, 4vw, 56px); }
+  .seg::before, .seg::after { content: none; }
+  .seg .ph { border-radius: var(--radius); }
+  .seg .ph img { aspect-ratio: 3 / 4; object-fit: cover; transition: transform 1200ms var(--ease); }
+  .seg:hover .ph img { transform: scale(1.06); }
+  .seg-body { position: static; padding: 16px 2px 0; }
+  .seg .ico { display: none; }
+  .seg h3 { color: var(--blue-900); font-size: clamp(1.35rem, 2vw, 1.7rem); }
+  .seg p { color: var(--muted); max-width: none; margin-top: 6px; }
+  .seg .tag { position: static; display: inline-block; margin: 12px 2px 0; padding: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; font-family: "Caveat", "Segoe Script", cursive; font-size: 1.4rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--gold-deep); }
+  .seg .tag + .seg-body { padding-top: 0; }
+
+  .pills { display: grid; gap: 10px; margin-top: 26px; }
+  .pill { position: relative; padding: 0 0 0 26px; border: 0; background: none; border-radius: 0; color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; font-weight: 400; }
+  .pill::before { content: ""; position: absolute; left: 0; top: 0.78em; width: 14px; height: 2px; background: var(--gold); }
+  .photo-frame { background: #fff; padding: 10px 10px 8px; border-radius: 3px; rotate: 1.4deg; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.65); }
+  .photo-frame::before { content: none; }
+  .photo-frame img { aspect-ratio: 3 / 4; max-height: 62vh; border-radius: 2px; box-shadow: none; }
+  .photo-frame figcaption { margin: 8px 0 0; padding: 0 6px 4px; color: var(--ink); font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: 1.35rem; text-align: center; }
+
+  .proj-grid { display: block; column-count: 3; column-gap: clamp(14px, 2vw, 24px); }
+  .proj { display: block; break-inside: avoid; -webkit-column-break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); border-radius: 0; background: none; color: var(--ink); overflow: visible; isolation: auto; }
+  .proj::before { content: none; }
+  .proj .ph { border-radius: var(--radius); }
+  .proj .ph img { transition: transform 1200ms var(--ease); }
+  .proj:hover .ph img { transform: scale(1.05); }
+  .proj .badge { display: none; }
+  .proj-body { position: static; padding: 12px 2px 0; }
+  .proj h3 { color: var(--blue-900); font-size: clamp(1.2rem, 1.8vw, 1.5rem); }
+  .proj p { color: var(--muted); margin-top: 4px; max-width: none; }
+  .proj.text { display: block; padding: clamp(22px, 2.4vw, 30px); border-radius: var(--radius); }
+  .proj.gold { background: #F2DFAE; color: var(--blue-950); }
+  .proj.gold h3 { color: var(--blue-950); }
+  .proj.gold p { color: rgba(4, 15, 42, 0.78); }
+  .proj.insta { background: var(--blue-800); color: #fff; }
+  .proj.insta h3 { color: #fff; }
+  .proj.insta p { color: rgba(255, 255, 255, 0.82); }
+  .proj > img.round { position: static; inset: auto; z-index: auto; display: block; }
+
+  .extra-photo { aspect-ratio: auto; border-radius: var(--radius); }
+  .extra-photo img { height: auto; }
+
+  .shot { width: auto; aspect-ratio: auto; height: clamp(280px, 34vw, 420px); }
+  .shot.wide { width: auto; }
+  .shot img { width: auto; height: 100%; display: block; }
+  .shot figcaption { font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: 1.35rem; padding: 36px 16px 12px; }
+
+  .qualifier { background: #0B2A6C; -webkit-backdrop-filter: none; backdrop-filter: none; border-color: rgba(255, 255, 255, 0.14); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1080px) {
+    .main-nav a:not(.nav-cta) { padding: 10px 10px; }
+    .seg-grid { grid-template-columns: repeat(2, 1fr); }
+    .proj-grid { column-count: 2; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .decor-diamond { width: 340px; height: 340px; right: -170px; }
+  }
+  @media (max-width: 980px) {
+    :root { --header-h: 70px; }
+    .brand-mark { width: 52px; height: 52px; }
+    .menu-toggle { display: block; }
+    .header-in { justify-content: flex-end; }
+    .brand { position: absolute; left: 50%; transform: translateX(-50%); }
+    .main-nav {
+      position: fixed; inset: calc(var(--header-h) + 8px) 14px auto 14px;
+      display: none; flex-direction: column; align-items: stretch; gap: 2px; padding: 14px;
+      border-radius: 24px; background: rgba(7, 27, 69, 0.97);
+      -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    }
+    .main-nav.is-open { display: flex; animation: panel-in 360ms var(--ease) both; }
+    .main-nav a:not(.nav-cta) { padding: 15px 18px; font-size: 1.05rem; }
+    .nav-cta { margin: 8px 0 0; }
+    .split, .extra { grid-template-columns: 1fr; }
+    .split .photo-frame { order: -1; max-width: 400px; margin-inline: auto; justify-self: center; }
+    .viva-grid { grid-template-columns: 1fr; }
+    .schedule { grid-template-columns: 1fr; }
+    .panel.is-active { grid-template-columns: 1fr; }
+    .panel-body { padding: 4px 6px 10px; }
+    .tabs { justify-content: flex-start; flex-wrap: nowrap; }
+  }
+  @media (max-width: 760px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .tile:nth-child(odd) { border-left: 0; padding-left: 0; }
+    .tile { padding-top: 14px; padding-bottom: 14px; }
+    .seg-grid { gap: 14px; }
+    .seg:nth-child(even) { margin-top: 22px; }
+    .proj-grid { column-count: 1; }
+    .extra-list { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .decor-diamond { width: 230px; height: 230px; right: -115px; top: 80px; }
+    .floating-actions { right: 14px; bottom: 14px; }
+    .fab { width: 50px; height: 50px; }
+    .shell { width: min(calc(100% - 32px), var(--max)); }
+    .ribbon-group span { font-size: 0.86rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+    .manifesto-text .w { opacity: 1; }
+    .sparkles { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" data-header>
+  <div class="shell header-in">
+    <a class="brand" href="#topo" aria-label="Colégio Aclimação - início">
+      <img class="brand-mark" src="assets/logo-ca.png" alt="Colégio Aclimação" width="64" height="64" />
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" data-nav aria-label="Menu principal">
+      <a href="#jornada">Sua escolha</a>
+      <a href="#segmentos">Segmentos</a>
+      <a href="#bilingue">Bilíngue</a>
+      <a href="#viva-escola">Viva Escola</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-gold nav-cta" href="#visita">Agendar visita</a>
+    </nav>
+  </div>
+  <div class="progress" data-progress></div>
+</header>
+
+<main id="topo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" data-hero>
+    <div class="aurora" aria-hidden="true">
+      <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+      <div class="sparkles" data-sparkles></div>
+    </div>
+
+    <figure class="hero-banner" data-hero-banner>
+      <img src="assets/hero-banner.jpg" width="2000" height="679" alt="Colégio Aclimação: o futuro começa aqui. Vagas abertas 2027. 40 anos. Criança sorrindo com as mãos pintadas de verde e azul." fetchpriority="high" />
+    </figure>
+
+    <div class="shell hero-copy">
+      <p class="chip reveal"><i></i> Vagas abertas 2027 · 40 anos de tradição</p>
+      <h1 class="reveal" style="--i:1">40 anos educando com <em class="grad">amor</em>, construindo <em class="grad">confiança</em> e preparando <em class="grad">futuros</em>.</h1>
+      <p class="lead reveal" style="--i:2">Do berçário ao Fundamental I, cuidamos de cada criança pelo nome, com turmas pequenas, inglês no dia a dia e muito carinho.</p>
+      <div class="cta-row reveal" style="--i:3">
+        <a class="btn btn-gold" href="#visita">
+          Agendar uma visita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#jornada">Tire suas dúvidas</a>
+      </div>
+    </div>
+
+    <a href="#jornada" class="scroll-down" data-scroll-next aria-label="Rolar para a próxima seção">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ VALORES (faixa rolante) ============ -->
+  <div class="ribbon" aria-label="Nossos valores">
+    <div class="ribbon-track">
+      <div class="ribbon-group">
+        <span>Amor</span><i>✦</i><span>Segurança</span><i>✦</i><span>Confiança</span><i>✦</i><span>Acolhimento</span><i>✦</i><span>Educação</span><i>✦</i><span>Futuro</span><i>✦</i><span>Família</span><i>✦</i><span>Tradição</span><i>✦</i><span>Desenvolvimento</span><i>✦</i><span>Oportunidades</span><i>✦</i>
+      </div>
+      <div class="ribbon-group" aria-hidden="true">
+        <span>Amor</span><i>✦</i><span>Segurança</span><i>✦</i><span>Confiança</span><i>✦</i><span>Acolhimento</span><i>✦</i><span>Educação</span><i>✦</i><span>Futuro</span><i>✦</i><span>Família</span><i>✦</i><span>Tradição</span><i>✦</i><span>Desenvolvimento</span><i>✦</i><span>Oportunidades</span><i>✦</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MANIFESTO ============ -->
+  <section class="manifesto on-dark" id="escola">
+    <div class="shell">
+      <p class="manifesto-text" data-words>Um pai não escolhe apenas uma escola. Ele escolhe onde seu filho será <b>cuidado</b>, <b>acolhido</b>, <b>educado</b> e <b>preparado para o futuro</b>.</p>
+      <p class="manifesto-foot reveal">É com esse olhar que cuidamos de cada criança há 40 anos.</p>
+    </div>
+  </section>
+
+  <!-- ============ NÚMEROS ============ -->
+  <section class="section" data-bg-light>
+    <div class="shell">
+      <div class="stats-grid">
+        <div class="tile tile-blue reveal">
+          <span class="big" data-count="40">40</span>
+          <span class="unit">anos de tradição</span>
+          <p>Há 40 anos fazendo parte da história de muitas famílias.</p>
+        </div>
+        <div class="tile tile-gold reveal" style="--i:1">
+          <span class="big sm">4º mês</span>
+          <p>Recebemos seu filho a partir do 4º mês de vida.</p>
+        </div>
+        <div class="tile reveal" style="--i:2">
+          <span class="big sm">7h–19h</span>
+          <p>Viva Escola: um horário que cabe na rotina da família.</p>
+        </div>
+        <div class="tile tile-dark reveal" style="--i:3">
+          <span class="big sm">Cambridge</span>
+          <p>Parceria com Cambridge e professores especializados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JORNADA DA FAMÍLIA ============ -->
+  <section class="section" id="jornada" data-bg-light style="padding-top:0">
+    <div class="shell">
+      <header class="section-head center reveal">
+        <span class="eyebrow">Para as famílias</span>
+        <h2>O que você quer saber antes de escolher?</h2>
+        <p>Escolha o que mais importa para a sua família. Respondemos direto, com fotos reais da nossa rotina.</p>
+      </header>
+
+      <div class="tabs reveal" role="tablist" aria-label="Prioridades da família" data-tabs>
+        <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true"><span class="n">1</span>Segurança</button>
+        <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span class="n">2</span>Acolhimento</button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span class="n">3</span>Qualidade do ensino</button>
+        <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span class="n">4</span>Atenção individual</button>
+        <button class="tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" tabindex="-1"><span class="n">5</span>Inglês e futuro</button>
+        <button class="tab" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false" tabindex="-1"><span class="n">6</span>Família e escola</button>
+        <button class="tab" role="tab" id="tab-7" aria-controls="panel-7" aria-selected="false" tabindex="-1"><span class="n">7</span>Rotina e estrutura</button>
+      </div>
+
+      <div class="panels reveal" data-panels>
+        <article class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-seguranca.jpg" width="1280" height="960" alt="Fachada do Colégio Aclimação com o logo e as informações de contato" style="object-position:50% 50%" /></span><figcaption>Fachada do colégio, no Cambuci</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">1 · Segurança</span>
+            <h3>Meu filho está bem cuidado e protegido?</h3>
+            <p class="answer">Os ambientes são preparados para brincar, aprender e explorar, sempre com adultos por perto.</p>
+            <ul class="checks">
+              <li>Ambiente seguro e afetuoso</li>
+              <li>Professores e coordenação por perto</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#visita">Quero visitar</a>
+              <button class="link-next" type="button" data-next>Próxima: Acolhimento <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-acolhimento.jpg" width="1280" height="720" alt="Professora e alunos abraçados diante do quadro com a frase Bom dia" loading="lazy" style="object-position:50% 35%" /></span><figcaption>Bom dia com abraço, todos os dias</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">2 · Acolhimento</span>
+            <h3>Ele será feliz, respeitado e ouvido?</h3>
+            <p class="answer">Aqui, seu filho é conhecido pelo nome, acolhido com carinho e respeitado em cada descoberta.</p>
+            <ul class="checks">
+              <li>Família e escola próximas no dia a dia</li>
+              <li>Acompanhamento individual</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#visita">Quero visitar</a>
+              <button class="link-next" type="button" data-next>Próxima: Qualidade do ensino <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-ensino.jpg" width="1200" height="1600" alt="Sala de aula com alunos fazendo atividade e a professora acompanhando de perto" loading="lazy" style="object-position:50% 40%" /></span><figcaption>Professora acompanhando a turma em sala</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">3 · Qualidade do ensino</span>
+            <h3>Ele realmente vai aprender?</h3>
+            <p class="answer">Base acadêmica forte e incentivo ao pensamento crítico, com professores qualificados e projetos ao longo do ano.</p>
+            <ul class="checks">
+              <li>Projetos pedagógicos o ano todo</li>
+              <li>Olimpíada de Matemática e outros desafios</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#projetos">Ver os projetos</a>
+              <button class="link-next" type="button" data-next>Próxima: Atenção individual <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-atencao.jpg" width="960" height="1280" alt="Pequeno grupo de crianças sorrindo e brincando de jogo da memória no chão da sala" loading="lazy" style="object-position:50% 40%" /></span><figcaption>Turma pequena</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">4 · Atenção individual</span>
+            <h3>Os professores conhecem as necessidades dele?</h3>
+            <p class="answer">Em turmas menores, o professor conhece cada criança e acompanha de perto o desenvolvimento.</p>
+            <ul class="checks">
+              <li>Turmas reduzidas</li>
+              <li>Atendimento personalizado</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#visita">Quero visitar</a>
+              <button class="link-next" type="button" data-next>Próxima: Inglês e futuro <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-futuro.jpg" width="960" height="1280" alt="Duas alunas sorrindo diante de notebooks na sala de informática" loading="lazy" style="object-position:50% 45%" /></span><figcaption>Informática a partir do Infantil 2</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">5 · Inglês e futuro</span>
+            <h3>Vai aprender inglês e desenvolver novas habilidades?</h3>
+            <p class="answer">Inglês no dia a dia, com parceria Cambridge, e informática a partir do Infantil 2.</p>
+            <ul class="checks">
+              <li>Inglês 3x por semana no Viva Escola</li>
+              <li>Professores especializados</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#bilingue">Conhecer o ensino bilíngue</a>
+              <button class="link-next" type="button" data-next>Próxima: Família e escola <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" hidden>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-familia.jpg" width="960" height="1280" alt="Educadora abraçando uma criança na porta da sala" loading="lazy" style="object-position:50% 40%" /></span><figcaption>A chegada na escola</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">6 · Família e escola</span>
+            <h3>Vou saber como está o desenvolvimento dele?</h3>
+            <p class="answer">A gente conversa com a família com transparência e atenção.</p>
+            <ul class="checks">
+              <li>Atendimento rápido por WhatsApp</li>
+              <li>Visita agendada para conhecer a rotina</li>
+              <li>Dia a dia no Instagram @colegioaclimacao</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#visita">Falar com a escola</a>
+              <button class="link-next" type="button" data-next>Próxima: Rotina e estrutura <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-7" aria-labelledby="tab-7" hidden>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-rotina.jpg" width="934" height="718" alt="Criança sorrindo na brinquedoteca da escola, com outros alunos brincando ao fundo" loading="lazy" style="object-position:30% 50%" /></span><figcaption>Brinquedoteca do colégio</figcaption></figure>
+          <div class="panel-body">
+            <span class="q">7 · Rotina e estrutura</span>
+            <h3>A rotina da escola cabe na rotina da minha família?</h3>
+            <p class="answer">Com o Viva Escola, o dia vai das 7h às 19h, com refeições, recreação e acompanhamento.</p>
+            <ul class="checks">
+              <li>Café da manhã, suco natural, almoço, sobremesa e jantar</li>
+              <li>Recreação com jogos e atividades lúdicas</li>
+              <li>Você escolhe: integral, intermediário ou só o Tempo de Aprender</li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-navy" href="#viva-escola">Ver horários</a>
+              <button class="link-next" type="button" data-next-first>Voltar ao início <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGMENTOS ============ -->
+  <section class="section" id="segmentos" data-bg-light style="padding-top:0">
+    <div class="shell">
+      <header class="section-head reveal">
+        <span class="eyebrow">Nossos segmentos</span>
+        <h2>Do berçário ao 5º ano, cada um no seu ritmo.</h2>
+      </header>
+
+      <div class="seg-grid">
+        <article class="seg reveal">
+          <span class="ph"><img src="assets/segmento-bercario.jpg" width="960" height="1280" alt="Bebê sorrindo diante do mural colorido do fundo do mar" loading="lazy" style="object-position:50% 30%" /></span>
+          <span class="tag">A partir do 4º mês</span>
+          <div class="seg-body">
+            <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26v22h44V26M10 30h44M18 30v18m9-18v18m10-18v18m9-18v18M14 48v7m36-7v7M32 22s-10-5.6-10-11a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 5.4-10 11-10 11Z"/></svg></span>
+            <h3>Berçário</h3>
+            <p>Com carinho, segurança e rotina acompanhada de perto.</p>
+          </div>
+        </article>
+        <article class="seg reveal" style="--i:1">
+          <span class="ph"><img src="assets/segmento-mini-maternal.jpg" width="960" height="1280" alt="Crianças pequenas em roda de história com a professora" loading="lazy" style="object-position:50% 62%" /></span>
+          <div class="seg-body">
+            <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="33" width="23" height="22" rx="3"/><rect x="32" y="33" width="23" height="22" rx="3"/><rect x="21" y="11" width="23" height="22" rx="3"/><circle cx="20.5" cy="44" r="4"/><path d="m39 48 4.5-8 4.5 8ZM29 22h7m-3.5-3.5v7"/></svg></span>
+            <h3>Mini Maternal</h3>
+            <p>Primeiras descobertas e mais autonomia, num ambiente preparado para explorar.</p>
+          </div>
+        </article>
+        <article class="seg reveal" style="--i:2">
+          <span class="ph"><img src="assets/segmento-infantil.jpg" width="1104" height="1280" alt="Menino sorrindo ao explorar um livro ilustrado na sala de aula" loading="lazy" style="object-position:50% 30%" /></span>
+          <div class="seg-body">
+            <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 32c8-3 15-2 23 3 8-5 15-6 23-3v22c-8-3-15-2-23 3-8-5-15-6-23-3ZM32 35v22M23 8h23a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5h-9l-8 5v-5h-6a5 5 0 0 1-5-5v-8a5 5 0 0 1 5-5ZM26 17h.1m8 0h.1m8 0h.1M15 40c4-.7 8 0 11 1.5m-11 6c4-.7 8 0 11 1.5"/></svg></span>
+            <h3>Educação Infantil</h3>
+            <p>Vivências bilíngues e projetos criativos.</p>
+          </div>
+        </article>
+        <article class="seg reveal" style="--i:3">
+          <span class="ph"><img src="assets/segmento-fundamental.jpg" width="1017" height="1280" alt="Aluno do Fundamental I fazendo um experimento de ciências" loading="lazy" style="object-position:50% 30%" /></span>
+          <span class="tag">1º ao 5º ano</span>
+          <div class="seg-body">
+            <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 25c-8-5-15-6-23-3v29c8-3 15-2 23 3 8-5 15-6 23-3V34M32 25v29M15 31c4-.7 8 0 11 1.5m-11 6c4-.7 8 0 11 1.5M38 27l1-8L50 8a3 3 0 0 1 4 0l2 2a3 3 0 0 1 0 4L45 25ZM47 11l6 6M39 19l6 6"/></svg></span>
+            <h3>Fundamental I</h3>
+            <p>Base forte nas matérias e incentivo ao pensamento crítico.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BILÍNGUE ============ -->
+  <section class="bilingue section on-dark" id="bilingue">
+    <div class="shell split">
+      <div class="reveal">
+        <span class="eyebrow on-dark">Sistema bilíngue</span>
+        <h2>Inglês no dia a dia, <em class="grad">com Cambridge</em>.</h2>
+        <p class="lead">Novas palavras, novas descobertas. Professores especializados e material didático de ponta fazem do inglês uma parte natural da rotina.</p>
+        <div class="pills">
+          <span class="pill">Parceria Cambridge</span>
+          <span class="pill">Professores especializados</span>
+          <span class="pill">Material didático de ponta</span>
+          <span class="pill">Inglês 3x por semana no Viva Escola</span>
+        </div>
+        <a class="btn btn-gold" href="https://wa.me/551133411329?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20programa%20biling%C3%BCe%20do%20Col%C3%A9gio%20Aclima%C3%A7%C3%A3o" target="_blank" rel="noreferrer">Quero saber mais sobre o bilíngue</a>
+      </div>
+      <figure class="photo-frame reveal" style="--i:1">
+        <img src="assets/bilingue-foto.jpg" width="960" height="1280" alt="Aluna colocando cartões de vocabulário em inglês sobre o clima no mural da sala" loading="lazy" style="object-position:50% 40%" />
+        <figcaption>Vocabulário em inglês no mural da sala de aula</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ VIVA ESCOLA / TEMPO DE APRENDER ============ -->
+  <section class="section" id="viva-escola" data-bg-light>
+    <div class="shell">
+      <header class="section-head center reveal">
+        <span class="eyebrow">Aprender e viver</span>
+        <h2>Viva Escola e Tempo de Aprender</h2>
+        <p>Dois caminhos, uma mesma jornada de crescimento. Mais do que um período estendido, uma experiência completa que une aprendizado, cuidado e diversão.</p>
+      </header>
+
+      <div class="viva-grid">
+        <article class="viva-card reveal" data-viva tabindex="0">
+          <img class="viva-logo" src="assets/viva-escola-logo-viva.png" width="400" height="200" alt="Escola Viva" loading="lazy" />
+          <h3>Mais do que um período estendido: uma experiência completa</h3>
+          <p class="sub">Um tempo de descobertas, crescimento e cuidado, em sintonia com os valores de amor, acolhimento e excelência do Colégio Aclimação.</p>
+          <ul>
+            <li>Alimentação saudável e equilibrada</li>
+            <li>Informática a partir do Infantil 2</li>
+            <li>Inglês 3x por semana</li>
+            <li>Ambiente seguro, afetuoso e cheio de oportunidades</li>
+            <li>Recreação com jogos e atividades lúdicas</li>
+            <li>Educação Infantil: espaço acolhedor, com acompanhamento nas rotinas</li>
+            <li>Fundamental: acompanhamento com professora e coordenação para estudos, reforço e lição de casa</li>
+          </ul>
+        </article>
+
+        <article class="viva-card tempo reveal" style="--i:1" data-viva tabindex="0">
+          <img class="viva-logo" src="assets/viva-escola-logo-tempo.png" width="400" height="260" alt="Tempo de Aprender" loading="lazy" />
+          <h3>O horário pedagógico: tempo de aprender, criar e descobrir</h3>
+          <p class="sub">O tempo da sala de aula, dos projetos e das descobertas que transformam informação em conhecimento.</p>
+          <ul>
+            <li>Projetos pedagógicos ao longo do ano</li>
+            <li>Meu Pequeno Autor e Soletrando</li>
+            <li>Feira do Empreendedor e Educação Financeira</li>
+            <li>Podcast PodEstudar</li>
+            <li>Dia da Fruta e Show de Talentos</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="schedule">
+        <div class="sch star reveal"><strong>7h às 19h</strong><span>Viva Escola + Tempo de Aprender · Educação Infantil e Fundamental I</span></div>
+        <div class="sch reveal" style="--i:1"><strong>13h às 19h</strong><span>Intermediário</span></div>
+        <div class="sch reveal" style="--i:2"><strong>13h às 17h · 13h às 18h</strong><span>Tempo de Aprender: Educação Infantil · Ensino Fundamental I</span></div>
+      </div>
+      <div class="meals reveal">
+        <b>No Viva Escola está incluso:</b>
+        <span class="meal">Café da manhã</span><span class="meal">Suco natural</span><span class="meal">Almoço e sobremesa</span><span class="meal">Jantar</span>
+      </div>
+      <p class="fine reveal">Sem taxa de matrícula.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROJETOS ============ -->
+  <section class="section" id="projetos" data-bg-light style="padding-top:0">
+    <div class="shell">
+      <header class="section-head reveal">
+        <span class="eyebrow">Projetos</span>
+        <h2>Aqui a criança aprende fazendo.</h2>
+        <p>Fotos reais da nossa rotina: gincanas, olimpíadas, feiras e muita criatividade.</p>
+      </header>
+
+      <div class="proj-grid">
+        <article class="proj p-a reveal">
+          <span class="ph"><img src="assets/projeto-gincana-medalhas.jpg" width="1600" height="1200" alt="Alunos com medalhas e professores abraçados após a gincana" loading="lazy" style="object-position:50% 45%" /></span>
+          <span class="badge">Gincana</span>
+          <div class="proj-body"><h3>Gincana</h3><p>Times que torcem juntos e aprendem a ganhar e a perder com respeito.</p></div>
+        </article>
+        <article class="proj p-b reveal" style="--i:1">
+          <span class="ph"><img src="assets/projeto-olimpiada-matematica.jpg" width="1200" height="1600" alt="Aluno resolvendo a prova da Olimpíada de Matemática 2026" loading="lazy" style="object-position:55% 45%" /></span>
+          <span class="badge">Olimpíada</span>
+          <div class="proj-body"><h3>Olimpíada de Matemática</h3><p>Desafios para pensar e ganhar confiança.</p></div>
+        </article>
+        <article class="proj text gold reveal" style="--i:2">
+          <img class="round" src="assets/projeto-feira-empreendedor.jpg" width="320" height="321" alt="Aluno vendendo doces na Feira do Empreendedor" loading="lazy" />
+          <h3>Feira do Empreendedor</h3>
+          <p>Os alunos criam, vendem e aprendem empreendedorismo na prática.</p>
+        </article>
+        <article class="proj reveal" style="--i:3">
+          <span class="ph"><img src="assets/projeto-gincana-saco.jpg" width="1200" height="1600" alt="Aluno pulando na corrida de saco durante a gincana na quadra" loading="lazy" style="object-position:50% 45%" /></span>
+          <div class="proj-body"><h3>Corrida de saco</h3><p>Movimento e diversão na quadra.</p></div>
+        </article>
+        <article class="proj reveal" style="grid-column: span 2">
+          <span class="ph"><img src="assets/projeto-arte-mural.jpg" width="1600" height="950" alt="Crianças pintando juntas um grande mural de papel" loading="lazy" style="object-position:50% 45%" /></span>
+          <span class="badge">Arte</span>
+          <div class="proj-body"><h3>Criar junto</h3><p>Pintura em grupo, todo mundo participando.</p></div>
+        </article>
+        <article class="proj reveal" style="--i:1">
+          <span class="ph"><img src="assets/projeto-gincana-copos.jpg" width="1200" height="1600" alt="Alunos em fila na quadra equilibrando copos d'água na cabeça" loading="lazy" style="object-position:50% 50%" /></span>
+          <div class="proj-body"><h3>Desafio do equilíbrio</h3><p>Concentração e trabalho em equipe.</p></div>
+        </article>
+        <article class="proj text insta reveal" style="--i:2">
+          <h3>Acompanhe o dia a dia</h3>
+          <p>Projetos, eventos e bastidores no Instagram da escola.</p>
+          <a class="btn btn-gold" href="https://www.instagram.com/colegioaclimacao/" target="_blank" rel="noreferrer">@colegioaclimacao</a>
+        </article>
+      </div>
+
+      <div class="chips-wrap reveal" aria-label="Projetos do Colégio Aclimação">
+        <div class="chips-track">
+          <div class="chips-group">
+            <span class="pj g">Meu Pequeno Autor</span><span class="pj">Soletrando</span><span class="pj b">Feira do Empreendedor</span><span class="pj">Dia da Fruta</span><span class="pj g">Podcast PodEstudar</span><span class="pj">Educação Financeira</span><span class="pj b">Show de Talentos</span><span class="pj">Olimpíada de Matemática</span><span class="pj g">Feira Cultural</span>
+          </div>
+          <div class="chips-group" aria-hidden="true">
+            <span class="pj g">Meu Pequeno Autor</span><span class="pj">Soletrando</span><span class="pj b">Feira do Empreendedor</span><span class="pj">Dia da Fruta</span><span class="pj g">Podcast PodEstudar</span><span class="pj">Educação Financeira</span><span class="pj b">Show de Talentos</span><span class="pj">Olimpíada de Matemática</span><span class="pj g">Feira Cultural</span>
+          </div>
+        </div>
+        <div class="chips-track">
+          <div class="chips-group">
+            <span class="pj">Festa Junina</span><span class="pj b">Semana da Gincana</span><span class="pj">Datas comemorativas</span><span class="pj g">Gincana</span><span class="pj">Show de Talentos</span><span class="pj b">Eu Recomendo</span><span class="pj">Livros</span><span class="pj g">Projetos pedagógicos</span>
+          </div>
+          <div class="chips-group" aria-hidden="true">
+            <span class="pj">Festa Junina</span><span class="pj b">Semana da Gincana</span><span class="pj">Datas comemorativas</span><span class="pj g">Gincana</span><span class="pj">Show de Talentos</span><span class="pj b">Eu Recomendo</span><span class="pj">Livros</span><span class="pj g">Projetos pedagógicos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- extracurriculares -->
+      <div class="extra">
+        <figure class="extra-photo reveal"><img src="assets/extra-bolas.jpg" width="960" height="1280" alt="Alunos na quadra erguendo bolas coloridas" loading="lazy" style="object-position:50% 55%" /></figure>
+        <div class="reveal" style="--i:1">
+          <span class="eyebrow">Extracurriculares</span>
+          <h3>Esporte, arte e movimento.</h3>
+          <p class="lead">Atividades para além da sala de aula.</p>
+          <div class="extra-list">
+            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 15 9.8l-1.2 3.7h-3.6L9 9.8 12 7.5Z"/><path d="M12 3v4.5M9 9.8 5 8.5M15 9.8l4-1.3M10.2 13.5 7.5 18M13.8 13.5l2.7 4.5"/></svg></span><div><strong>Futebol</strong></div></div>
+            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20h6"/></svg></span><div><strong>CAIE</strong><small>Colégio Aclimação Iniciação Esportiva</small></div></div>
+            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7L12 3Z"/></svg></span><div><strong>Ballet</strong></div></div>
+            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M12 7v6M12 9l-5 3M12 9l5-3M12 13l-4 6M12 13l5 5"/></svg></span><div><strong>Capoeira</strong></div></div>
+            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9v6a4.5 4.5 0 0 1-9 0V5Z"/><path d="M7.2 8.5h.01M10 8.5h.01M7 12a2.2 1.6 0 0 0 3.6 0"/><path d="M13 8h7v6a4.5 4.5 0 0 1-7.5 3.3"/></svg></span><div><strong>Teatro</strong></div></div>
+            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16.5" cy="6" r="2"/><path d="M3 12l6-2 4 3 4-1M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 21c2 0 2-1.5 4-1.5S8 21 10 21s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/></svg></span><div><strong>Natação</strong></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VITRINE ============ -->
+  <section class="section" id="vitrine" data-bg-light style="padding-top:0">
+    <div class="shell vitrine-head">
+      <header class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Vitrine do colégio</span>
+        <h2>O dia a dia como ele é.</h2>
+      </header>
+      <div class="arrows reveal" style="--i:1">
+        <button class="arrow" type="button" data-scroll-prev aria-label="Fotos anteriores"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="arrow" type="button" data-scroll-next-photos aria-label="Próximas fotos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="scroller" data-scroller>
+      <figure class="shot wide"><img src="assets/vitrine-roda-amigos.jpg" width="1280" height="720" alt="Turma de amigos abraçados e sorrindo" loading="lazy" /><figcaption>Amizade que começa cedo</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-desenho.jpg" width="960" height="1280" alt="Aluna orgulhosa mostrando seu desenho de borboleta" loading="lazy" /><figcaption>Olha o que eu fiz!</figcaption></figure>
+      <figure class="shot wide"><img src="assets/vitrine-corredor-mural.jpg" width="1280" height="960" alt="Turma grande reunida no corredor diante do mural da escola" loading="lazy" /><figcaption>Nossa turma</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-bolas.jpg" width="960" height="1280" alt="Crianças na quadra segurando bolas coloridas" loading="lazy" /><figcaption>Hora da quadra</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-abraco-duplo.jpg" width="960" height="1280" alt="Educadora abraçando duas crianças com corações de papel" loading="lazy" /><figcaption>Abraço</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-massinha.jpg" width="960" height="1280" alt="Crianças com touca misturando massinha colorida" loading="lazy" /><figcaption>Mão na massa</figcaption></figure>
+      <figure class="shot wide"><img src="assets/vitrine-abraco-sala.jpg" width="1280" height="960" alt="Professor abraçando um grupo de alunos na sala" loading="lazy" /><figcaption>Abraço de professor</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-pintura-quadra.jpg" width="960" height="1280" alt="Crianças pintando em folhas de papel na quadra com uma jovem professora" loading="lazy" /><figcaption>Pintura na quadra</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-cores.jpg" width="960" height="1280" alt="Menino montando uma flor colorida em atividade de arte" loading="lazy" /><figcaption>Cores e formas</figcaption></figure>
+      <figure class="shot"><img src="assets/vitrine-abraco.jpg" width="960" height="1280" alt="Educadora abraçando um menino com carinho" loading="lazy" /><figcaption>Colinho</figcaption></figure>
+      <figure class="shot wide"><img src="assets/projeto-gincana-equipe.jpg" width="1600" height="1200" alt="Equipe de alunos de azul-claro com medalhas ao lado de professores" loading="lazy" /><figcaption>Gincana</figcaption></figure>
+      <figure class="shot wide"><img src="assets/projeto-aula-quadra.jpg" width="1600" height="1200" alt="Professor reunindo a turma sentada em roda na quadra ao pôr do sol" loading="lazy" /><figcaption>Aula na quadra ao pôr do sol</figcaption></figure>
+      <figure class="shot wide"><img src="assets/projeto-gincana-franca.jpg" width="1600" height="1200" alt="Grupo de alunos com medalhas no corredor da escola" loading="lazy" /><figcaption>Medalhas da gincana</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ============ VISITA / LEAD ============ -->
+  <section class="visita section on-dark" id="visita">
+    <div class="shell split">
+      <div class="reveal">
+        <span class="eyebrow on-dark">Vagas abertas 2027</span>
+        <h2>Venha <em class="grad">conhecer a escola</em>.</h2>
+        <p class="lead">Escolha o que quer saber e a gente continua a conversa pelo WhatsApp.</p>
+        <div class="steps">
+          <div class="step"><b>1</b><span>Escolha a série e o que você quer saber.</span></div>
+          <div class="step"><b>2</b><span>Abrimos o WhatsApp com a mensagem pronta.</span></div>
+          <div class="step"><b>3</b><span>Combinamos o melhor dia para a sua visita.</span></div>
+        </div>
+      </div>
+
+      <form class="qualifier reveal" style="--i:1" data-qualifier novalidate>
+        <fieldset>
+          <legend>1. Qual série interessa?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="serie" value="Berçário"><span>Berçário</span></label>
+            <label class="opt"><input type="radio" name="serie" value="Mini Maternal"><span>Mini Maternal</span></label>
+            <label class="opt"><input type="radio" name="serie" value="Educação Infantil"><span>Educação Infantil</span></label>
+            <label class="opt"><input type="radio" name="serie" value="Fundamental I"><span>Fundamental I</span></label>
+            <label class="opt"><input type="radio" name="serie" value="ainda não sei" checked><span>Ainda não sei</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>2. O que você quer saber? (pode marcar mais de um)</legend>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="assunto" value="agendar uma visita" checked><span>Agendar visita</span></label>
+            <label class="opt"><input type="checkbox" name="assunto" value="vagas e matrícula 2027"><span>Vagas e matrícula</span></label>
+            <label class="opt"><input type="checkbox" name="assunto" value="o Viva Escola e os horários"><span>Viva Escola e horários</span></label>
+            <label class="opt"><input type="checkbox" name="assunto" value="o ensino bilíngue com Cambridge"><span>Ensino bilíngue</span></label>
+            <label class="opt"><input type="checkbox" name="assunto" value="os projetos e atividades"><span>Projetos e atividades</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="nome">Seu nome (opcional)</label>
+          <input id="nome" name="nome" type="text" autocomplete="given-name" placeholder="Como podemos te chamar?" />
+        </div>
+        <div class="preview" aria-live="polite"><small>Mensagem que vamos enviar</small><span data-preview></span></div>
+        <button class="btn btn-gold" type="submit">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.08c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.28-3.41-.71-2.89-1.2-4.75-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.28-.12.55.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.7-.82.88-1.1.19-.28.37-.23.63-.14.26.09 1.66.78 1.94.92.28.14.47.21.54.33.07.12.07.71-.17 1.39Z"/></svg>
+          Continuar no WhatsApp
+        </button>
+        <p class="fine">Nada é enviado por este site: apenas abrimos o WhatsApp com a mensagem pronta.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="duvidas" data-bg-light>
+    <div class="shell">
+      <header class="section-head center reveal">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Dúvidas frequentes</h2>
+      </header>
+      <div class="faq reveal">
+        <details open><summary>A partir de que idade meu filho pode estudar no Colégio Aclimação?</summary><div class="a">Recebemos crianças desde o berçário, a partir do 4º mês de vida, e acompanhamos o desenvolvimento até o Fundamental I.</div></details>
+        <details><summary>Qual é o horário de funcionamento?</summary><div class="a">A escola funciona de segunda a sexta, das 7h às 19h. Com o Viva Escola e o Tempo de Aprender, a família escolhe o formato que cabe na sua rotina: integral (7h às 19h), intermediário (13h às 19h) ou apenas o Tempo de Aprender.</div></details>
+        <details><summary>O que é o Viva Escola?</summary><div class="a">É o nosso programa de dia ampliado: um tempo de descobertas, crescimento e cuidado, com alimentação saudável e equilibrada, inglês 3x por semana, informática a partir do Infantil 2, recreação e acompanhamento nos estudos.</div></details>
+        <details><summary>A escola oferece refeições?</summary><div class="a">Sim. No Viva Escola estão inclusos café da manhã, suco natural, almoço com sobremesa e jantar.</div></details>
+        <details><summary>Como funciona o ensino bilíngue?</summary><div class="a">Por meio de parceria com Cambridge, com professores especializados e material didático de ponta, para uma rotina bilíngue natural. No Viva Escola, o inglês acontece 3x por semana.</div></details>
+        <details><summary>Como agendo uma visita?</summary><div class="a">É só escolher a série e o assunto no formulário acima e continuar no WhatsApp, ou ligar para (11) 3341-1329. Vamos adorar receber você.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FECHAMENTO ============ -->
+  <section class="closing" data-closing>
+    <img data-random-banner="assets/banner-futuro-bg.jpg,assets/banner-futuro-bg-2.jpg" src="assets/banner-futuro-bg.jpg" width="3750" height="1174" alt="O futuro começa aqui" loading="lazy" />
+    <div class="closing-cta"><a class="btn btn-gold" href="#visita">Agendar uma visita</a></div>
+  </section>
+</main>
+
+<footer class="site-footer" id="contato" data-bg-light>
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-ca.png" width="96" height="96" alt="Colégio Aclimação" loading="lazy" />
+        <p>Educação com afeto e excelência há 40 anos.</p>
+      </div>
+      <div>
+        <h4>Endereço</h4>
+        <address><a href="https://www.google.com/maps/search/?api=1&query=Rua+Teodureto+Souto%2C+970+-+Cambuci%2C+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noreferrer">Rua Teodureto Souto, 970<br />Cambuci, São Paulo - SP</a></address>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="tel:+551133411329">(11) 3341-1329</a>
+        <a href="tel:+551132717424">(11) 3271-7424</a>
+        <a href="mailto:contato@colegioaclimacao.com.br">contato@colegioaclimacao.com.br</a>
+        <a href="https://www.instagram.com/colegioaclimacao/" target="_blank" rel="noreferrer">Instagram @colegioaclimacao</a>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p style="color:var(--muted)">Segunda a sexta<br />7h às 19h</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Colégio Aclimação. Todos os direitos reservados.</span><span>Vagas abertas 2027</span></div>
+  </div>
+</footer>
+
+<img class="decor-diamond" src="assets/decor-diamond.png" alt="" aria-hidden="true" data-decor-spin />
+
+<div class="floating-actions" data-floating-actions>
+  <a class="fab fab-whatsapp" href="https://wa.me/551133411329?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Col%C3%A9gio%20Aclima%C3%A7%C3%A3o" target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.08c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.28-3.41-.71-2.89-1.2-4.75-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.28-.12.55.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.7-.82.88-1.1.19-.28.37-.23.63-.14.26.09 1.66.78 1.94.92.28.14.47.21.54.33.07.12.07.71-.17 1.39Z"/></svg>
+  </a>
+  <button class="fab fab-top" data-scroll-top type="button" aria-label="Voltar ao topo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a = 0, b = 1) => Math.min(Math.max(v, a), b);
+
+  /* ---- banner aleatório no fechamento ---- */
+  $$('[data-random-banner]').forEach(img => {
+    const opts = img.dataset.randomBanner.split(',').map(s => s.trim()).filter(Boolean);
+    if (opts.length > 1) img.src = opts[Math.floor(Math.random() * opts.length)];
+  });
+
+  /* ---- menu mobile ---- */
+  const toggle = $('[data-menu-toggle]');
+  const nav = $('[data-nav]');
+  const closeMenu = () => {
+    nav.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+  toggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    document.body.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  $$('a', nav).forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  /* ---- reveal ao rolar ---- */
+  const revealEls = $$('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-visible'); obs.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* ---- faíscas douradas no hero ---- */
+  const sparkWrap = $('[data-sparkles]');
+  if (sparkWrap && !reduce) {
+    const n = window.innerWidth < 760 ? 16 : 34;
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement('i');
+      s.className = 'sp' + (i % 5 === 0 ? ' rb' : '');
+      s.style.left = (Math.random() * 100).toFixed(1) + '%';
+      s.style.setProperty('--s', (3 + Math.random() * 5).toFixed(1) + 'px');
+      s.style.setProperty('--d', (11 + Math.random() * 15).toFixed(1) + 's');
+      s.style.setProperty('--dl', (-Math.random() * 22).toFixed(1) + 's');
+      s.style.setProperty('--x', (Math.random() * 120 - 60).toFixed(0) + 'px');
+      sparkWrap.appendChild(s);
+    }
+  }
+
+  /* ---- manifesto: palavras acendem ao rolar ---- */
+  const manifesto = $('[data-words]');
+  let words = [];
+  if (manifesto) {
+    const wrap = node => {
+      [...node.childNodes].forEach(ch => {
+        if (ch.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          ch.textContent.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            const sp = document.createElement('span');
+            sp.className = 'w'; sp.textContent = part; frag.appendChild(sp);
+          });
+          ch.replaceWith(frag);
+        } else if (ch.nodeType === 1) wrap(ch);
+      });
+    };
+    wrap(manifesto);
+    words = $$('.w', manifesto);
+    if (reduce) words.forEach(w => w.classList.add('on'));
+  }
+
+  /* ---- contadores ---- */
+  $$('[data-count]').forEach(el => {
+    const target = +el.dataset.count;
+    if (reduce) return;
+    el.textContent = '0';
+    const io = new IntersectionObserver(([en], obs) => {
+      if (!en.isIntersecting) return;
+      obs.disconnect();
+      const t0 = performance.now(), dur = 1600;
+      const tick = now => {
+        const p = clamp((now - t0) / dur);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.5 });
+    io.observe(el);
+  });
+
+  /* ---- abas da jornada ---- */
+  const tabs = $$('[role="tab"]');
+  const panels = $$('[role="tabpanel"]');
+  const selectTab = (i, focus) => {
+    tabs.forEach((t, k) => {
+      const on = k === i;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      panels[k].hidden = !on;
+      panels[k].classList.toggle('is-active', on);
+    });
+    tabs[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    if (focus) tabs[i].focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(i));
+    t.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); selectTab((i + 1) % tabs.length, true); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); selectTab((i - 1 + tabs.length) % tabs.length, true); }
+    });
+  });
+  $$('[data-next]').forEach(b => b.addEventListener('click', () => {
+    const cur = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+    selectTab((cur + 1) % tabs.length);
+  }));
+  $$('[data-next-first]').forEach(b => b.addEventListener('click', () => selectTab(0)));
+
+  /* ---- Viva Escola: toque ativa o card ---- */
+  const vivas = $$('[data-viva]');
+  vivas.forEach(c => {
+    const flip = () => {
+      const was = c.classList.contains('is-active');
+      vivas.forEach(o => o.classList.remove('is-active'));
+      if (!was) c.classList.add('is-active');
+    };
+    c.addEventListener('click', flip);
+    c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+  });
+
+  /* ---- vitrine: setas ---- */
+  const scroller = $('[data-scroller]');
+  const step = () => Math.max(260, scroller.clientWidth * 0.7);
+  $('[data-scroll-prev]')?.addEventListener('click', () => scroller.scrollBy({ left: -step(), behavior: 'smooth' }));
+  $('[data-scroll-next-photos]')?.addEventListener('click', () => scroller.scrollBy({ left: step(), behavior: 'smooth' }));
+
+  /* ---- formulário -> WhatsApp ---- */
+  const form = $('[data-qualifier]');
+  const preview = $('[data-preview]');
+  const WA = 'https://wa.me/551133411329?text=';
+  const buildMsg = () => {
+    const data = new FormData(form);
+    const nome = (data.get('nome') || '').toString().trim();
+    const serie = data.get('serie') || 'ainda não sei';
+    const assuntos = data.getAll('assunto');
+    let lista = 'conhecer a escola';
+    if (assuntos.length === 1) lista = assuntos[0];
+    else if (assuntos.length > 1) lista = assuntos.slice(0, -1).join(', ') + ' e ' + assuntos[assuntos.length - 1];
+    const quem = nome ? `Olá! Meu nome é ${nome}.` : 'Olá!';
+    const interesse = serie === 'ainda não sei' ? 'Ainda estou decidindo a série' : `Tenho interesse em ${serie}`;
+    return `${quem} ${interesse} e gostaria de saber sobre: ${lista}. Podemos conversar sobre uma visita ao Colégio Aclimação?`;
+  };
+  const refresh = () => { preview.textContent = buildMsg(); };
+  form?.addEventListener('input', refresh);
+  form?.addEventListener('change', refresh);
+  form?.addEventListener('submit', e => {
+    e.preventDefault();
+    window.open(WA + encodeURIComponent(buildMsg()), '_blank', 'noopener');
+  });
+  if (form) refresh();
+
+  /* ---- botões de scroll ---- */
+  $$('[data-scroll-next]').forEach(btn => btn.addEventListener('click', e => {
+    e.preventDefault();
+    const sec = btn.closest('section');
+    const next = sec && (sec.nextElementSibling);
+    next?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  $('[data-scroll-top]')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ---- menu: seção atual ---- */
+  const links = $$('.main-nav a[href^="#"]:not(.nav-cta)');
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  if ('IntersectionObserver' in window) {
+    const so = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const a = map.get(en.target.id);
+        links.forEach(l => l.classList.remove('is-current'));
+        if (a) a.classList.add('is-current');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id], .hero, .site-footer').forEach(el => so.observe(el));
+  }
+
+  /* ---- loop de rolagem: header, progresso, parallax, manifesto, flutuantes, losango ---- */
+  const header = $('[data-header]');
+  const progress = $('[data-progress]');
+  const hero = $('[data-hero]');
+  const heroImg = $('[data-hero-banner] img');
+  const closing = $('[data-closing]');
+  const closingImg = closing && $('img', closing);
+  const floating = $('[data-floating-actions]');
+  const diamond = $('[data-decor-spin]');
+  const lightSections = $$('[data-bg-light]');
+
+  let ticking = false;
+  const frame = () => {
+    ticking = false;
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+    const docH = document.documentElement.scrollHeight - vh;
+
+    header.classList.toggle('is-solid', y > 24);
+    progress.style.transform = `scaleX(${docH > 0 ? clamp(y / docH) : 0})`;
+
+    if (!reduce) {
+      if (heroImg) heroImg.style.transform = `scale(${1 + clamp(y / (vh * 1.2)) * 0.1})`;
+
+      if (closing && closingImg) {
+        const r = closing.getBoundingClientRect();
+        const p = clamp((vh - r.top) / (vh + r.height));
+        closingImg.style.transform = `scale(${1 + p * 0.14})`;
+      }
+
+      if (words.length) {
+        const r = manifesto.getBoundingClientRect();
+        const p = clamp((vh * 0.82 - r.top) / (r.height + vh * 0.25));
+        const lit = Math.round(p * words.length * 1.05);
+        words.forEach((w, i) => w.classList.toggle('on', i < lit));
+      }
+
+      if (diamond) diamond.style.transform = `rotate(${y * 0.15}deg)`;
+    }
+
+    if (floating && hero) floating.classList.toggle('is-visible', hero.getBoundingClientRect().bottom < 0);
+
+    if (diamond) {
+      const d = diamond.getBoundingClientRect();
+      const cy = d.top + d.height / 2;
+      const over = lightSections.some(s => { const r = s.getBoundingClientRect(); return cy >= r.top && cy <= r.bottom; });
+      diamond.classList.toggle('is-visible', over);
+    }
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  frame();
+})();
+</script>
+</body>
+</html>
