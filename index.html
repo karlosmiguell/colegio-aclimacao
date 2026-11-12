@@ -554,6 +554,71 @@
 
   .qualifier { background: #0B2A6C; -webkit-backdrop-filter: none; backdrop-filter: none; border-color: rgba(255, 255, 255, 0.14); }
 
+  /* ---------- simplificado: palavras-chave, modal, Viva Escola ---------- */
+  .kw { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .kw li { padding: 8px 16px; border-radius: 999px; background: rgba(230, 190, 106, 0.24); color: var(--blue-900); font-weight: 500; font-size: 0.96rem; line-height: 1.2; }
+  .kw.light li { background: rgba(255, 255, 255, 0.2); color: #fff; }
+  .btn-line { color: var(--blue-900); background: transparent; border: 1.5px solid var(--blue-900); }
+  .btn-line:hover { background: var(--blue-900); color: #fff; }
+  .btn-light { color: var(--blue-900); background: #fff; box-shadow: 0 10px 26px rgba(4, 15, 42, 0.18); }
+  .btn-light:hover { box-shadow: 0 16px 34px rgba(4, 15, 42, 0.28); }
+  .panel-actions { margin-top: 28px; }
+  .more { display: none; }
+
+  .proj p { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 500ms var(--ease), opacity 400ms ease, margin 400ms ease; margin-top: 0; }
+  .proj:hover p, .proj:focus-within p { max-height: 5em; opacity: 1; margin-top: 4px; }
+  .proj.text p { max-height: none; opacity: 1; margin-top: 6px; }
+  @media (hover: none) { .proj p { max-height: none; opacity: 1; margin-top: 4px; } }
+
+  .modal { border: 0; padding: 0; width: min(560px, calc(100% - 32px)); border-radius: var(--radius); background: #fff; color: var(--ink); box-shadow: 0 40px 120px rgba(4, 15, 42, 0.55); overflow: visible; }
+  .modal::backdrop { background: rgba(4, 15, 42, 0.62); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .modal[open] { animation: modal-in 420ms var(--ease) both; }
+  @keyframes modal-in { from { opacity: 0; transform: translateY(26px) scale(0.97); } to { opacity: 1; transform: none; } }
+  .modal-in { position: relative; padding: clamp(26px, 4vw, 40px); }
+  .modal h3 { padding-right: 40px; font-size: clamp(1.5rem, 3vw, 2rem); }
+  .modal .answer { margin-top: 14px; color: var(--muted); }
+  .modal .checks { margin-top: 20px; margin-bottom: 26px; }
+  .modal .x { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(14, 30, 63, 0.07); color: var(--blue-900); transition: background 200ms ease, transform 300ms var(--ease); }
+  .modal .x:hover { background: var(--gold); transform: rotate(90deg); }
+  body.modal-open { overflow: hidden; }
+
+  .duo { display: flex; gap: 18px; min-height: 430px; }
+  .duo-panel { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0; padding: clamp(24px, 3vw, 40px); border-radius: var(--radius); color: #fff; overflow: hidden; cursor: pointer; transition: flex 800ms var(--ease), box-shadow 600ms var(--ease); isolation: isolate; }
+  .duo-panel.sun { background: radial-gradient(420px 320px at 100% 0%, rgba(255, 220, 130, 0.55), transparent 70%), linear-gradient(160deg, #FFAE42, #F7961E 55%, #E27B00); }
+  .duo-panel.leaf { background: radial-gradient(420px 320px at 0% 0%, rgba(120, 230, 215, 0.4), transparent 70%), linear-gradient(160deg, #2BA79C, #1B8A80 55%, #115A52); }
+  .duo-panel::after { content: ""; position: absolute; width: 360px; height: 360px; right: -120px; bottom: -140px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); z-index: -1; transition: transform 900ms var(--ease); }
+  .duo-panel:hover::after, .duo-panel.is-open::after { transform: scale(1.5); }
+  .duo-panel:hover, .duo-panel.is-open { flex: 1.35; box-shadow: 0 40px 80px -40px rgba(14, 30, 63, 0.6); }
+  .duo:has(.duo-panel:hover) .duo-panel:not(:hover) { flex: 0.85; }
+  .duo-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: auto; padding-bottom: 28px; }
+  .duo-logo { width: auto; height: clamp(70px, 7vw, 92px); padding: 8px 16px; border-radius: 12px; background: #fff; }
+  .hours { padding: 9px 18px; border-radius: 999px; background: rgba(4, 15, 42, 0.28); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
+  .duo-panel h3 { color: #fff; font-size: clamp(1.6rem, 2.6vw, 2.2rem); max-width: 18ch; }
+  .duo-panel .btn { margin-top: 22px; align-self: flex-start; min-height: 48px; padding: 0 24px; }
+
+  .timeline { margin-top: clamp(40px, 6vw, 72px); }
+  .tl-title { margin-bottom: 22px; font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+  .tl-grid { display: grid; grid-template-columns: 220px 1fr; gap: 12px 20px; align-items: center; }
+  .tl-axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.86rem; font-weight: 500; }
+  .tl-grid b { font-weight: 600; color: var(--blue-900); font-size: 0.98rem; line-height: 1.2; }
+  .tl-track { position: relative; height: 44px; border-radius: 999px; background: rgba(14, 30, 63, 0.06); }
+  .bar { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; border-radius: 999px; color: #fff; font-style: normal; font-weight: 600; font-size: 0.95rem; transform: scaleX(0); transform-origin: left center; transition: transform 1200ms var(--ease) calc(var(--d, 0) * 160ms); }
+  .timeline.is-visible .bar { transform: none; }
+  .bar.both { background: linear-gradient(90deg, #F7961E, #1B8A80); }
+  .bar.sun { background: #F7961E; }
+  .bar.leaf { background: #1B8A80; }
+  .meals-line { margin-top: 24px; color: var(--muted); }
+  .meals-line b { color: var(--blue-900); font-weight: 600; margin-right: 6px; }
+
+  @media (max-width: 980px) {
+    .duo { flex-direction: column; min-height: 0; }
+    .duo-panel, .duo-panel:hover, .duo-panel.is-open, .duo:has(.duo-panel:hover) .duo-panel:not(:hover) { flex: none; }
+    .duo-panel { min-height: 340px; }
+    .tl-grid { grid-template-columns: 1fr; gap: 6px; }
+    .tl-spacer { display: none; }
+    .tl-grid b { margin-top: 12px; }
+  }
+
   /* ---------- responsive ---------- */
   @media (max-width: 1080px) {
     .main-nav a:not(.nav-cta) { padding: 10px 10px; }
@@ -652,7 +717,7 @@
     <div class="shell hero-copy">
       <p class="chip reveal"><i></i> Vagas abertas 2027 · 40 anos de tradição</p>
       <h1 class="reveal" style="--i:1">40 anos educando com <em class="grad">amor</em>, construindo <em class="grad">confiança</em> e preparando <em class="grad">futuros</em>.</h1>
-      <p class="lead reveal" style="--i:2">Do berçário ao Fundamental I, cuidamos de cada criança pelo nome, com turmas pequenas, inglês no dia a dia e muito carinho.</p>
+      <p class="lead reveal" style="--i:2">Do berçário ao Fundamental I, com turmas pequenas, inglês e muito carinho.</p>
       <div class="cta-row reveal" style="--i:3">
         <a class="btn btn-gold" href="#visita">
           Agendar uma visita
@@ -694,19 +759,19 @@
         <div class="tile tile-blue reveal">
           <span class="big" data-count="40">40</span>
           <span class="unit">anos de tradição</span>
-          <p>Há 40 anos fazendo parte da história de muitas famílias.</p>
+          <p>Há 40 anos com as famílias.</p>
         </div>
         <div class="tile tile-gold reveal" style="--i:1">
           <span class="big sm">4º mês</span>
-          <p>Recebemos seu filho a partir do 4º mês de vida.</p>
+          <p>A partir do 4º mês de vida.</p>
         </div>
         <div class="tile reveal" style="--i:2">
           <span class="big sm">7h–19h</span>
-          <p>Viva Escola: um horário que cabe na rotina da família.</p>
+          <p>Viva Escola.</p>
         </div>
         <div class="tile tile-dark reveal" style="--i:3">
           <span class="big sm">Cambridge</span>
-          <p>Parceria com Cambridge e professores especializados.</p>
+          <p>Parceria bilíngue.</p>
         </div>
       </div>
     </div>
@@ -718,7 +783,7 @@
       <header class="section-head center reveal">
         <span class="eyebrow">Para as famílias</span>
         <h2>O que você quer saber antes de escolher?</h2>
-        <p>Escolha o que mais importa para a sua família. Respondemos direto, com fotos reais da nossa rotina.</p>
+        <p>Escolha o que mais importa para você.</p>
       </header>
 
       <div class="tabs reveal" role="tablist" aria-label="Prioridades da família" data-tabs>
@@ -734,15 +799,16 @@
       <div class="panels reveal" data-panels>
         <article class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-seguranca.jpg" width="1280" height="960" alt="Fachada do Colégio Aclimação com o logo e as informações de contato" style="object-position:50% 50%" /></span><figcaption>Fachada do colégio, no Cambuci</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">1 · Segurança</span>
             <h3>Meu filho está bem cuidado e protegido?</h3>
-            <p class="answer">Os ambientes são preparados para brincar, aprender e explorar, sempre com adultos por perto.</p>
-            <ul class="checks">
+            <ul class="kw"><li>Ambiente seguro</li><li>Adultos por perto</li><li>Espaços preparados</li></ul>
+            <div class="more" hidden><p class="answer">Os ambientes são preparados para brincar, aprender e explorar, sempre com adultos por perto.</p><ul class="checks">
               <li>Ambiente seguro e afetuoso</li>
               <li>Professores e coordenação por perto</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#visita">Quero visitar</a>
               <button class="link-next" type="button" data-next>Próxima: Acolhimento <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -751,15 +817,16 @@
 
         <article class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-acolhimento.jpg" width="1280" height="720" alt="Professora e alunos abraçados diante do quadro com a frase Bom dia" loading="lazy" style="object-position:50% 35%" /></span><figcaption>Bom dia com abraço, todos os dias</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">2 · Acolhimento</span>
             <h3>Ele será feliz, respeitado e ouvido?</h3>
-            <p class="answer">Aqui, seu filho é conhecido pelo nome, acolhido com carinho e respeitado em cada descoberta.</p>
-            <ul class="checks">
+            <ul class="kw"><li>Conhecido pelo nome</li><li>Carinho</li><li>Respeito</li></ul>
+            <div class="more" hidden><p class="answer">Aqui, seu filho é conhecido pelo nome, acolhido com carinho e respeitado em cada descoberta.</p><ul class="checks">
               <li>Família e escola próximas no dia a dia</li>
               <li>Acompanhamento individual</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#visita">Quero visitar</a>
               <button class="link-next" type="button" data-next>Próxima: Qualidade do ensino <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -768,15 +835,16 @@
 
         <article class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-ensino.jpg" width="1200" height="1600" alt="Sala de aula com alunos fazendo atividade e a professora acompanhando de perto" loading="lazy" style="object-position:50% 40%" /></span><figcaption>Professora acompanhando a turma em sala</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">3 · Qualidade do ensino</span>
             <h3>Ele realmente vai aprender?</h3>
-            <p class="answer">Base acadêmica forte e incentivo ao pensamento crítico, com professores qualificados e projetos ao longo do ano.</p>
-            <ul class="checks">
+            <ul class="kw"><li>Base forte</li><li>Projetos</li><li>Olimpíada de Matemática</li></ul>
+            <div class="more" hidden><p class="answer">Base acadêmica forte e incentivo ao pensamento crítico, com professores qualificados e projetos ao longo do ano.</p><ul class="checks">
               <li>Projetos pedagógicos o ano todo</li>
               <li>Olimpíada de Matemática e outros desafios</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#projetos">Ver os projetos</a>
               <button class="link-next" type="button" data-next>Próxima: Atenção individual <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -785,15 +853,16 @@
 
         <article class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-atencao.jpg" width="960" height="1280" alt="Pequeno grupo de crianças sorrindo e brincando de jogo da memória no chão da sala" loading="lazy" style="object-position:50% 40%" /></span><figcaption>Turma pequena</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">4 · Atenção individual</span>
             <h3>Os professores conhecem as necessidades dele?</h3>
-            <p class="answer">Em turmas menores, o professor conhece cada criança e acompanha de perto o desenvolvimento.</p>
-            <ul class="checks">
+            <ul class="kw"><li>Turmas reduzidas</li><li>Atendimento personalizado</li><li>Acompanhamento</li></ul>
+            <div class="more" hidden><p class="answer">Em turmas menores, o professor conhece cada criança e acompanha de perto o desenvolvimento.</p><ul class="checks">
               <li>Turmas reduzidas</li>
               <li>Atendimento personalizado</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#visita">Quero visitar</a>
               <button class="link-next" type="button" data-next>Próxima: Inglês e futuro <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -802,15 +871,16 @@
 
         <article class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-futuro.jpg" width="960" height="1280" alt="Duas alunas sorrindo diante de notebooks na sala de informática" loading="lazy" style="object-position:50% 45%" /></span><figcaption>Informática a partir do Infantil 2</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">5 · Inglês e futuro</span>
             <h3>Vai aprender inglês e desenvolver novas habilidades?</h3>
-            <p class="answer">Inglês no dia a dia, com parceria Cambridge, e informática a partir do Infantil 2.</p>
-            <ul class="checks">
+            <ul class="kw"><li>Cambridge</li><li>Inglês 3x por semana</li><li>Informática</li></ul>
+            <div class="more" hidden><p class="answer">Inglês no dia a dia, com parceria Cambridge, e informática a partir do Infantil 2.</p><ul class="checks">
               <li>Inglês 3x por semana no Viva Escola</li>
               <li>Professores especializados</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#bilingue">Conhecer o ensino bilíngue</a>
               <button class="link-next" type="button" data-next>Próxima: Família e escola <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -819,16 +889,17 @@
 
         <article class="panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" hidden>
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-familia.jpg" width="960" height="1280" alt="Educadora abraçando uma criança na porta da sala" loading="lazy" style="object-position:50% 40%" /></span><figcaption>A chegada na escola</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">6 · Família e escola</span>
             <h3>Vou saber como está o desenvolvimento dele?</h3>
-            <p class="answer">A gente conversa com a família com transparência e atenção.</p>
-            <ul class="checks">
+            <ul class="kw"><li>Transparência</li><li>WhatsApp rápido</li><li>Instagram</li></ul>
+            <div class="more" hidden><p class="answer">A gente conversa com a família com transparência e atenção.</p><ul class="checks">
               <li>Atendimento rápido por WhatsApp</li>
               <li>Visita agendada para conhecer a rotina</li>
               <li>Dia a dia no Instagram @colegioaclimacao</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#visita">Falar com a escola</a>
               <button class="link-next" type="button" data-next>Próxima: Rotina e estrutura <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -837,16 +908,17 @@
 
         <article class="panel" role="tabpanel" id="panel-7" aria-labelledby="tab-7" hidden>
           <figure class="panel-photo"><span class="ph"><img src="assets/jornada-rotina.jpg" width="934" height="718" alt="Criança sorrindo na brinquedoteca da escola, com outros alunos brincando ao fundo" loading="lazy" style="object-position:30% 50%" /></span><figcaption>Brinquedoteca do colégio</figcaption></figure>
-          <div class="panel-body">
+          <div class="panel-body" data-more-root>
             <span class="q">7 · Rotina e estrutura</span>
             <h3>A rotina da escola cabe na rotina da minha família?</h3>
-            <p class="answer">Com o Viva Escola, o dia vai das 7h às 19h, com refeições, recreação e acompanhamento.</p>
-            <ul class="checks">
+            <ul class="kw"><li>7h–19h</li><li>Refeições</li><li>Recreação</li></ul>
+            <div class="more" hidden><p class="answer">Com o Viva Escola, o dia vai das 7h às 19h, com refeições, recreação e acompanhamento.</p><ul class="checks">
               <li>Café da manhã, suco natural, almoço, sobremesa e jantar</li>
               <li>Recreação com jogos e atividades lúdicas</li>
               <li>Você escolhe: integral, intermediário ou só o Tempo de Aprender</li>
-            </ul>
+            </ul></div>
             <div class="panel-actions">
+              <button class="btn btn-line" type="button" data-open-more>Ver mais</button>
               <a class="btn btn-navy" href="#viva-escola">Ver horários</a>
               <button class="link-next" type="button" data-next-first>Voltar ao início <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
@@ -871,7 +943,7 @@
           <div class="seg-body">
             <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26v22h44V26M10 30h44M18 30v18m9-18v18m10-18v18m9-18v18M14 48v7m36-7v7M32 22s-10-5.6-10-11a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 5.4-10 11-10 11Z"/></svg></span>
             <h3>Berçário</h3>
-            <p>Com carinho, segurança e rotina acompanhada de perto.</p>
+            <p>Carinho · segurança · rotina</p>
           </div>
         </article>
         <article class="seg reveal" style="--i:1">
@@ -879,7 +951,7 @@
           <div class="seg-body">
             <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="33" width="23" height="22" rx="3"/><rect x="32" y="33" width="23" height="22" rx="3"/><rect x="21" y="11" width="23" height="22" rx="3"/><circle cx="20.5" cy="44" r="4"/><path d="m39 48 4.5-8 4.5 8ZM29 22h7m-3.5-3.5v7"/></svg></span>
             <h3>Mini Maternal</h3>
-            <p>Primeiras descobertas e mais autonomia, num ambiente preparado para explorar.</p>
+            <p>Descobertas · autonomia</p>
           </div>
         </article>
         <article class="seg reveal" style="--i:2">
@@ -887,7 +959,7 @@
           <div class="seg-body">
             <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 32c8-3 15-2 23 3 8-5 15-6 23-3v22c-8-3-15-2-23 3-8-5-15-6-23-3ZM32 35v22M23 8h23a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5h-9l-8 5v-5h-6a5 5 0 0 1-5-5v-8a5 5 0 0 1 5-5ZM26 17h.1m8 0h.1m8 0h.1M15 40c4-.7 8 0 11 1.5m-11 6c4-.7 8 0 11 1.5"/></svg></span>
             <h3>Educação Infantil</h3>
-            <p>Vivências bilíngues e projetos criativos.</p>
+            <p>Bilíngue · criatividade</p>
           </div>
         </article>
         <article class="seg reveal" style="--i:3">
@@ -896,7 +968,7 @@
           <div class="seg-body">
             <span class="ico"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 25c-8-5-15-6-23-3v29c8-3 15-2 23 3 8-5 15-6 23-3V34M32 25v29M15 31c4-.7 8 0 11 1.5m-11 6c4-.7 8 0 11 1.5M38 27l1-8L50 8a3 3 0 0 1 4 0l2 2a3 3 0 0 1 0 4L45 25ZM47 11l6 6M39 19l6 6"/></svg></span>
             <h3>Fundamental I</h3>
-            <p>Base forte nas matérias e incentivo ao pensamento crítico.</p>
+            <p>Base forte · pensamento crítico</p>
           </div>
         </article>
       </div>
@@ -909,7 +981,7 @@
       <div class="reveal">
         <span class="eyebrow on-dark">Sistema bilíngue</span>
         <h2>Inglês no dia a dia, <em class="grad">com Cambridge</em>.</h2>
-        <p class="lead">Novas palavras, novas descobertas. Professores especializados e material didático de ponta fazem do inglês uma parte natural da rotina.</p>
+        <p class="lead">Novas palavras, novas descobertas, todo dia.</p>
         <div class="pills">
           <span class="pill">Parceria Cambridge</span>
           <span class="pill">Professores especializados</span>
@@ -931,49 +1003,72 @@
       <header class="section-head center reveal">
         <span class="eyebrow">Aprender e viver</span>
         <h2>Viva Escola e Tempo de Aprender</h2>
-        <p>Dois caminhos, uma mesma jornada de crescimento. Mais do que um período estendido, uma experiência completa que une aprendizado, cuidado e diversão.</p>
+        <p>Dois caminhos, uma mesma jornada.</p>
       </header>
 
-      <div class="viva-grid">
-        <article class="viva-card reveal" data-viva tabindex="0">
-          <img class="viva-logo" src="assets/viva-escola-logo-viva.png" width="400" height="200" alt="Escola Viva" loading="lazy" />
-          <h3>Mais do que um período estendido: uma experiência completa</h3>
-          <p class="sub">Um tempo de descobertas, crescimento e cuidado, em sintonia com os valores de amor, acolhimento e excelência do Colégio Aclimação.</p>
-          <ul>
-            <li>Alimentação saudável e equilibrada</li>
-            <li>Informática a partir do Infantil 2</li>
-            <li>Inglês 3x por semana</li>
-            <li>Ambiente seguro, afetuoso e cheio de oportunidades</li>
-            <li>Recreação com jogos e atividades lúdicas</li>
-            <li>Educação Infantil: espaço acolhedor, com acompanhamento nas rotinas</li>
-            <li>Fundamental: acompanhamento com professora e coordenação para estudos, reforço e lição de casa</li>
-          </ul>
+      <div class="duo reveal">
+        <article class="duo-panel sun" data-more-root data-more-title="Viva Escola" tabindex="0">
+          <div class="duo-top">
+            <img class="duo-logo" src="assets/viva-escola-logo-viva.png" width="400" height="200" alt="Escola Viva" loading="lazy" />
+            <span class="hours">7h–19h</span>
+          </div>
+          <h3>Aprender, brincar e se sentir em casa.</h3>
+          <ul class="kw light"><li>Alimentação</li><li>Inglês 3x</li><li>Informática</li><li>Recreação</li><li>Lição de casa</li></ul>
+          <button class="btn btn-light" type="button" data-open-more>Ver detalhes</button>
+          <div class="more" hidden>
+            <p class="answer">Mais do que um período estendido: uma experiência completa que une aprendizado, cuidado e diversão.</p>
+            <ul class="checks">
+              <li>Alimentação saudável e equilibrada</li>
+              <li>Informática a partir do Infantil 2</li>
+              <li>Inglês 3x por semana</li>
+              <li>Ambiente seguro, afetuoso e cheio de oportunidades</li>
+              <li>Recreação com jogos e atividades lúdicas</li>
+              <li>Educação Infantil: espaço acolhedor, com acompanhamento nas rotinas</li>
+              <li>Fundamental: acompanhamento com professora e coordenação para estudos, reforço e lição de casa</li>
+            </ul>
+          </div>
         </article>
 
-        <article class="viva-card tempo reveal" style="--i:1" data-viva tabindex="0">
-          <img class="viva-logo" src="assets/viva-escola-logo-tempo.png" width="400" height="260" alt="Tempo de Aprender" loading="lazy" />
-          <h3>O horário pedagógico: tempo de aprender, criar e descobrir</h3>
-          <p class="sub">O tempo da sala de aula, dos projetos e das descobertas que transformam informação em conhecimento.</p>
-          <ul>
-            <li>Projetos pedagógicos ao longo do ano</li>
-            <li>Meu Pequeno Autor e Soletrando</li>
-            <li>Feira do Empreendedor e Educação Financeira</li>
-            <li>Podcast PodEstudar</li>
-            <li>Dia da Fruta e Show de Talentos</li>
-          </ul>
+        <article class="duo-panel leaf" data-more-root data-more-title="Tempo de Aprender" tabindex="0">
+          <div class="duo-top">
+            <img class="duo-logo" src="assets/viva-escola-logo-tempo.png" width="400" height="260" alt="Tempo de Aprender" loading="lazy" />
+            <span class="hours">13h–17h · 13h–18h</span>
+          </div>
+          <h3>O tempo da sala de aula e dos projetos.</h3>
+          <ul class="kw light"><li>Projetos</li><li>Meu Pequeno Autor</li><li>Soletrando</li><li>Feira do Empreendedor</li><li>PodEstudar</li></ul>
+          <button class="btn btn-light" type="button" data-open-more>Ver detalhes</button>
+          <div class="more" hidden>
+            <p class="answer">O horário pedagógico, com projetos que transformam informação em conhecimento.</p>
+            <ul class="checks">
+              <li>Meu Pequeno Autor</li>
+              <li>Soletrando</li>
+              <li>Feira do Empreendedor</li>
+              <li>Dia da Fruta</li>
+              <li>Podcast PodEstudar</li>
+              <li>Educação Financeira</li>
+              <li>Show de Talentos</li>
+              <li>E muito mais ao longo do ano</li>
+            </ul>
+          </div>
         </article>
       </div>
 
-      <div class="schedule">
-        <div class="sch star reveal"><strong>7h às 19h</strong><span>Viva Escola + Tempo de Aprender · Educação Infantil e Fundamental I</span></div>
-        <div class="sch reveal" style="--i:1"><strong>13h às 19h</strong><span>Intermediário</span></div>
-        <div class="sch reveal" style="--i:2"><strong>13h às 17h · 13h às 18h</strong><span>Tempo de Aprender: Educação Infantil · Ensino Fundamental I</span></div>
+      <div class="timeline reveal">
+        <h3 class="tl-title">Escolha o horário</h3>
+        <div class="tl-grid">
+          <span class="tl-spacer"></span>
+          <div class="tl-axis"><span>7h</span><span>9h</span><span>11h</span><span>13h</span><span>15h</span><span>17h</span><span>19h</span></div>
+          <b>Integral</b>
+          <div class="tl-track"><i class="bar both" style="left:0;width:100%;--d:0">7h–19h</i></div>
+          <b>Intermediário</b>
+          <div class="tl-track"><i class="bar sun" style="left:50%;width:50%;--d:1">13h–19h</i></div>
+          <b>Tempo de Aprender · Infantil</b>
+          <div class="tl-track"><i class="bar leaf" style="left:50%;width:33.333%;--d:2">13h–17h</i></div>
+          <b>Tempo de Aprender · Fund. I</b>
+          <div class="tl-track"><i class="bar leaf" style="left:50%;width:41.667%;--d:3">13h–18h</i></div>
+        </div>
+        <p class="meals-line"><b>Incluso no Viva Escola:</b> café da manhã · suco natural · almoço e sobremesa · jantar</p>
       </div>
-      <div class="meals reveal">
-        <b>No Viva Escola está incluso:</b>
-        <span class="meal">Café da manhã</span><span class="meal">Suco natural</span><span class="meal">Almoço e sobremesa</span><span class="meal">Jantar</span>
-      </div>
-      <p class="fine reveal">Sem taxa de matrícula.</p>
     </div>
   </section>
 
@@ -983,41 +1078,41 @@
       <header class="section-head reveal">
         <span class="eyebrow">Projetos</span>
         <h2>Aqui a criança aprende fazendo.</h2>
-        <p>Fotos reais da nossa rotina: gincanas, olimpíadas, feiras e muita criatividade.</p>
+        <p>Fotos reais da nossa rotina.</p>
       </header>
 
       <div class="proj-grid">
         <article class="proj p-a reveal">
           <span class="ph"><img src="assets/projeto-gincana-medalhas.jpg" width="1600" height="1200" alt="Alunos com medalhas e professores abraçados após a gincana" loading="lazy" style="object-position:50% 45%" /></span>
           <span class="badge">Gincana</span>
-          <div class="proj-body"><h3>Gincana</h3><p>Times que torcem juntos e aprendem a ganhar e a perder com respeito.</p></div>
+          <div class="proj-body"><h3>Gincana</h3><p>Equipe, superação e alegria.</p></div>
         </article>
         <article class="proj p-b reveal" style="--i:1">
           <span class="ph"><img src="assets/projeto-olimpiada-matematica.jpg" width="1200" height="1600" alt="Aluno resolvendo a prova da Olimpíada de Matemática 2026" loading="lazy" style="object-position:55% 45%" /></span>
           <span class="badge">Olimpíada</span>
-          <div class="proj-body"><h3>Olimpíada de Matemática</h3><p>Desafios para pensar e ganhar confiança.</p></div>
+          <div class="proj-body"><h3>Olimpíada de Matemática</h3><p>Raciocínio e confiança.</p></div>
         </article>
         <article class="proj text gold reveal" style="--i:2">
           <img class="round" src="assets/projeto-feira-empreendedor.jpg" width="320" height="321" alt="Aluno vendendo doces na Feira do Empreendedor" loading="lazy" />
           <h3>Feira do Empreendedor</h3>
-          <p>Os alunos criam, vendem e aprendem empreendedorismo na prática.</p>
+          <p>Criar, vender e aprender.</p>
         </article>
         <article class="proj reveal" style="--i:3">
           <span class="ph"><img src="assets/projeto-gincana-saco.jpg" width="1200" height="1600" alt="Aluno pulando na corrida de saco durante a gincana na quadra" loading="lazy" style="object-position:50% 45%" /></span>
-          <div class="proj-body"><h3>Corrida de saco</h3><p>Movimento e diversão na quadra.</p></div>
+          <div class="proj-body"><h3>Corrida de saco</h3><p>Movimento e diversão.</p></div>
         </article>
         <article class="proj reveal" style="grid-column: span 2">
           <span class="ph"><img src="assets/projeto-arte-mural.jpg" width="1600" height="950" alt="Crianças pintando juntas um grande mural de papel" loading="lazy" style="object-position:50% 45%" /></span>
           <span class="badge">Arte</span>
-          <div class="proj-body"><h3>Criar junto</h3><p>Pintura em grupo, todo mundo participando.</p></div>
+          <div class="proj-body"><h3>Criar junto</h3><p>Arte em grupo.</p></div>
         </article>
         <article class="proj reveal" style="--i:1">
           <span class="ph"><img src="assets/projeto-gincana-copos.jpg" width="1200" height="1600" alt="Alunos em fila na quadra equilibrando copos d'água na cabeça" loading="lazy" style="object-position:50% 50%" /></span>
-          <div class="proj-body"><h3>Desafio do equilíbrio</h3><p>Concentração e trabalho em equipe.</p></div>
+          <div class="proj-body"><h3>Desafio do equilíbrio</h3><p>Foco e equipe.</p></div>
         </article>
         <article class="proj text insta reveal" style="--i:2">
           <h3>Acompanhe o dia a dia</h3>
-          <p>Projetos, eventos e bastidores no Instagram da escola.</p>
+          <p>Projetos e bastidores no Instagram.</p>
           <a class="btn btn-gold" href="https://www.instagram.com/colegioaclimacao/" target="_blank" rel="noreferrer">@colegioaclimacao</a>
         </article>
       </div>
@@ -1096,11 +1191,11 @@
       <div class="reveal">
         <span class="eyebrow on-dark">Vagas abertas 2027</span>
         <h2>Venha <em class="grad">conhecer a escola</em>.</h2>
-        <p class="lead">Escolha o que quer saber e a gente continua a conversa pelo WhatsApp.</p>
+        <p class="lead">Escolha e continue no WhatsApp.</p>
         <div class="steps">
-          <div class="step"><b>1</b><span>Escolha a série e o que você quer saber.</span></div>
-          <div class="step"><b>2</b><span>Abrimos o WhatsApp com a mensagem pronta.</span></div>
-          <div class="step"><b>3</b><span>Combinamos o melhor dia para a sua visita.</span></div>
+          <div class="step"><b>1</b><span>Escolha a série e o assunto.</span></div>
+          <div class="step"><b>2</b><span>O WhatsApp abre com a mensagem pronta.</span></div>
+          <div class="step"><b>3</b><span>Combinamos o dia da visita.</span></div>
         </div>
       </div>
 
@@ -1147,12 +1242,12 @@
         <h2>Dúvidas frequentes</h2>
       </header>
       <div class="faq reveal">
-        <details open><summary>A partir de que idade meu filho pode estudar no Colégio Aclimação?</summary><div class="a">Recebemos crianças desde o berçário, a partir do 4º mês de vida, e acompanhamos o desenvolvimento até o Fundamental I.</div></details>
-        <details><summary>Qual é o horário de funcionamento?</summary><div class="a">A escola funciona de segunda a sexta, das 7h às 19h. Com o Viva Escola e o Tempo de Aprender, a família escolhe o formato que cabe na sua rotina: integral (7h às 19h), intermediário (13h às 19h) ou apenas o Tempo de Aprender.</div></details>
-        <details><summary>O que é o Viva Escola?</summary><div class="a">É o nosso programa de dia ampliado: um tempo de descobertas, crescimento e cuidado, com alimentação saudável e equilibrada, inglês 3x por semana, informática a partir do Infantil 2, recreação e acompanhamento nos estudos.</div></details>
-        <details><summary>A escola oferece refeições?</summary><div class="a">Sim. No Viva Escola estão inclusos café da manhã, suco natural, almoço com sobremesa e jantar.</div></details>
-        <details><summary>Como funciona o ensino bilíngue?</summary><div class="a">Por meio de parceria com Cambridge, com professores especializados e material didático de ponta, para uma rotina bilíngue natural. No Viva Escola, o inglês acontece 3x por semana.</div></details>
-        <details><summary>Como agendo uma visita?</summary><div class="a">É só escolher a série e o assunto no formulário acima e continuar no WhatsApp, ou ligar para (11) 3341-1329. Vamos adorar receber você.</div></details>
+        <details open><summary>A partir de que idade meu filho pode estudar no Colégio Aclimação?</summary><div class="a">Do berçário, a partir do 4º mês, até o Fundamental I.</div></details>
+        <details><summary>Qual é o horário de funcionamento?</summary><div class="a">Segunda a sexta, das 7h às 19h. Você escolhe: integral, intermediário ou só o Tempo de Aprender.</div></details>
+        <details><summary>O que é o Viva Escola?</summary><div class="a">O dia ampliado da escola: refeições, inglês 3x por semana, informática, recreação e acompanhamento nos estudos.</div></details>
+        <details><summary>A escola oferece refeições?</summary><div class="a">Sim: café da manhã, suco natural, almoço com sobremesa e jantar, inclusos no Viva Escola.</div></details>
+        <details><summary>Como funciona o ensino bilíngue?</summary><div class="a">Parceria com Cambridge, professores especializados e inglês 3x por semana no Viva Escola.</div></details>
+        <details><summary>Como agendo uma visita?</summary><div class="a">Pelo formulário acima (WhatsApp) ou ligando para (11) 3341-1329.</div></details>
       </div>
     </div>
   </section>
@@ -1201,6 +1296,17 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 </div>
+
+<dialog class="modal" data-modal aria-labelledby="modal-title">
+  <div class="modal-in">
+    <button class="x" type="button" data-modal-close aria-label="Fechar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h3 id="modal-title" data-modal-title></h3>
+    <div class="modal-body" data-modal-body></div>
+    <a class="btn btn-gold" href="#visita" data-modal-close>Quero visitar</a>
+  </div>
+</dialog>
 
 <script>
 (() => {
@@ -1370,6 +1476,37 @@
     window.open(WA + encodeURIComponent(buildMsg()), '_blank', 'noopener');
   });
   if (form) refresh();
+
+  /* ---- modal "ver mais" ---- */
+  const modal = $('[data-modal]');
+  if (modal) {
+    const mTitle = $('[data-modal-title]', modal);
+    const mBody = $('[data-modal-body]', modal);
+    $$('[data-open-more]').forEach(btn => btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const root = btn.closest('[data-more-root]');
+      const more = $('.more', root);
+      if (!more) return;
+      mTitle.textContent = root.dataset.moreTitle || $('h3', root).textContent;
+      mBody.innerHTML = more.innerHTML;
+      document.body.classList.add('modal-open');
+      modal.showModal();
+    }));
+    modal.addEventListener('close', () => document.body.classList.remove('modal-open'));
+    modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+    $$('[data-modal-close]', modal).forEach(b => b.addEventListener('click', () => modal.close()));
+  }
+
+  /* ---- Viva Escola / Tempo de Aprender: toque expande o painel ---- */
+  const duo = $$('.duo-panel');
+  duo.forEach(c => {
+    c.addEventListener('click', () => {
+      const was = c.classList.contains('is-open');
+      duo.forEach(o => o.classList.remove('is-open'));
+      if (!was) c.classList.add('is-open');
+    });
+    c.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target === c) c.click(); });
+  });
 
   /* ---- botões de scroll ---- */
   $$('[data-scroll-next]').forEach(btn => btn.addEventListener('click', e => {
