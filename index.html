@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/png" href="assets/logo-ca.png" />
-<link rel="preload" as="image" href="assets/hero-banner.jpg" fetchpriority="high" />
+<link rel="preload" as="image" href="assets/vitrine-roda-amigos.jpg" fetchpriority="high" />
 <style>
   :root {
     --blue-950: #040F2A;
@@ -186,9 +186,6 @@
   @keyframes drift-b { to { transform: translate3d(-220px, -70px, 0) scale(1.25); } }
   @keyframes drift-c { to { transform: translate3d(-200px, 120px, 0) scale(0.9); } }
   .aurora::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.2px); background-size: 34px 34px; mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); }
-
-  .silk { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 2200ms ease 200ms; }
-  .silk.is-on { opacity: 1; }
   .sparkles { position: absolute; inset: 0; overflow: hidden; }
   .sp { position: absolute; bottom: -24px; left: 50%; width: var(--s, 5px); height: var(--s, 5px); border-radius: 50%; background: radial-gradient(circle, #FFF3C9 0%, #E6BE6A 55%, rgba(230, 190, 106, 0) 72%); opacity: 0; animation: rise var(--d, 16s) linear var(--dl, 0s) infinite; }
   .sp.rb { width: calc(var(--s, 5px) * 3.2); height: calc(var(--s, 5px) * 0.9); border-radius: 3px; background: linear-gradient(90deg, #B98A2E, #F6E2B0, #C99A3B); animation: rise var(--d, 16s) linear var(--dl, 0s) infinite, spin 7s linear infinite; }
@@ -200,19 +197,7 @@
   }
   @keyframes spin { to { rotate: 360deg; } }
 
-  .hero-banner { position: relative; margin: 0; overflow: hidden; }
-  .hero-banner img { width: 100%; height: auto; aspect-ratio: 2000 / 679; object-fit: cover; will-change: transform; transform-origin: 50% 40%; }
-  @media (max-width: 640px) {
-    /* celular: recorte centrado na criança (mãos, "vagas abertas" e 2027) em vez de uma faixa minúscula */
-    .hero-banner img { aspect-ratio: 6 / 5; object-position: 50% 50%; transform-origin: 50% 50%; }
-  }
-  .hero-banner::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(105deg, transparent 38%, rgba(255, 243, 201, 0.28) 50%, transparent 62%);
-    transform: translateX(-130%); animation: shine 7s ease-in-out 1.6s infinite;
-  }
   @keyframes shine { 0%, 55% { transform: translateX(-130%); } 100% { transform: translateX(130%); } }
-  .hero-banner::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 1; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 
   .hero-copy { position: relative; text-align: center; padding: clamp(40px, 6vw, 84px) 0 clamp(96px, 11vw, 150px); }
   .chip {
@@ -227,6 +212,100 @@
   .hero h1 { color: #fff; max-width: 17ch; margin-inline: auto; }
   .hero .lead { max-width: 640px; margin: 26px auto 0; font-size: clamp(1.05rem, 1.6vw, 1.28rem); color: rgba(255, 255, 255, 0.82); font-weight: 300; }
   .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 38px; }
+
+  /* capa: poucas palavras, 2027 em contorno dourado, botão de contato e horizonte curvo */
+  .hero-copy { z-index: 1; padding: clamp(44px, 6vw, 84px) 0 clamp(170px, 17vw, 250px); }
+  .hero h1 { max-width: none; margin: 0; font-size: 1rem; line-height: 1; letter-spacing: 0; font-weight: 200; color: #fff; }
+  .cover-label { display: block; padding-left: 0.34em; font-family: var(--display); font-weight: 300; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold-light); font-size: clamp(1rem, 2.6vw, 1.75rem); }
+  .cover-year {
+    display: block; margin-top: clamp(4px, 1vw, 12px);
+    font-family: var(--display); font-weight: 200; line-height: 0.92; letter-spacing: -0.02em;
+    font-size: clamp(6.2rem, 23vw, 15.5rem);
+    color: transparent; -webkit-text-stroke: 2.6px var(--gold); paint-order: stroke fill;
+    background: linear-gradient(0deg, rgba(230, 190, 106, 0.34), rgba(230, 190, 106, 0) 80%) no-repeat 0 100% / 100% 0%;
+    -webkit-background-clip: text; background-clip: text;
+    animation: year-fill 2600ms cubic-bezier(0.22, 1, 0.36, 1) 700ms forwards;
+  }
+  @keyframes year-fill { to { background-size: 100% 100%; } }
+  .hero .lead { max-width: 34ch; margin: clamp(18px, 2.4vw, 28px) auto 0; font-size: clamp(1rem, 1.5vw, 1.2rem); }
+  .cta-row { margin-top: clamp(26px, 3vw, 36px); }
+  .horizon {
+    position: absolute; left: 50%; bottom: 0; z-index: 0; width: 170%; height: clamp(96px, 9.5vw, 138px);
+    transform: translateX(-50%); pointer-events: none;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(59, 139, 240, 0.55), rgba(10, 42, 108, 0.9) 62%, #071B45 100%);
+    box-shadow: 0 -2px 0 rgba(230, 190, 106, 0.75), 0 -16px 70px rgba(230, 190, 106, 0.22);
+  }
+  @media (max-width: 640px) { .cover-year { -webkit-text-stroke-width: 2px; } }
+
+  /* capa com slides de fotos reais */
+  .cover { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: clamp(600px, calc(100vh - var(--header-h)), 900px); }
+  .cover .hero-copy { width: min(calc(100% - 40px), var(--max)); padding: clamp(40px, 5vw, 70px) 0 clamp(112px, 10.5vw, 160px); }
+  .slides { position: absolute; inset: 0; background: #071B45; }
+  .slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1500ms ease; }
+  .slide.is-active { opacity: 1; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); }
+  .slide.is-active img { animation: kenburns 8s ease-out forwards; }
+  @keyframes kenburns { from { transform: scale(1.13); } to { transform: scale(1); } }
+  .slides-shade { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 70% 60% at 50% 42%, rgba(4, 15, 42, 0.52), transparent 75%), linear-gradient(180deg, rgba(4, 15, 42, 0.72) 0%, rgba(10, 42, 108, 0.38) 45%, rgba(4, 15, 42, 0.78) 100%); }
+  .cover-year { filter: drop-shadow(0 6px 28px rgba(4, 15, 42, 0.55)); }
+  .cover .lead { color: rgba(255, 255, 255, 0.92); text-shadow: 0 2px 16px rgba(4, 15, 42, 0.6); }
+  .slide-ui { position: absolute; z-index: 2; left: max(20px, calc((100vw - var(--max)) / 2)); bottom: clamp(22px, 3vw, 38px); display: flex; flex-direction: column; gap: 6px; }
+  .slide-kw { font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1; color: var(--gold-light); text-shadow: 0 2px 14px rgba(4, 15, 42, 0.7); transition: opacity 420ms ease, transform 420ms var(--ease); }
+  .slide-kw.is-swap { opacity: 0; transform: translateY(6px); }
+  .dots { display: flex; gap: 8px; }
+  .dot { display: grid; align-items: center; width: clamp(30px, 4vw, 44px); height: 22px; padding: 0; border: 0; background: none; }
+  .dot i { position: relative; display: block; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(255, 255, 255, 0.38); }
+  .dot i::after { content: ""; position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; }
+  .dot.is-active i::after { animation: dotfill var(--slide-ms, 5600ms) linear forwards; }
+  @keyframes dotfill { to { transform: scaleX(1); } }
+  .scroll-down { z-index: 3; }
+  @media (max-width: 640px) { .cover { min-height: 600px; } .slide-ui { left: 20px; } }
+
+
+  /* extracurriculares: fundo fixo em carrossel automático + opções na horizontal */
+  .extras { position: relative; display: grid; align-items: center; min-height: clamp(560px, 92vh, 860px); padding: clamp(72px, 9vw, 130px) 0; color: #fff; background: #071B45; isolation: isolate; }
+  .extras-bg { position: absolute; inset: 0; z-index: -2; clip-path: inset(0); }
+  .xslide { position: fixed; inset: 0; margin: 0; opacity: 0; transition: opacity 1800ms ease; }
+  .xslide.is-active { opacity: 1; }
+  .xslide img { width: 100%; height: 100%; object-fit: cover; }
+  .xslide.is-active img { animation: kenburns 9s ease-out forwards; }
+  .extras-shade { position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(4, 15, 42, 0.5), transparent 78%), linear-gradient(180deg, rgba(4, 15, 42, 0.72) 0%, rgba(10, 42, 108, 0.42) 50%, rgba(4, 15, 42, 0.82) 100%); }
+  .extras-head { text-align: center; max-width: 760px; margin-inline: auto; }
+  .extras-head h2 { color: #fff; text-shadow: 0 4px 30px rgba(4, 15, 42, 0.5); }
+  .extras-head p { margin-top: 16px; color: rgba(255, 255, 255, 0.9); font-size: clamp(1.05rem, 1.6vw, 1.25rem); text-shadow: 0 2px 16px rgba(4, 15, 42, 0.6); }
+  .extra-list { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(10px, 1.4vw, 18px); margin-top: clamp(34px, 5vw, 64px); }
+  .ex { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 84px; padding: 18px 12px; text-align: center; border-radius: var(--radius); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.24); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: background 500ms ease, border-color 500ms ease, transform 500ms var(--ease), box-shadow 500ms ease; }
+  .ex strong { display: block; font-weight: 600; font-size: clamp(1rem, 1.5vw, 1.2rem); letter-spacing: 0.02em; color: #fff; line-height: 1.2; }
+  .ex small { display: block; margin-top: 4px; color: rgba(255, 255, 255, 0.78); font-size: 0.78rem; line-height: 1.25; }
+  .ex.is-on { background: rgba(230, 190, 106, 0.26); border-color: var(--gold); transform: translateY(-6px); box-shadow: 0 22px 50px -24px rgba(0, 0, 0, 0.6); }
+  @media (max-width: 980px) { .extra-list { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .extra-list { grid-template-columns: repeat(2, 1fr); } .ex { min-height: 72px; padding: 14px 10px; } }
+
+  /* vitrine em tira de filme */
+  .strip { display: flex; margin-top: clamp(8px, 2vw, 28px); gap: clamp(6px, 1vw, 12px); height: clamp(400px, 66vh, 660px); padding-inline: max(20px, calc((100vw - 1400px) / 2)); }
+  .fs { position: relative; flex: 1 1 0; min-width: 0; margin: 0; overflow: hidden; border-radius: var(--radius); background: var(--blue-900); cursor: pointer; transition: flex-grow 950ms var(--ease); outline-offset: 3px; }
+  .fs.is-active { flex-grow: 7; cursor: default; }
+  .fs img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(0.75) brightness(0.72); transform: scale(1.08); transition: filter 700ms ease, transform 1400ms var(--ease); }
+  .fs.is-active img { filter: none; transform: scale(1); }
+  .fs:not(.is-active):hover img { filter: saturate(0.95) brightness(0.9); }
+  .fs figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 22px 18px; background: linear-gradient(180deg, transparent, rgba(4, 15, 42, 0.78)); color: #fff; font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1; opacity: 0; transform: translateY(10px); transition: opacity 500ms ease 350ms, transform 600ms var(--ease) 350ms; }
+  .fs.is-active figcaption { opacity: 1; transform: none; }
+  .strip-ui { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 20px; }
+  .strip-count { font-family: var(--display); font-weight: 200; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--blue-900); }
+  .strip-count small { font-size: 1rem; color: var(--muted); }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  @media (max-width: 760px) {
+    /* celular: foto ativa grande + uma faixa de cada lado; as demais ficam escondidas */
+    .strip { gap: 0; height: clamp(420px, 66vh, 560px); padding-inline: 14px; }
+    .fs { flex: 0 0 0; opacity: 0; margin-inline: 0; transition: flex 750ms var(--ease), opacity 500ms ease, margin 750ms var(--ease); }
+    .fs.is-prev, .fs.is-next { flex: 0 0 34px; opacity: 1; margin-inline: 4px; }
+    .fs.is-active { flex: 1 1 0; opacity: 1; margin-inline: 4px; }
+    .fs figcaption { font-size: 1.7rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .slide img { animation: none !important; } }
+
+  @media (prefers-reduced-motion: reduce) { .cover-year { background-size: 100% 100%; } }
 
   .scroll-down {
     position: absolute; left: 50%; bottom: 26px; z-index: 2;
@@ -278,6 +357,9 @@
   .tabs::-webkit-scrollbar { display: none; }
   .tab { flex: none; scroll-snap-align: center; padding: 13px 22px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); font-weight: 500; font-size: 0.98rem; transition: all 280ms var(--ease); }
   .tab:hover { border-color: var(--gold); transform: translateY(-2px); }
+  /* barrinha dourada que enche e passa para a próxima aba (troca automática) */
+  .tab { position: relative; }
+  .tab[aria-selected="true"]::after { content: ""; position: absolute; left: 22px; right: 22px; bottom: 6px; height: 2px; border-radius: 2px; background: var(--gold); transform: scaleX(var(--p, 0)); transform-origin: left; transition: transform 140ms linear; }
   .tab[aria-selected="true"] { color: #fff; background: linear-gradient(135deg, #0B3C9E, #071B45); border-color: transparent; box-shadow: 0 14px 30px -10px rgba(11, 60, 158, 0.55); }
   .tab .n { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 50%; background: rgba(14, 30, 63, 0.08); font-size: 0.78rem; font-weight: 600; }
   .tab[aria-selected="true"] .n { background: var(--gold); color: var(--blue-950); }
@@ -397,17 +479,6 @@
   .pj.g { background: linear-gradient(135deg, #F6E2B0, #E6BE6A); border-color: transparent; }
   .pj.b { background: linear-gradient(135deg, #0B3C9E, #071B45); border-color: transparent; color: #fff; }
 
-  .extra { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: clamp(64px, 9vw, 120px); }
-  .extra-photo { margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 4.8; box-shadow: 0 40px 80px -40px rgba(14, 30, 63, 0.55); }
-  .extra-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .extra h3 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
-  .extra .lead { margin-top: 14px; color: var(--muted); font-size: 1.1rem; }
-  .extra-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
-  .ex { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--line); transition: transform 360ms var(--ease), border-color 300ms ease, box-shadow 360ms var(--ease); }
-  .ex:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 18px 40px -24px rgba(14, 30, 63, 0.45); }
-  .ex .ico { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(145deg, #0B3C9E, #071B45); color: var(--gold); }
-  .ex strong { display: block; font-weight: 600; color: var(--blue-900); line-height: 1.2; }
-  .ex small { display: block; margin-top: 2px; color: var(--muted); font-size: 0.82rem; line-height: 1.25; }
 
   /* ---------- vitrine ---------- */
   .vitrine-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -461,9 +532,9 @@
 
   /* ---------- closing banner ---------- */
   .closing { position: relative; overflow: hidden; background: var(--blue-950); }
-  .closing img { width: 100%; aspect-ratio: 3750 / 1174; object-fit: cover; will-change: transform; transform-origin: 50% 50%; }
-  .closing-cta { position: absolute; inset: auto 0 clamp(16px, 4vw, 52px) 0; display: flex; justify-content: center; z-index: 1; }
-
+  .closing img { display: block; width: 100%; height: auto; aspect-ratio: 1920 / 939; object-fit: cover; will-change: transform; transform-origin: 50% 50%; }
+  .closing::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 38%, rgba(255, 243, 201, 0.3) 50%, transparent 62%); transform: translateX(-130%); animation: shine 7s ease-in-out 1.6s infinite; }
+  .closing::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 1; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
   /* ---------- footer ---------- */
   .site-footer { padding: 72px 0 36px; background: #fff; border-top: 1px solid var(--line); }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
@@ -500,10 +571,8 @@
   .tile p, .tile-blue p, .tile-gold p, .tile-dark p { color: var(--muted); opacity: 1; max-width: 28ch; }
 
   .panel { padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; grid-template-columns: 0.8fr 1.2fr; }
-  .panel-photo { aspect-ratio: auto; overflow: visible; background: #fff; padding: 10px 10px 8px; border-radius: 3px; box-shadow: 0 24px 50px -22px rgba(14, 30, 63, 0.5), 0 2px 6px rgba(14, 30, 63, 0.12); rotate: -1.6deg; max-width: 420px; width: 100%; justify-self: center; }
-  .panel-photo .ph img { max-height: 520px; object-fit: cover; }
-  .panel-photo figcaption { position: static; margin: 0; padding: 10px 6px 4px; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; color: var(--ink); font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: 1.35rem; text-align: center; line-height: 1.1; }
-  .panel-photo figcaption::before { content: none; }
+  .panel-photo { aspect-ratio: auto; overflow: hidden; background: none; padding: 0; border-radius: var(--radius); box-shadow: 0 30px 60px -30px rgba(14, 30, 63, 0.5); max-width: 460px; width: 100%; justify-self: center; }
+  .panel-photo .ph img { max-height: 560px; object-fit: cover; }
   .panel-body .q { font-family: "Caveat", "Segoe Script", cursive; font-size: 1.6rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--gold-deep); margin-bottom: 8px; }
   .checks { gap: 10px; }
   .checks li { padding-left: 24px; }
@@ -527,10 +596,9 @@
   .pills { display: grid; gap: 10px; margin-top: 26px; }
   .pill { position: relative; padding: 0 0 0 26px; border: 0; background: none; border-radius: 0; color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; font-weight: 400; }
   .pill::before { content: ""; position: absolute; left: 0; top: 0.78em; width: 14px; height: 2px; background: var(--gold); }
-  .photo-frame { background: #fff; padding: 10px 10px 8px; border-radius: 3px; rotate: 1.4deg; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.65); }
+  .photo-frame { background: none; padding: 0; rotate: none; box-shadow: none; }
   .photo-frame::before { content: none; }
-  .photo-frame img { aspect-ratio: 3 / 4; max-height: 62vh; border-radius: 2px; box-shadow: none; }
-  .photo-frame figcaption { margin: 8px 0 0; padding: 0 6px 4px; color: var(--ink); font-family: "Caveat", "Segoe Script", cursive; font-weight: 600; font-size: 1.35rem; text-align: center; }
+  .photo-frame img { aspect-ratio: 3 / 4; max-height: 62vh; border-radius: var(--radius); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.65); }
 
   .proj-grid { display: block; column-count: 3; column-gap: clamp(14px, 2vw, 24px); }
   .proj { display: block; break-inside: avoid; -webkit-column-break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); border-radius: 0; background: none; color: var(--ink); overflow: visible; isolation: auto; }
@@ -551,8 +619,6 @@
   .proj.insta p { color: rgba(255, 255, 255, 0.82); }
   .proj > img.round { position: static; inset: auto; z-index: auto; display: block; }
 
-  .extra-photo { aspect-ratio: auto; border-radius: var(--radius); }
-  .extra-photo img { height: auto; }
 
   .shot { width: auto; aspect-ratio: auto; height: clamp(280px, 34vw, 420px); }
   .shot.wide { width: auto; }
@@ -588,6 +654,8 @@
   .modal .x { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(14, 30, 63, 0.07); color: var(--blue-900); transition: background 200ms ease, transform 300ms var(--ease); }
   .modal .x:hover { background: var(--gold); transform: rotate(90deg); }
   body.modal-open { overflow: hidden; }
+
+
 
   .duo { display: flex; gap: 18px; min-height: 430px; }
   .duo-panel { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0; padding: clamp(24px, 3vw, 40px); border-radius: var(--radius); color: #fff; overflow: hidden; cursor: pointer; transition: flex 800ms var(--ease), box-shadow 600ms var(--ease); isolation: isolate; }
@@ -650,7 +718,7 @@
     .main-nav.is-open { display: flex; animation: panel-in 360ms var(--ease) both; }
     .main-nav a:not(.nav-cta) { padding: 15px 18px; font-size: 1.05rem; }
     .nav-cta { margin: 8px 0 0; }
-    .split, .extra { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; }
     .split .photo-frame { order: -1; max-width: 400px; margin-inline: auto; justify-self: center; }
     .viva-grid { grid-template-columns: 1fr; }
     .schedule { grid-template-columns: 1fr; }
@@ -665,7 +733,6 @@
     .seg-grid { gap: 14px; }
     .seg:nth-child(even) { margin-top: 22px; }
     .proj-grid { column-count: 1; }
-    .extra-list { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
     .decor-diamond { width: 230px; height: 230px; right: -115px; top: 80px; }
     .floating-actions { right: 14px; bottom: 14px; }
@@ -714,30 +781,38 @@
   <section class="hero" data-hero>
     <div class="aurora" aria-hidden="true">
       <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
-      <canvas class="silk" data-silk></canvas>
       <div class="sparkles" data-sparkles></div>
     </div>
 
-    <figure class="hero-banner" data-hero-banner>
-      <img src="assets/hero-banner.jpg" width="2000" height="679" alt="Colégio Aclimação: o futuro começa aqui. Vagas abertas 2027. 40 anos. Criança sorrindo com as mãos pintadas de verde e azul." fetchpriority="high" />
-    </figure>
-
-    <div class="shell hero-copy">
-      <p class="chip reveal"><i></i> Vagas abertas 2027 · 40 anos de tradição</p>
-      <h1 class="reveal" style="--i:1">40 anos educando com <em class="grad">amor</em>, construindo <em class="grad">confiança</em> e preparando <em class="grad">futuros</em>.</h1>
-      <p class="lead reveal" style="--i:2">Do berçário ao Fundamental I, com turmas pequenas, inglês e muito carinho.</p>
+    <div class="cover">
+      <div class="slides" data-slides aria-hidden="true">
+        <figure class="slide is-active"><img src="assets/vitrine-roda-amigos.jpg" alt="" style="object-position:50% 40%" data-kw="Amizade" fetchpriority="high" /></figure>
+        <figure class="slide"><img src="assets/projeto-aula-quadra.jpg" alt="" style="object-position:50% 45%" data-kw="Aula ao ar livre" loading="lazy" /></figure>
+        <figure class="slide"><img src="assets/projeto-gincana-equipe.jpg" alt="" style="object-position:50% 30%" data-kw="Gincana" loading="lazy" /></figure>
+        <figure class="slide"><img src="assets/vitrine-abraco-sala.jpg" alt="" style="object-position:50% 35%" data-kw="Abraço de professor" loading="lazy" /></figure>
+        <figure class="slide"><img src="assets/projeto-arte-mural.jpg" alt="" style="object-position:50% 40%" data-kw="Arte" loading="lazy" /></figure>
+      </div>
+      <div class="slides-shade" aria-hidden="true"></div>
+      <div class="shell hero-copy">
+      <h1 class="reveal"><span class="cover-label">Vagas abertas</span><span class="cover-year">2027</span></h1>
+      <p class="lead reveal" style="--i:2">40 anos educando com amor, confiança e futuro.</p>
       <div class="cta-row reveal" style="--i:3">
-        <a class="btn btn-gold" href="#visita">
-          Agendar uma visita
+        <a class="btn btn-gold" href="https://wa.me/551133411329?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20as%20vagas%202027%20do%20Col%C3%A9gio%20Aclima%C3%A7%C3%A3o" target="_blank" rel="noreferrer">
+          Fale com a gente
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn-ghost" href="#jornada">Tire suas dúvidas</a>
+        <a class="btn btn-ghost" href="#visita">Agendar visita</a>
       </div>
     </div>
-
+      <div class="slide-ui">
+        <span class="slide-kw" data-slide-kw aria-hidden="true">Amizade</span>
+        <div class="dots" role="group" aria-label="Fotos da capa"><button type="button" class="dot is-active" data-slide-go="0" aria-label="Foto 1 de 5"><i></i></button><button type="button" class="dot" data-slide-go="1" aria-label="Foto 2 de 5"><i></i></button><button type="button" class="dot" data-slide-go="2" aria-label="Foto 3 de 5"><i></i></button><button type="button" class="dot" data-slide-go="3" aria-label="Foto 4 de 5"><i></i></button><button type="button" class="dot" data-slide-go="4" aria-label="Foto 5 de 5"><i></i></button></div>
+      </div>
+      <div class="horizon" aria-hidden="true"></div>
     <a href="#jornada" class="scroll-down" data-scroll-next aria-label="Rolar para a próxima seção">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </a>
+    </div>
   </section>
 
   <!-- ============ VALORES (faixa rolante) ============ -->
@@ -755,38 +830,13 @@
   <!-- ============ MANIFESTO ============ -->
   <section class="manifesto on-dark" id="escola">
     <div class="shell">
-      <p class="manifesto-text" data-words>Um pai não escolhe apenas uma escola. Ele escolhe onde seu filho será <b>cuidado</b>, <b>acolhido</b>, <b>educado</b> e <b>preparado para o futuro</b>.</p>
+      <p class="manifesto-text" data-words>Você não escolhe apenas uma escola. Você escolhe onde seu filho será <b>cuidado</b>, <b>acolhido</b>, <b>educado</b> e <b>preparado para o futuro</b>.</p>
       <p class="manifesto-foot reveal">É com esse olhar que cuidamos de cada criança há 40 anos.</p>
     </div>
   </section>
 
-  <!-- ============ NÚMEROS ============ -->
-  <section class="section" data-bg-light>
-    <div class="shell">
-      <div class="stats-grid">
-        <div class="tile tile-blue reveal">
-          <span class="big" data-count="40">40</span>
-          <span class="unit">anos de tradição</span>
-          <p>Há 40 anos com as famílias.</p>
-        </div>
-        <div class="tile tile-gold reveal" style="--i:1">
-          <span class="big sm">4º mês</span>
-          <p>A partir do 4º mês de vida.</p>
-        </div>
-        <div class="tile reveal" style="--i:2">
-          <span class="big sm">7h–19h</span>
-          <p>Viva Escola.</p>
-        </div>
-        <div class="tile tile-dark reveal" style="--i:3">
-          <span class="big sm">Cambridge</span>
-          <p>Parceria bilíngue.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ JORNADA DA FAMÍLIA ============ -->
-  <section class="section" id="jornada" data-bg-light style="padding-top:0">
+  <section class="section" id="jornada" data-bg-light>
     <div class="shell">
       <header class="section-head center reveal">
         <span class="eyebrow">Para as famílias</span>
@@ -806,7 +856,7 @@
 
       <div class="panels reveal" data-panels>
         <article class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-seguranca.jpg" width="1280" height="960" alt="Fachada do Colégio Aclimação com o logo e as informações de contato" style="object-position:50% 50%" /></span><figcaption>Fachada do colégio, no Cambuci</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-seguranca.jpg" width="1280" height="960" alt="Fachada do Colégio Aclimação com o logo e as informações de contato" style="object-position:50% 50%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">1 · Segurança</span>
             <h3>Meu filho está bem cuidado e protegido?</h3>
@@ -824,7 +874,7 @@
         </article>
 
         <article class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-acolhimento.jpg" width="1280" height="720" alt="Professora e alunos abraçados diante do quadro com a frase Bom dia" loading="lazy" style="object-position:50% 35%" /></span><figcaption>Bom dia com abraço, todos os dias</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-acolhimento.jpg" width="1280" height="720" alt="Professora e alunos abraçados diante do quadro com a frase Bom dia" loading="lazy" style="object-position:50% 35%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">2 · Acolhimento</span>
             <h3>Ele será feliz, respeitado e ouvido?</h3>
@@ -842,7 +892,7 @@
         </article>
 
         <article class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-ensino.jpg" width="1200" height="1600" alt="Sala de aula com alunos fazendo atividade e a professora acompanhando de perto" loading="lazy" style="object-position:50% 40%" /></span><figcaption>Professora acompanhando a turma em sala</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-ensino.jpg" width="1200" height="1600" alt="Sala de aula com alunos fazendo atividade e a professora acompanhando de perto" loading="lazy" style="object-position:50% 40%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">3 · Qualidade do ensino</span>
             <h3>Ele realmente vai aprender?</h3>
@@ -860,7 +910,7 @@
         </article>
 
         <article class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-atencao.jpg" width="960" height="1280" alt="Pequeno grupo de crianças sorrindo e brincando de jogo da memória no chão da sala" loading="lazy" style="object-position:50% 40%" /></span><figcaption>Turma pequena</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-atencao.jpg" width="960" height="1280" alt="Pequeno grupo de crianças sorrindo e brincando de jogo da memória no chão da sala" loading="lazy" style="object-position:50% 40%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">4 · Atenção individual</span>
             <h3>Os professores conhecem as necessidades dele?</h3>
@@ -878,7 +928,7 @@
         </article>
 
         <article class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-futuro.jpg" width="960" height="1280" alt="Duas alunas sorrindo diante de notebooks na sala de informática" loading="lazy" style="object-position:50% 45%" /></span><figcaption>Informática a partir do Infantil 2</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-futuro.jpg" width="960" height="1280" alt="Duas alunas sorrindo diante de notebooks na sala de informática" loading="lazy" style="object-position:50% 45%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">5 · Inglês e futuro</span>
             <h3>Vai aprender inglês e desenvolver novas habilidades?</h3>
@@ -896,7 +946,7 @@
         </article>
 
         <article class="panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" hidden>
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-familia.jpg" width="960" height="1280" alt="Educadora abraçando uma criança na porta da sala" loading="lazy" style="object-position:50% 40%" /></span><figcaption>A chegada na escola</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-familia.jpg" width="960" height="1280" alt="Educadora abraçando uma criança na porta da sala" loading="lazy" style="object-position:50% 40%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">6 · Família e escola</span>
             <h3>Vou saber como está o desenvolvimento dele?</h3>
@@ -915,7 +965,7 @@
         </article>
 
         <article class="panel" role="tabpanel" id="panel-7" aria-labelledby="tab-7" hidden>
-          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-rotina.jpg" width="934" height="718" alt="Criança sorrindo na brinquedoteca da escola, com outros alunos brincando ao fundo" loading="lazy" style="object-position:30% 50%" /></span><figcaption>Brinquedoteca do colégio</figcaption></figure>
+          <figure class="panel-photo"><span class="ph"><img src="assets/jornada-rotina.jpg" width="934" height="718" alt="Criança sorrindo na brinquedoteca da escola, com outros alunos brincando ao fundo" loading="lazy" style="object-position:30% 50%" /></span></figure>
           <div class="panel-body" data-more-root>
             <span class="q">7 · Rotina e estrutura</span>
             <h3>A rotina da escola cabe na rotina da minha família?</h3>
@@ -1000,7 +1050,6 @@
       </div>
       <figure class="photo-frame reveal" style="--i:1">
         <img src="assets/bilingue-foto.jpg" width="960" height="1280" alt="Aluna colocando cartões de vocabulário em inglês sobre o clima no mural da sala" loading="lazy" style="object-position:50% 40%" />
-        <figcaption>Vocabulário em inglês no mural da sala de aula</figcaption>
       </figure>
     </div>
   </section>
@@ -1143,52 +1192,62 @@
         </div>
       </div>
 
-      <!-- extracurriculares -->
-      <div class="extra">
-        <figure class="extra-photo reveal"><img src="assets/extra-bolas.jpg" width="960" height="1280" alt="Alunos na quadra erguendo bolas coloridas" loading="lazy" style="object-position:50% 55%" /></figure>
-        <div class="reveal" style="--i:1">
-          <span class="eyebrow">Extracurriculares</span>
-          <h3>Esporte, arte e movimento.</h3>
-          <p class="lead">Atividades para além da sala de aula.</p>
-          <div class="extra-list">
-            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 15 9.8l-1.2 3.7h-3.6L9 9.8 12 7.5Z"/><path d="M12 3v4.5M9 9.8 5 8.5M15 9.8l4-1.3M10.2 13.5 7.5 18M13.8 13.5l2.7 4.5"/></svg></span><div><strong>Futebol</strong></div></div>
-            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20h6"/></svg></span><div><strong>CAIE</strong><small>Colégio Aclimação Iniciação Esportiva</small></div></div>
-            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7L12 3Z"/></svg></span><div><strong>Ballet</strong></div></div>
-            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M12 7v6M12 9l-5 3M12 9l5-3M12 13l-4 6M12 13l5 5"/></svg></span><div><strong>Capoeira</strong></div></div>
-            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9v6a4.5 4.5 0 0 1-9 0V5Z"/><path d="M7.2 8.5h.01M10 8.5h.01M7 12a2.2 1.6 0 0 0 3.6 0"/><path d="M13 8h7v6a4.5 4.5 0 0 1-7.5 3.3"/></svg></span><div><strong>Teatro</strong></div></div>
-            <div class="ex"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16.5" cy="6" r="2"/><path d="M3 12l6-2 4 3 4-1M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 21c2 0 2-1.5 4-1.5S8 21 10 21s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/></svg></span><div><strong>Natação</strong></div></div>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- ============ EXTRACURRICULARES ============ -->
+  <section class="extras on-dark" id="extras" aria-label="Extracurriculares">
+    <div class="extras-bg" aria-hidden="true" data-extras-bg>
+        <figure class="xslide is-active" data-for="futebol"><img src="assets/extra-bg-futebol.jpg" alt="" /></figure>
+        <figure class="xslide" data-for="caie"><img src="assets/extra-bg-caie.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="ballet"><img src="assets/extra-bg-ballet.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="capoeira"><img src="assets/extra-bg-capoeira.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="teatro"><img src="assets/extra-bg-teatro.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="natacao"><img src="assets/extra-bg-natacao.jpg" alt="" loading="lazy" /></figure>
+    </div>
+    <div class="extras-shade" aria-hidden="true"></div>
+    <div class="shell extras-in">
+      <header class="extras-head reveal">
+        <span class="eyebrow on-dark">Extracurriculares</span>
+        <h2>Esporte, arte e movimento.</h2>
+        <p>Atividades para além da sala de aula.</p>
+      </header>
+      <div class="extra-list reveal" style="--i:1">
+          <div class="ex" data-ex="futebol"><div><strong>Futebol</strong></div></div>
+          <div class="ex" data-ex="caie"><div><strong>CAIE</strong><small>Colégio Aclimação Iniciação Esportiva</small></div></div>
+          <div class="ex" data-ex="ballet"><div><strong>Ballet</strong></div></div>
+          <div class="ex" data-ex="capoeira"><div><strong>Capoeira</strong></div></div>
+          <div class="ex" data-ex="teatro"><div><strong>Teatro</strong></div></div>
+          <div class="ex" data-ex="natacao"><div><strong>Natação</strong></div></div>
       </div>
     </div>
   </section>
 
   <!-- ============ VITRINE ============ -->
-  <section class="section" id="vitrine" data-bg-light style="padding-top:0">
-    <div class="shell vitrine-head">
-      <header class="section-head reveal" style="margin-bottom:0">
+  <section class="section" id="vitrine" data-bg-light aria-label="O dia a dia do colégio">
+    <div class="shell">
+      <header class="section-head center reveal" style="margin-bottom:0">
         <span class="eyebrow">Vitrine do colégio</span>
-        <h2>O dia a dia como ele é.</h2>
+        <h2>Veja mais sobre o Colégio Aclimação</h2>
       </header>
-      <div class="arrows reveal" style="--i:1">
-        <button class="arrow" type="button" data-scroll-prev aria-label="Fotos anteriores"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button class="arrow" type="button" data-scroll-next-photos aria-label="Próximas fotos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
-      </div>
     </div>
-    <div class="scroller" data-scroller>
-      <figure class="shot wide"><img src="assets/vitrine-roda-amigos.jpg" width="1280" height="720" alt="Turma de amigos abraçados e sorrindo" loading="lazy" /><figcaption>Amizade que começa cedo</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-desenho.jpg" width="960" height="1280" alt="Aluna orgulhosa mostrando seu desenho de borboleta" loading="lazy" /><figcaption>Olha o que eu fiz!</figcaption></figure>
-      <figure class="shot wide"><img src="assets/vitrine-corredor-mural.jpg" width="1280" height="960" alt="Turma grande reunida no corredor diante do mural da escola" loading="lazy" /><figcaption>Nossa turma</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-bolas.jpg" width="960" height="1280" alt="Crianças na quadra segurando bolas coloridas" loading="lazy" /><figcaption>Hora da quadra</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-abraco-duplo.jpg" width="960" height="1280" alt="Educadora abraçando duas crianças com corações de papel" loading="lazy" /><figcaption>Abraço</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-massinha.jpg" width="960" height="1280" alt="Crianças com touca misturando massinha colorida" loading="lazy" /><figcaption>Mão na massa</figcaption></figure>
-      <figure class="shot wide"><img src="assets/vitrine-abraco-sala.jpg" width="1280" height="960" alt="Professor abraçando um grupo de alunos na sala" loading="lazy" /><figcaption>Abraço de professor</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-pintura-quadra.jpg" width="960" height="1280" alt="Crianças pintando em folhas de papel na quadra com uma jovem professora" loading="lazy" /><figcaption>Pintura na quadra</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-cores.jpg" width="960" height="1280" alt="Menino montando uma flor colorida em atividade de arte" loading="lazy" /><figcaption>Cores e formas</figcaption></figure>
-      <figure class="shot"><img src="assets/vitrine-abraco.jpg" width="960" height="1280" alt="Educadora abraçando um menino com carinho" loading="lazy" /><figcaption>Colinho</figcaption></figure>
-      <figure class="shot wide"><img src="assets/projeto-gincana-equipe.jpg" width="1600" height="1200" alt="Equipe de alunos de azul-claro com medalhas ao lado de professores" loading="lazy" /><figcaption>Gincana</figcaption></figure>
-      <figure class="shot wide"><img src="assets/projeto-aula-quadra.jpg" width="1600" height="1200" alt="Professor reunindo a turma sentada em roda na quadra ao pôr do sol" loading="lazy" /><figcaption>Aula na quadra ao pôr do sol</figcaption></figure>
-      <figure class="shot wide"><img src="assets/projeto-gincana-franca.jpg" width="1600" height="1200" alt="Grupo de alunos com medalhas no corredor da escola" loading="lazy" /><figcaption>Medalhas da gincana</figcaption></figure>
+    <div class="strip" data-strip>
+      <figure class="fs is-active" tabindex="0" aria-label="Amizade que começa cedo"><img src="assets/vitrine-roda-amigos.jpg" width="1280" height="720" alt="Turma de amigos abraçados e sorrindo" loading="lazy" /><figcaption>Amizade que começa cedo</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Olha o que eu fiz!"><img src="assets/vitrine-desenho.jpg" width="960" height="1280" alt="Aluna orgulhosa mostrando seu desenho de borboleta" loading="lazy" /><figcaption>Olha o que eu fiz!</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Abraço"><img src="assets/vitrine-abraco-duplo.jpg" width="960" height="1280" alt="Educadora abraçando duas crianças com corações de papel" loading="lazy" /><figcaption>Abraço</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Mão na massa"><img src="assets/vitrine-massinha.jpg" width="960" height="1280" alt="Crianças com touca misturando massinha colorida" loading="lazy" /><figcaption>Mão na massa</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Abraço de professor"><img src="assets/vitrine-abraco-sala.jpg" width="1280" height="960" alt="Professor abraçando um grupo de alunos na sala" loading="lazy" /><figcaption>Abraço de professor</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Hora da quadra"><img src="assets/vitrine-bolas.jpg" width="960" height="1280" alt="Crianças na quadra segurando bolas coloridas" loading="lazy" /><figcaption>Hora da quadra</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Pintura na quadra"><img src="assets/vitrine-pintura-quadra.jpg" width="960" height="1280" alt="Crianças pintando em folhas de papel na quadra com uma jovem professora" loading="lazy" /><figcaption>Pintura na quadra</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Cores e formas"><img src="assets/vitrine-cores.jpg" width="960" height="1280" alt="Menino montando uma flor colorida em atividade de arte" loading="lazy" /><figcaption>Cores e formas</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Nossa turma"><img src="assets/vitrine-corredor-mural.jpg" width="1280" height="960" alt="Turma grande reunida no corredor diante do mural da escola" loading="lazy" /><figcaption>Nossa turma</figcaption></figure>
+    </div>
+    <div class="shell strip-ui">
+      <p class="strip-count" aria-live="polite"><span data-strip-n>01</span> <small>/ 09</small></p>
+      <div class="arrows">
+        <button class="arrow" type="button" data-strip-prev aria-label="Foto anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="arrow" type="button" data-strip-next aria-label="Próxima foto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </section>
 
@@ -1261,8 +1320,7 @@
 
   <!-- ============ FECHAMENTO ============ -->
   <section class="closing" data-closing>
-    <img data-random-banner="assets/banner-futuro-bg.jpg,assets/banner-futuro-bg-2.jpg" src="assets/banner-futuro-bg.jpg" width="3750" height="1174" alt="O futuro começa aqui" loading="lazy" />
-    <div class="closing-cta"><a class="btn btn-gold" href="#visita">Agendar uma visita</a></div>
+    <img data-random-banner="assets/banner-futuro-bg.jpg,assets/banner-futuro-bg-2.jpg" src="assets/banner-futuro-bg.jpg" width="1920" height="939" alt="O futuro começa aqui" loading="lazy" />
   </section>
 </main>
 
@@ -1289,7 +1347,7 @@
         <p style="color:var(--muted)">Segunda a sexta<br />7h às 19h</p>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Colégio Aclimação. Todos os direitos reservados.</span><span>Vagas abertas 2027</span></div>
+    <div class="footer-bottom"><span>© 2027 Colégio Aclimação. Todos os direitos reservados.</span><span>Vagas abertas 2027</span></div>
   </div>
 </footer>
 
@@ -1356,85 +1414,31 @@
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  /* ---- motion de fundo do hero: fitas de seda azul e dourada + losangos flutuando ---- */
-  const silk = $('[data-silk]');
-  if (silk && silk.getContext) {
-    const cx = silk.getContext('2d');
-    const heroEl = silk.closest('.hero');
-    const small = window.innerWidth < 760;
-    const ribbons = [
-      { y: .30, amp: .07, f: 1.3, sp: .22, ph: 0.0, th: .15, c: [230, 190, 106], a: .20 },
-      { y: .42, amp: .09, f: 1.0, sp: .17, ph: 1.7, th: .20, c: [59, 139, 240], a: .26 },
-      { y: .55, amp: .08, f: 1.6, sp: .26, ph: 3.1, th: .13, c: [255, 243, 201], a: .13 },
-      { y: .66, amp: .10, f: .9,  sp: .15, ph: 4.4, th: .22, c: [31, 111, 224], a: .30 },
-      { y: .78, amp: .07, f: 1.4, sp: .20, ph: 5.6, th: .14, c: [230, 190, 106], a: .18 },
-      { y: .50, amp: .12, f: .7,  sp: .12, ph: 2.4, th: .28, c: [10, 42, 108], a: .35 }
-    ].slice(0, small ? 4 : 6);
-    const rhombi = Array.from({ length: small ? 6 : 11 }, () => ({
-      x: Math.random(), y: Math.random(), s: 10 + Math.random() * 26,
-      sp: .012 + Math.random() * .03, rot: Math.random() * 6.28, rs: (Math.random() - .5) * .3, a: .1 + Math.random() * .22
-    }));
-    let W = 0, H = 0, raf = 0, running = false, t0 = performance.now();
-    const fit = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      const r = silk.getBoundingClientRect();
-      W = Math.max(1, r.width); H = Math.max(1, r.height);
-      silk.width = Math.round(W * dpr); silk.height = Math.round(H * dpr);
-      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  /* ---- capa: slides de fotos ---- */
+  const slideEls = $$('[data-slides] .slide');
+  if (slideEls.length) {
+    const dotEls = $$('[data-slide-go]');
+    const kwEl = $('[data-slide-kw]');
+    const SLIDE_MS = 5600;
+    let si = 0, st = 0, sRun = false;
+    const showSlide = i => {
+      si = (i + slideEls.length) % slideEls.length;
+      slideEls.forEach((el, k) => el.classList.toggle('is-active', k === si));
+      dotEls.forEach((d, k) => { d.classList.remove('is-active'); if (k === si) { void d.offsetWidth; d.classList.add('is-active'); } });
+      const kw = $('img', slideEls[si])?.dataset.kw || '';
+      if (kwEl) { kwEl.classList.add('is-swap'); setTimeout(() => { kwEl.textContent = kw; kwEl.classList.remove('is-swap'); }, 300); }
     };
-    const draw = now => {
-      const t = (now - t0) / 1000;
-      cx.clearRect(0, 0, W, H);
-      cx.globalCompositeOperation = 'lighter';
-      const step = small ? 18 : 12;
-      ribbons.forEach(r => {
-        const up = [], dn = [];
-        for (let x = -step; x <= W + step; x += step) {
-          const u = x / W;
-          const c = r.y * H
-            + Math.sin(u * Math.PI * 2 * r.f + t * r.sp * 2 + r.ph) * r.amp * H
-            + Math.sin(u * Math.PI * 4.3 * r.f - t * r.sp * 3 + r.ph * 2) * r.amp * H * .35;
-          const th = (r.th * H * .5) * (.55 + .45 * Math.sin(u * Math.PI * 2 * r.f * .8 + t * r.sp + r.ph));
-          up.push([x, c - th]); dn.push([x, c + th]);
-        }
-        cx.beginPath();
-        up.forEach((p, i) => i ? cx.lineTo(p[0], p[1]) : cx.moveTo(p[0], p[1]));
-        for (let i = dn.length - 1; i >= 0; i--) cx.lineTo(dn[i][0], dn[i][1]);
-        cx.closePath();
-        const g = cx.createLinearGradient(0, 0, W, 0);
-        const [R, G, B] = r.c;
-        g.addColorStop(0, `rgba(${R},${G},${B},0)`);
-        g.addColorStop(.35, `rgba(${R},${G},${B},${r.a})`);
-        g.addColorStop(.7, `rgba(${R},${G},${B},${r.a * .8})`);
-        g.addColorStop(1, `rgba(${R},${G},${B},0)`);
-        cx.fillStyle = g; cx.fill();
-        // fio dourado de brilho na borda da fita
-        cx.beginPath();
-        up.forEach((p, i) => i ? cx.lineTo(p[0], p[1]) : cx.moveTo(p[0], p[1]));
-        cx.strokeStyle = `rgba(${R},${G},${B},${Math.min(.5, r.a * 1.6)})`; cx.lineWidth = 1; cx.stroke();
-      });
-      cx.globalCompositeOperation = 'source-over';
-      rhombi.forEach(d => {
-        const y = ((d.y - t * d.sp) % 1 + 1) % 1;
-        const px = d.x * W + Math.sin(t * .3 + d.rot) * 18, py = y * H;
-        const fade = Math.sin(y * Math.PI);
-        cx.save(); cx.translate(px, py); cx.rotate(d.rot + t * d.rs);
-        cx.beginPath(); cx.moveTo(0, -d.s); cx.lineTo(d.s * .62, 0); cx.lineTo(0, d.s); cx.lineTo(-d.s * .62, 0); cx.closePath();
-        cx.strokeStyle = `rgba(230,190,106,${d.a * fade})`; cx.lineWidth = 1.2; cx.stroke();
-        cx.fillStyle = `rgba(255,243,201,${d.a * .18 * fade})`; cx.fill();
-        cx.restore();
-      });
-    };
-    const loop = now => { draw(now); raf = requestAnimationFrame(loop); };
-    const start = () => { if (!running && !reduce) { running = true; raf = requestAnimationFrame(loop); } };
-    const stop = () => { running = false; cancelAnimationFrame(raf); };
-    fit(); draw(performance.now());
-    requestAnimationFrame(() => silk.classList.add('is-on'));
-    if (!reduce && 'IntersectionObserver' in window) {
-      new IntersectionObserver(es => es[0].isIntersecting ? start() : stop(), { threshold: 0 }).observe(heroEl);
-    } else start();
-    document.addEventListener('visibilitychange', () => document.hidden ? stop() : (heroEl.getBoundingClientRect().bottom > 0 && start()));
-    let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { fit(); draw(performance.now()); }, 150); });
+    const runSlides = () => { clearInterval(st); if (sRun && !reduce) st = setInterval(() => showSlide(si + 1), SLIDE_MS); };
+    dotEls.forEach(d => d.addEventListener('click', () => { showSlide(+d.dataset.slideGo); runSlides(); }));
+    const coverEl = $('.cover');
+    new IntersectionObserver(es => { sRun = es[0].isIntersecting; runSlides(); }, { threshold: 0.15 }).observe(coverEl);
+    let tx = null;
+    coverEl.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    coverEl.addEventListener('touchend', e => {
+      if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+      if (Math.abs(dx) > 50) { showSlide(si + (dx < 0 ? 1 : -1)); runSlides(); }
+    }, { passive: true });
+    document.addEventListener('visibilitychange', () => { sRun = !document.hidden; runSlides(); });
   }
 
   /* ---- faíscas douradas no hero ---- */
@@ -1498,7 +1502,9 @@
   /* ---- abas da jornada ---- */
   const tabs = $$('[role="tab"]');
   const panels = $$('[role="tabpanel"]');
+  let tabElapsed = 0;
   const selectTab = (i, focus) => {
+    tabElapsed = 0; const tb = $('[data-tabs]'); if (tb) tb.style.setProperty('--p', 0);
     tabs.forEach((t, k) => {
       const on = k === i;
       t.setAttribute('aria-selected', String(on));
@@ -1506,8 +1512,9 @@
       panels[k].hidden = !on;
       panels[k].classList.toggle('is-active', on);
     });
-    tabs[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
-    if (focus) tabs[i].focus();
+    const bar = tabs[i].parentElement;
+    if (bar && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: tabs[i].offsetLeft - (bar.clientWidth - tabs[i].offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+    if (focus) tabs[i].focus({ preventScroll: true });
   };
   tabs.forEach((t, i) => {
     t.addEventListener('click', () => selectTab(i));
@@ -1522,6 +1529,40 @@
   }));
   $$('[data-next-first]').forEach(b => b.addEventListener('click', () => selectTab(0)));
 
+  /* troca automática: a barrinha dourada da aba ativa enche e, ao terminar, abre a próxima.
+     Pausa com o mouse em cima, foco no teclado, janela "ver mais" aberta, aba escondida ou seção fora da tela. */
+  const tabBar = $('[data-tabs]');
+  if (tabBar && tabs.length > 1) {
+    const pauseSet = new Set();
+    const syncPause = () => tabBar.classList.toggle('is-paused', pauseSet.size > 0);
+    const setPause = (why, on) => { on ? pauseSet.add(why) : pauseSet.delete(why); syncPause(); };
+    const jornada = $('#jornada');
+    if (reduce) pauseSet.add('reduce');
+    pauseSet.add('view'); syncPause();
+    new IntersectionObserver(es => setPause('view', !es[0].isIntersecting), { threshold: 0.35 }).observe(jornada);
+    const watch = el => {
+      el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setPause('hover', true); });
+      el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') setPause('hover', false); });
+      el.addEventListener('focusin', () => setPause('focus', true));
+      el.addEventListener('focusout', () => setPause('focus', false));
+    };
+    watch(tabBar); panels.forEach(watch);
+    document.addEventListener('visibilitychange', () => setPause('hidden', document.hidden));
+    new MutationObserver(() => setPause('modal', document.body.classList.contains('modal-open'))).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    if (!reduce) {
+      const DUR = 8000, TICK = 100;
+      setInterval(() => {
+        if (pauseSet.size) return;
+        tabElapsed += TICK;
+        tabBar.style.setProperty('--p', Math.min(1, tabElapsed / DUR));
+        if (tabElapsed >= DUR) {
+          const cur = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+          selectTab((cur + 1) % tabs.length);
+        }
+      }, TICK);
+    }
+  }
+
   /* ---- Viva Escola: toque ativa o card ---- */
   const vivas = $$('[data-viva]');
   vivas.forEach(c => {
@@ -1534,11 +1575,40 @@
     c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
   });
 
-  /* ---- vitrine: setas ---- */
-  const scroller = $('[data-scroller]');
-  const step = () => Math.max(260, scroller.clientWidth * 0.7);
-  $('[data-scroll-prev]')?.addEventListener('click', () => scroller.scrollBy({ left: -step(), behavior: 'smooth' }));
-  $('[data-scroll-next-photos]')?.addEventListener('click', () => scroller.scrollBy({ left: step(), behavior: 'smooth' }));
+  /* ---- vitrine em tira de filme ---- */
+  const stripItems = $$('[data-strip] .fs');
+  if (stripItems.length) {
+    let cur = 0, timer = 0, hover = false, inView = false;
+    const nEl = $('[data-strip-n]');
+    const goStrip = i => {
+      cur = (i + stripItems.length) % stripItems.length;
+      const nItems = stripItems.length;
+      stripItems.forEach((el, k) => {
+        el.classList.toggle('is-active', k === cur);
+        el.classList.toggle('is-prev', k === (cur - 1 + nItems) % nItems);
+        el.classList.toggle('is-next', k === (cur + 1) % nItems);
+      });
+      if (nEl) nEl.textContent = String(cur + 1).padStart(2, '0');
+    };
+    const tickStrip = () => { clearInterval(timer); if (!reduce && inView && !hover) timer = setInterval(() => goStrip(cur + 1), 4200); };
+    stripItems.forEach((el, k) => {
+      el.addEventListener('click', () => { goStrip(k); tickStrip(); });
+      el.addEventListener('focus', () => { goStrip(k); });
+    });
+    $('[data-strip-prev]')?.addEventListener('click', () => { goStrip(cur - 1); tickStrip(); });
+    $('[data-strip-next]')?.addEventListener('click', () => { goStrip(cur + 1); tickStrip(); });
+    goStrip(0);
+    const stripEl = $('[data-strip]');
+    stripEl.addEventListener('mouseenter', () => { hover = true; tickStrip(); });
+    stripEl.addEventListener('mouseleave', () => { hover = false; tickStrip(); });
+    let sx = null;
+    stripEl.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    stripEl.addEventListener('touchend', e => {
+      if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) { goStrip(cur + (dx < 0 ? 1 : -1)); tickStrip(); }
+    }, { passive: true });
+    new IntersectionObserver(es => { inView = es[0].isIntersecting; tickStrip(); }, { threshold: 0.35 }).observe(stripEl);
+  }
 
   /* ---- formulário -> WhatsApp ---- */
   const form = $('[data-qualifier]');
@@ -1564,6 +1634,25 @@
     window.open(WA + encodeURIComponent(buildMsg()), '_blank', 'noopener');
   });
   if (form) refresh();
+
+  /* ---- extracurriculares: fundo fixo que troca sozinho (uma foto por atividade), sem controles ---- */
+  const xSlides = $$('[data-extras-bg] .xslide');
+  if (xSlides.length) {
+    const chips = $$('.extras .ex');
+    let xi = 0, xt = 0;
+    const xShow = i => {
+      xi = (i + xSlides.length) % xSlides.length;
+      xSlides.forEach((el, k) => el.classList.toggle('is-active', k === xi));
+      chips.forEach(c => c.classList.toggle('is-on', c.dataset.ex === xSlides[xi].dataset.for));
+    };
+    xShow(0);
+    if (!reduce) {
+      new IntersectionObserver(es => {
+        clearInterval(xt);
+        if (es[0].isIntersecting) xt = setInterval(() => xShow(xi + 1), 4800);
+      }, { threshold: 0.1 }).observe($('.extras'));
+    }
+  }
 
   /* ---- modal "ver mais" ---- */
   const modal = $('[data-modal]');
@@ -1624,7 +1713,6 @@
   const header = $('[data-header]');
   const progress = $('[data-progress]');
   const hero = $('[data-hero]');
-  const heroImg = $('[data-hero-banner] img');
   const closing = $('[data-closing]');
   const closingImg = closing && $('img', closing);
   const floating = $('[data-floating-actions]');
@@ -1642,8 +1730,6 @@
     progress.style.transform = `scaleX(${docH > 0 ? clamp(y / docH) : 0})`;
 
     if (!reduce) {
-      if (heroImg) heroImg.style.transform = `scale(${1 + clamp(y / (vh * 1.2)) * 0.1})`;
-
       if (closing && closingImg) {
         const r = closing.getBoundingClientRect();
         const p = clamp((vh - r.top) / (vh + r.height));
