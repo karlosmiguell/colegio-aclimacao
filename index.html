@@ -8,7 +8,7 @@
 <title>Colégio Aclimação | Educação bilíngue e acolhedora em São Paulo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/png" href="assets/logo-ca.png" />
 <link rel="preload" as="image" href="assets/vitrine-roda-amigos.jpg" fetchpriority="high" />
 <style>
@@ -45,8 +45,8 @@
     margin: 0;
     color: var(--ink);
     background: var(--paper);
-    font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 1.05rem;
+    font-family: "Montserrat", "Gotham", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -276,6 +276,11 @@
   .extras-head p { margin-top: 16px; color: rgba(255, 255, 255, 0.9); font-size: clamp(1.05rem, 1.6vw, 1.25rem); text-shadow: 0 2px 16px rgba(4, 15, 42, 0.6); }
   .extra-list { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(10px, 1.4vw, 18px); margin-top: clamp(34px, 5vw, 64px); }
   .ex { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 84px; padding: 18px 12px; text-align: center; border-radius: var(--radius); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.24); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: background 500ms ease, border-color 500ms ease, transform 500ms var(--ease), box-shadow 500ms ease; }
+  button.ex { font: inherit; color: inherit; cursor: pointer; width: 100%; }
+  .ex:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.5); }
+  .ex.is-on:hover { background: rgba(230, 190, 106, 0.32); border-color: var(--gold); }
+  .ex:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .ex span { display: block; }
   .ex strong { display: block; font-weight: 600; font-size: clamp(1rem, 1.5vw, 1.2rem); letter-spacing: 0.02em; color: #fff; line-height: 1.2; }
   .ex small { display: block; margin-top: 4px; color: rgba(255, 255, 255, 0.78); font-size: 0.78rem; line-height: 1.25; }
   .ex.is-on { background: rgba(230, 190, 106, 0.26); border-color: var(--gold); transform: translateY(-6px); box-shadow: 0 22px 50px -24px rgba(0, 0, 0, 0.6); }
@@ -360,6 +365,7 @@
   /* barrinha dourada que enche e passa para a próxima aba (troca automática) */
   .tab { position: relative; }
   .tab[aria-selected="true"]::after { content: ""; position: absolute; left: 22px; right: 22px; bottom: 6px; height: 2px; border-radius: 2px; background: var(--gold); transform: scaleX(var(--p, 0)); transform-origin: left; transition: transform 140ms linear; }
+  @media (max-width: 760px) { .tab[aria-selected="true"]::after { display: none; } }
   .tab[aria-selected="true"] { color: #fff; background: linear-gradient(135deg, #0B3C9E, #071B45); border-color: transparent; box-shadow: 0 14px 30px -10px rgba(11, 60, 158, 0.55); }
   .tab .n { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 50%; background: rgba(14, 30, 63, 0.08); font-size: 0.78rem; font-weight: 600; }
   .tab[aria-selected="true"] .n { background: var(--gold); color: var(--blue-950); }
@@ -540,7 +546,7 @@
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
   .footer-brand img { width: 96px; height: 96px; object-fit: contain; filter: none; }
   .footer-brand p { margin-top: 14px; max-width: 30ch; color: var(--muted); }
-  .site-footer h4 { margin-bottom: 14px; font-family: "Outfit", sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
+  .site-footer h4 { margin-bottom: 14px; font-family: "Montserrat", sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
   .site-footer address { font-style: normal; color: var(--muted); }
   .site-footer a:not(.btn) { display: block; padding: 3px 0; color: var(--muted); transition: color 200ms ease; }
   .site-footer a:not(.btn):hover { color: var(--blue-700); }
@@ -1213,12 +1219,12 @@
         <p>Atividades para além da sala de aula.</p>
       </header>
       <div class="extra-list reveal" style="--i:1">
-          <div class="ex" data-ex="futebol"><div><strong>Futebol</strong></div></div>
-          <div class="ex" data-ex="caie"><div><strong>CAIE</strong><small>Colégio Aclimação Iniciação Esportiva</small></div></div>
-          <div class="ex" data-ex="ballet"><div><strong>Ballet</strong></div></div>
-          <div class="ex" data-ex="capoeira"><div><strong>Capoeira</strong></div></div>
-          <div class="ex" data-ex="teatro"><div><strong>Teatro</strong></div></div>
-          <div class="ex" data-ex="natacao"><div><strong>Natação</strong></div></div>
+          <button class="ex" type="button" data-ex="futebol" aria-pressed="false"><span><strong>Futebol</strong></span></button>
+          <button class="ex" type="button" data-ex="caie" aria-pressed="false"><span><strong>CAIE</strong><small>Colégio Aclimação Iniciação Esportiva</small></span></button>
+          <button class="ex" type="button" data-ex="ballet" aria-pressed="false"><span><strong>Ballet</strong></span></button>
+          <button class="ex" type="button" data-ex="capoeira" aria-pressed="false"><span><strong>Capoeira</strong></span></button>
+          <button class="ex" type="button" data-ex="teatro" aria-pressed="false"><span><strong>Teatro</strong></span></button>
+          <button class="ex" type="button" data-ex="natacao" aria-pressed="false"><span><strong>Natação</strong></span></button>
       </div>
     </div>
   </section>
@@ -1538,7 +1544,10 @@
     const setPause = (why, on) => { on ? pauseSet.add(why) : pauseSet.delete(why); syncPause(); };
     const jornada = $('#jornada');
     if (reduce) pauseSet.add('reduce');
+    const mqPhone = window.matchMedia('(max-width: 760px)');
+    const syncPhone = () => { setPause('phone', mqPhone.matches); if (mqPhone.matches) { tabElapsed = 0; tabBar.style.setProperty('--p', 0); } };
     pauseSet.add('view'); syncPause();
+    syncPhone(); mqPhone.addEventListener('change', syncPhone);
     new IntersectionObserver(es => setPause('view', !es[0].isIntersecting), { threshold: 0.35 }).observe(jornada);
     const watch = el => {
       el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setPause('hover', true); });
@@ -1635,23 +1644,30 @@
   });
   if (form) refresh();
 
-  /* ---- extracurriculares: fundo fixo que troca sozinho (uma foto por atividade), sem controles ---- */
+  /* ---- extracurriculares: fundo fixo que troca sozinho (uma foto por atividade).
+     Clicar numa opção mostra a foto dela na hora; depois o carrossel segue a partir dali. ---- */
   const xSlides = $$('[data-extras-bg] .xslide');
   if (xSlides.length) {
     const chips = $$('.extras .ex');
-    let xi = 0, xt = 0;
+    const X_MS = 4800;
+    let xi = 0, xt = 0, xVisible = false;
     const xShow = i => {
       xi = (i + xSlides.length) % xSlides.length;
       xSlides.forEach((el, k) => el.classList.toggle('is-active', k === xi));
-      chips.forEach(c => c.classList.toggle('is-on', c.dataset.ex === xSlides[xi].dataset.for));
+      chips.forEach(c => {
+        const on = c.dataset.ex === xSlides[xi].dataset.for;
+        c.classList.toggle('is-on', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
     };
+    const xRun = () => { clearInterval(xt); if (xVisible && !reduce) xt = setInterval(() => xShow(xi + 1), X_MS); };
+    chips.forEach(c => {
+      const k = xSlides.findIndex(sl => sl.dataset.for === c.dataset.ex);
+      if (k < 0) return;
+      c.addEventListener('click', () => { xShow(k); xRun(); });
+    });
     xShow(0);
-    if (!reduce) {
-      new IntersectionObserver(es => {
-        clearInterval(xt);
-        if (es[0].isIntersecting) xt = setInterval(() => xShow(xi + 1), 4800);
-      }, { threshold: 0.1 }).observe($('.extras'));
-    }
+    new IntersectionObserver(es => { xVisible = es[0].isIntersecting; xRun(); }, { threshold: 0.1 }).observe($('.extras'));
   }
 
   /* ---- modal "ver mais" ---- */
