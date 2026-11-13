@@ -8,7 +8,7 @@
 <title>Colégio Aclimação | Educação bilíngue e acolhedora em São Paulo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560;9..144,650&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/png" href="assets/logo-ca.png" />
 <link rel="preload" as="image" href="assets/hero-banner.jpg" fetchpriority="high" />
 <style>
@@ -29,6 +29,7 @@
     --orange: #F7961E;
     --teal: #1B8A80;
     --teal-dark: #136359;
+    --display: "Montserrat", "Gotham", "Avenir Next", system-ui, sans-serif;
     --radius: 14px;
     --radius-sm: 10px;
     --max: 1240px;
@@ -60,14 +61,14 @@
 
   h1, h2, h3, h4 {
     margin: 0;
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 560;
-    letter-spacing: -0.02em;
+    font-family: var(--display);
+    font-weight: 200;
+    letter-spacing: -0.015em;
     color: var(--blue-900);
   }
-  h1 { font-size: clamp(2.5rem, 6.2vw, 5.2rem); line-height: 1.02; }
-  h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1.06; }
-  h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.15; }
+  h1 { font-size: clamp(2.2rem, 5.4vw, 4.4rem); line-height: 1.08; }
+  h2 { font-size: clamp(1.8rem, 4vw, 3.1rem); line-height: 1.12; }
+  h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.2; font-weight: 300; }
 
   .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
   .section { padding: var(--section-pad) 0; position: relative; }
@@ -186,6 +187,8 @@
   @keyframes drift-c { to { transform: translate3d(-200px, 120px, 0) scale(0.9); } }
   .aurora::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.2px); background-size: 34px 34px; mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, transparent); }
 
+  .silk { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 2200ms ease 200ms; }
+  .silk.is-on { opacity: 1; }
   .sparkles { position: absolute; inset: 0; overflow: hidden; }
   .sp { position: absolute; bottom: -24px; left: 50%; width: var(--s, 5px); height: var(--s, 5px); border-radius: 50%; background: radial-gradient(circle, #FFF3C9 0%, #E6BE6A 55%, rgba(230, 190, 106, 0) 72%); opacity: 0; animation: rise var(--d, 16s) linear var(--dl, 0s) infinite; }
   .sp.rb { width: calc(var(--s, 5px) * 3.2); height: calc(var(--s, 5px) * 0.9); border-radius: 3px; background: linear-gradient(90deg, #B98A2E, #F6E2B0, #C99A3B); animation: rise var(--d, 16s) linear var(--dl, 0s) infinite, spin 7s linear infinite; }
@@ -199,6 +202,10 @@
 
   .hero-banner { position: relative; margin: 0; overflow: hidden; }
   .hero-banner img { width: 100%; height: auto; aspect-ratio: 2000 / 679; object-fit: cover; will-change: transform; transform-origin: 50% 40%; }
+  @media (max-width: 640px) {
+    /* celular: recorte centrado na criança (mãos, "vagas abertas" e 2027) em vez de uma faixa minúscula */
+    .hero-banner img { aspect-ratio: 6 / 5; object-position: 50% 50%; transform-origin: 50% 50%; }
+  }
   .hero-banner::after {
     content: ""; position: absolute; inset: 0; pointer-events: none;
     background: linear-gradient(105deg, transparent 38%, rgba(255, 243, 201, 0.28) 50%, transparent 62%);
@@ -242,7 +249,7 @@
 
   /* ---------- manifesto ---------- */
   .manifesto { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 80% 0%, rgba(31, 111, 224, 0.35), transparent 70%), radial-gradient(700px 400px at 0% 100%, rgba(230, 190, 106, 0.16), transparent 70%), linear-gradient(180deg, #071B45, #040F2A); padding: clamp(96px, 14vw, 200px) 0; }
-  .manifesto-text { max-width: 22ch; margin: 0 auto; text-align: center; font-family: "Fraunces", Georgia, serif; font-weight: 450; letter-spacing: -0.02em; line-height: 1.14; font-size: clamp(2rem, 5.2vw, 4.2rem); color: #fff; max-width: 24ch; }
+  .manifesto-text { max-width: 22ch; margin: 0 auto; text-align: center; font-family: var(--display); font-weight: 200; letter-spacing: -0.015em; line-height: 1.2; font-size: clamp(1.7rem, 4.4vw, 3.5rem); color: #fff; max-width: 24ch; }
   .manifesto-text .w { opacity: 0.2; transition: opacity 420ms ease, color 420ms ease; }
   .manifesto-text .w.on { opacity: 1; }
   .manifesto-text b .w.on { color: var(--gold); }
@@ -252,11 +259,11 @@
   .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
   .tile { position: relative; overflow: hidden; padding: clamp(26px, 3vw, 40px); border-radius: var(--radius); background: #fff; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(14, 30, 63, 0.04), 0 20px 50px -30px rgba(14, 30, 63, 0.28); transition: transform 500ms var(--ease), box-shadow 500ms var(--ease); }
   .tile:hover { transform: translateY(-6px); box-shadow: 0 30px 70px -30px rgba(14, 30, 63, 0.4); }
-  .tile .big { font-variant-numeric: lining-nums; display: block; font-family: "Fraunces", Georgia, serif; font-weight: 560; letter-spacing: -0.03em; line-height: 0.95; font-size: clamp(2.6rem, 5vw, 4.4rem); color: var(--blue-900); }
+  .tile .big { font-variant-numeric: lining-nums; display: block; font-family: var(--display); font-weight: 200; letter-spacing: -0.03em; line-height: 0.95; font-size: clamp(2.4rem, 4.6vw, 4rem); color: var(--blue-900); }
   .tile p { margin-top: 14px; color: var(--muted); font-size: 1rem; }
   .tile-blue { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; color: #fff; border: 0; background: radial-gradient(500px 300px at 85% 0%, rgba(230, 190, 106, 0.38), transparent 70%), linear-gradient(150deg, #0B3C9E, #071B45); }
   .tile-blue .big { font-size: clamp(6rem, 15vw, 12rem); background: linear-gradient(120deg, #FFF3C9, #E6BE6A 60%, #B98A2E); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .tile-blue .unit { font-family: "Fraunces", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: #fff; margin-top: 6px; display: block; }
+  .tile-blue .unit { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.4rem); color: #fff; margin-top: 6px; display: block; }
   .tile-blue p { color: rgba(255, 255, 255, 0.8); max-width: 34ch; }
   .tile-gold { border: 0; background: linear-gradient(145deg, #F6E2B0, #E6BE6A 55%, #C99A3B); }
   .tile-gold .big, .tile-gold p { color: var(--blue-950); }
@@ -353,7 +360,7 @@
 
   .schedule { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .sch { padding: 22px 24px; border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--line); }
-  .sch strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.7rem; font-weight: 560; letter-spacing: -0.02em; color: var(--blue-900); }
+  .sch strong { display: block; font-family: var(--display); font-size: 1.5rem; font-weight: 300; letter-spacing: -0.01em; color: var(--blue-900); }
   .sch span { display: block; margin-top: 4px; color: var(--muted); font-size: 0.95rem; }
   .sch.star { background: linear-gradient(145deg, #0B3C9E, #071B45); border: 0; }
   .sch.star strong { color: var(--gold); } .sch.star span { color: rgba(255, 255, 255, 0.8); }
@@ -707,6 +714,7 @@
   <section class="hero" data-hero>
     <div class="aurora" aria-hidden="true">
       <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+      <canvas class="silk" data-silk></canvas>
       <div class="sparkles" data-sparkles></div>
     </div>
 
@@ -1346,6 +1354,87 @@
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* ---- motion de fundo do hero: fitas de seda azul e dourada + losangos flutuando ---- */
+  const silk = $('[data-silk]');
+  if (silk && silk.getContext) {
+    const cx = silk.getContext('2d');
+    const heroEl = silk.closest('.hero');
+    const small = window.innerWidth < 760;
+    const ribbons = [
+      { y: .30, amp: .07, f: 1.3, sp: .22, ph: 0.0, th: .15, c: [230, 190, 106], a: .20 },
+      { y: .42, amp: .09, f: 1.0, sp: .17, ph: 1.7, th: .20, c: [59, 139, 240], a: .26 },
+      { y: .55, amp: .08, f: 1.6, sp: .26, ph: 3.1, th: .13, c: [255, 243, 201], a: .13 },
+      { y: .66, amp: .10, f: .9,  sp: .15, ph: 4.4, th: .22, c: [31, 111, 224], a: .30 },
+      { y: .78, amp: .07, f: 1.4, sp: .20, ph: 5.6, th: .14, c: [230, 190, 106], a: .18 },
+      { y: .50, amp: .12, f: .7,  sp: .12, ph: 2.4, th: .28, c: [10, 42, 108], a: .35 }
+    ].slice(0, small ? 4 : 6);
+    const rhombi = Array.from({ length: small ? 6 : 11 }, () => ({
+      x: Math.random(), y: Math.random(), s: 10 + Math.random() * 26,
+      sp: .012 + Math.random() * .03, rot: Math.random() * 6.28, rs: (Math.random() - .5) * .3, a: .1 + Math.random() * .22
+    }));
+    let W = 0, H = 0, raf = 0, running = false, t0 = performance.now();
+    const fit = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const r = silk.getBoundingClientRect();
+      W = Math.max(1, r.width); H = Math.max(1, r.height);
+      silk.width = Math.round(W * dpr); silk.height = Math.round(H * dpr);
+      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    const draw = now => {
+      const t = (now - t0) / 1000;
+      cx.clearRect(0, 0, W, H);
+      cx.globalCompositeOperation = 'lighter';
+      const step = small ? 18 : 12;
+      ribbons.forEach(r => {
+        const up = [], dn = [];
+        for (let x = -step; x <= W + step; x += step) {
+          const u = x / W;
+          const c = r.y * H
+            + Math.sin(u * Math.PI * 2 * r.f + t * r.sp * 2 + r.ph) * r.amp * H
+            + Math.sin(u * Math.PI * 4.3 * r.f - t * r.sp * 3 + r.ph * 2) * r.amp * H * .35;
+          const th = (r.th * H * .5) * (.55 + .45 * Math.sin(u * Math.PI * 2 * r.f * .8 + t * r.sp + r.ph));
+          up.push([x, c - th]); dn.push([x, c + th]);
+        }
+        cx.beginPath();
+        up.forEach((p, i) => i ? cx.lineTo(p[0], p[1]) : cx.moveTo(p[0], p[1]));
+        for (let i = dn.length - 1; i >= 0; i--) cx.lineTo(dn[i][0], dn[i][1]);
+        cx.closePath();
+        const g = cx.createLinearGradient(0, 0, W, 0);
+        const [R, G, B] = r.c;
+        g.addColorStop(0, `rgba(${R},${G},${B},0)`);
+        g.addColorStop(.35, `rgba(${R},${G},${B},${r.a})`);
+        g.addColorStop(.7, `rgba(${R},${G},${B},${r.a * .8})`);
+        g.addColorStop(1, `rgba(${R},${G},${B},0)`);
+        cx.fillStyle = g; cx.fill();
+        // fio dourado de brilho na borda da fita
+        cx.beginPath();
+        up.forEach((p, i) => i ? cx.lineTo(p[0], p[1]) : cx.moveTo(p[0], p[1]));
+        cx.strokeStyle = `rgba(${R},${G},${B},${Math.min(.5, r.a * 1.6)})`; cx.lineWidth = 1; cx.stroke();
+      });
+      cx.globalCompositeOperation = 'source-over';
+      rhombi.forEach(d => {
+        const y = ((d.y - t * d.sp) % 1 + 1) % 1;
+        const px = d.x * W + Math.sin(t * .3 + d.rot) * 18, py = y * H;
+        const fade = Math.sin(y * Math.PI);
+        cx.save(); cx.translate(px, py); cx.rotate(d.rot + t * d.rs);
+        cx.beginPath(); cx.moveTo(0, -d.s); cx.lineTo(d.s * .62, 0); cx.lineTo(0, d.s); cx.lineTo(-d.s * .62, 0); cx.closePath();
+        cx.strokeStyle = `rgba(230,190,106,${d.a * fade})`; cx.lineWidth = 1.2; cx.stroke();
+        cx.fillStyle = `rgba(255,243,201,${d.a * .18 * fade})`; cx.fill();
+        cx.restore();
+      });
+    };
+    const loop = now => { draw(now); raf = requestAnimationFrame(loop); };
+    const start = () => { if (!running && !reduce) { running = true; raf = requestAnimationFrame(loop); } };
+    const stop = () => { running = false; cancelAnimationFrame(raf); };
+    fit(); draw(performance.now());
+    requestAnimationFrame(() => silk.classList.add('is-on'));
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver(es => es[0].isIntersecting ? start() : stop(), { threshold: 0 }).observe(heroEl);
+    } else start();
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : (heroEl.getBoundingClientRect().bottom > 0 && start()));
+    let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { fit(); draw(performance.now()); }, 150); });
   }
 
   /* ---- faíscas douradas no hero ---- */
