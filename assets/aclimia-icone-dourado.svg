@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 140" width="128" height="140" role="img" aria-label="aclim.ia"><title>aclim.ia</title>
+  <defs>
+    <linearGradient id="i0-bubble" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF0C4"/><stop offset="0.5" stop-color="#E6BE6A"/><stop offset="1" stop-color="#B98A2E"/></linearGradient>
+    <linearGradient id="i0-ear" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFF3D0"/></linearGradient>
+    <linearGradient id="i0-wm" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="443.82000000000005" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCE8FF"/></linearGradient>
+    <linearGradient id="i0-wa" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="443.82000000000005" y2="0"><stop offset="0" stop-color="#F6D98A"/><stop offset="0.55" stop-color="#E6BE6A"/><stop offset="1" stop-color="#B98A2E"/></linearGradient>
+    <g id="i0-shape">
+      <circle cx="26" cy="22" r="20"/><circle cx="94" cy="22" r="20"/>
+      <path d="M60 14 C93 14 112 33 112 60 C112 87 93 104 60 104 L44 104 C40 104 38 108 34 114 L24 128 L26 100 C14 90 8 76 8 60 C8 33 27 14 60 14 Z"/>
+    </g>
+    <clipPath id="i0-right"><rect x="60" y="0" width="80" height="140"/></clipPath>
+  </defs>
+  <g transform="translate(4 6)">
+    <use href="#i0-shape" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round"/>
+    <use href="#i0-shape" fill="url(#i0-bubble)"/>
+    <use href="#i0-shape" fill="rgba(80,50,0,.30)" clip-path="url(#i0-right)"/>
+    <circle cx="26" cy="23" r="9.5" fill="url(#i0-ear)"/><circle cx="94" cy="23" r="9.5" fill="url(#i0-ear)"/>
+    <circle cx="42" cy="58" r="8" fill="#0A2A6C"/><circle cx="78" cy="58" r="8" fill="#0A2A6C"/>
+    <ellipse cx="60" cy="74" rx="9.5" ry="7" fill="#0A2A6C"/>
+    <path d="M44 85 Q60 100 76 85" fill="none" stroke="#0A2A6C" stroke-width="6.5" stroke-linecap="round"/>
+  </g>
+</svg>
