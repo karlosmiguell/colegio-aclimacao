@@ -1831,10 +1831,10 @@
     <div class="extras-bg" aria-hidden="true" data-extras-bg>
         <figure class="xslide is-active" data-for="futebol"><img src="assets/extra-bg-futebol.jpg" alt="" /></figure>
         <figure class="xslide" data-for="caie"><img src="assets/extra-bg-caie.jpg" alt="" loading="lazy" /></figure>
-        <figure class="xslide" data-for="ballet"><img src="assets/extra-bg-ballet.jpg" alt="" loading="lazy" /></figure>
-        <figure class="xslide" data-for="capoeira"><img src="assets/extra-bg-capoeira.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="ballet"><img src="assets/extra-bg-ballet-real.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="capoeira"><img src="assets/extra-bg-capoeira-real.jpg" alt="" loading="lazy" /></figure>
         <figure class="xslide" data-for="teatro"><img src="assets/extra-bg-teatro.jpg" alt="" loading="lazy" /></figure>
-        <figure class="xslide" data-for="natacao"><img src="assets/extra-bg-natacao.jpg" alt="" loading="lazy" /></figure>
+        <figure class="xslide" data-for="natacao"><img src="assets/extra-bg-natacao-real.jpg" alt="" loading="lazy" /></figure>
     </div>
     <div class="extras-shade" aria-hidden="true"></div>
     <div class="shell extras-in">
@@ -1871,9 +1871,14 @@
       <figure class="fs" tabindex="0" aria-label="Pintura na quadra"><img src="assets/vitrine-pintura-quadra.jpg" width="960" height="1280" alt="Crianças pintando em folhas de papel na quadra com uma jovem professora" loading="lazy" /><figcaption>Pintura na quadra</figcaption></figure>
       <figure class="fs" tabindex="0" aria-label="Cores e formas"><img src="assets/vitrine-cores.jpg" width="960" height="1280" alt="Menino montando uma flor colorida em atividade de arte" loading="lazy" /><figcaption>Cores e formas</figcaption></figure>
       <figure class="fs" tabindex="0" aria-label="Nossa turma"><img src="assets/vitrine-corredor-mural.jpg" width="1280" height="960" alt="Turma grande reunida no corredor diante do mural da escola" loading="lazy" /><figcaption>Nossa turma</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Na piscina"><img src="assets/vitrine-natacao-oculos.jpg" width="868" height="1160" alt="Criança de touca e óculos de natação sorrindo dentro da piscina" loading="lazy" /><figcaption>Na piscina</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Turma do ballet"><img src="assets/vitrine-ballet-turma.jpg" width="1280" height="960" alt="Turma de ballet de collant rosa posando sorridente diante de um mural colorido" loading="lazy" /><figcaption>Turma do ballet</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Natação em turma"><img src="assets/vitrine-natacao-turma.jpg" width="963" height="1280" alt="Grupo de crianças de touca e óculos de natação segurando na borda da piscina" loading="lazy" /><figcaption>Natação em turma</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Pequenas bailarinas"><img src="assets/vitrine-ballet-trio.jpg" width="960" height="1280" alt="Três meninas de collant e tutu rosa com as mãos na cintura" loading="lazy" /><figcaption>Pequenas bailarinas</figcaption></figure>
+      <figure class="fs" tabindex="0" aria-label="Roda de movimento"><img src="assets/vitrine-capoeira.jpg" width="960" height="1280" alt="Crianças de uniforme de capoeira brincando entre cones na quadra, com o professor ao fundo" loading="lazy" /><figcaption>Roda de movimento</figcaption></figure>
     </div>
     <div class="shell strip-ui">
-      <p class="strip-count" aria-live="polite"><span data-strip-n>01</span> <small>/ 09</small></p>
+      <p class="strip-count" aria-live="polite"><span data-strip-n>01</span> <small>/ 14</small></p>
       <div class="arrows">
         <button class="arrow" type="button" data-strip-prev aria-label="Foto anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
         <button class="arrow" type="button" data-strip-next aria-label="Próxima foto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -2006,7 +2011,7 @@
 
   <!-- ============ FECHAMENTO ============ -->
   <section class="closing" data-closing>
-    <img data-random-banner="assets/banner-futuro-bg.jpg,assets/banner-futuro-bg-2.jpg" src="assets/banner-futuro-bg.jpg" width="1920" height="939" alt="O futuro começa aqui" loading="lazy" />
+    <img data-random-banner="assets/banner-futuro-bg.jpg,assets/banner-futuro-bg-2.jpg,assets/banner-vagas-2027.jpg" src="assets/banner-futuro-bg.jpg" width="1920" height="939" alt="O futuro começa aqui" loading="lazy" />
   </section>
 </main>
 
@@ -2136,7 +2141,11 @@
   /* ---- banner aleatório no fechamento ---- */
   $$('[data-random-banner]').forEach(img => {
     const opts = img.dataset.randomBanner.split(',').map(s => s.trim()).filter(Boolean);
-    if (opts.length > 1) img.src = opts[Math.floor(Math.random() * opts.length)];
+    if (opts.length > 1) {
+      const pick = opts[Math.floor(Math.random() * opts.length)];
+      if (pick.includes('banner-vagas-2027')) { img.width = 2000; img.height = 889; img.style.aspectRatio = '2000 / 889'; }
+      img.src = pick;
+    }
   });
 
   /* ---- modo claro / escuro ---- */
