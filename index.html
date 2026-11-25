@@ -468,6 +468,19 @@
   .en-cam img { display: block; height: 46px; width: auto; max-width: 100%; }
   .en-side .btn { display: flex; width: fit-content; margin-top: 30px; border-radius: 8px; }
   .en-side .btn + .btn { margin-top: 12px; }
+  /* fundo animado e foto que acompanha o mouse (mesmo efeito da apresentação da aclimia) */
+  .bilingue .shell { position: relative; z-index: 2; }
+  .en-blob { position: absolute; z-index: 0; width: clamp(280px, 40vw, 560px); aspect-ratio: 1; border-radius: 50%; filter: blur(80px); opacity: 0.45; pointer-events: none; animation: en-drift 16s ease-in-out infinite alternate; }
+  .en-blob.b1 { right: -8%; top: -12%; background: radial-gradient(circle, rgba(31, 111, 224, 0.9), transparent 70%); }
+  .en-blob.b2 { left: -10%; bottom: -16%; background: radial-gradient(circle, rgba(230, 190, 106, 0.7), transparent 70%); animation-delay: -6s; }
+  @keyframes en-drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(5%, 8%) scale(1.15); } }
+  .en-art { perspective: 1000px; }
+  .en-tilt { position: absolute; inset: 0; z-index: 1; transform-style: preserve-3d; transform: rotateY(calc(var(--tx, 0) * 12deg)) rotateX(calc(var(--ty, 0) * -10deg)); transition: transform 0.2s ease-out; will-change: transform; }
+  .en-tilt .en-photo { z-index: auto; }
+  .en-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.22) 50%, transparent 65%); background-size: 250% 100%; animation: en-sweep 4s ease-in-out infinite; pointer-events: none; }
+  @keyframes en-sweep { 0% { background-position: 150% 0; } 60%, 100% { background-position: -50% 0; } }
+  .en-title { transform: translate(calc(var(--tx, 0) * -10px), calc(var(--ty, 0) * -6px)); transition: transform 0.2s ease-out; }
+  @media (prefers-reduced-motion: reduce) { .en-blob, .en-photo::after { animation: none; } .en-tilt, .en-title { transition: none; } }
   @media (max-width: 900px) {
     .en-stage { grid-template-columns: 1fr; min-height: 0; gap: 28px; }
     .en-art { height: clamp(380px, 92vw, 520px); }
@@ -603,7 +616,7 @@
   .seg .tag { position: absolute; top: 18px; left: 18px; padding: 7px 14px; border-radius: 999px; background: rgba(4, 15, 42, 0.6); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: var(--gold-light); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 
   /* ---------- bilingue ---------- */
-  .bilingue { position: relative; overflow: hidden; background: radial-gradient(700px 500px at 100% 0%, rgba(31, 111, 224, 0.4), transparent 70%), linear-gradient(160deg, #0A2A6C, #040F2A); color: #fff; }
+  .bilingue { position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(900px 600px at 85% 10%, rgba(31, 111, 224, 0.4), transparent 70%), linear-gradient(170deg, #0A2A6C, #071B45 50%, #040F2A); color: #fff; }
   .split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
   .bilingue h2 { color: #fff; }
   .bilingue .lead { margin-top: 22px; color: rgba(255, 255, 255, 0.82); font-size: 1.18rem; font-weight: 300; max-width: 50ch; }
@@ -886,6 +899,13 @@
   .duo-panel:hover::after, .duo-panel.is-open::after { transform: scale(1.5); }
   .duo-panel:hover, .duo-panel.is-open { flex: 1.35; box-shadow: 0 40px 80px -40px rgba(14, 30, 63, 0.6); }
   .duo:has(.duo-panel:hover) .duo-panel:not(:hover) { flex: 0.85; }
+  /* chegada dos dois cards, como na apresentação da aclimia: um vem da esquerda e o outro da direita, juntos */
+  .duo.reveal { opacity: 1; transform: none; transition: none; }
+  .duo .duo-panel { opacity: 0; transition: flex 800ms var(--ease), box-shadow 600ms var(--ease), opacity 800ms var(--ease) var(--d, 0s), translate 800ms var(--ease) var(--d, 0s); }
+  .duo .duo-panel.sun { translate: -48px 0; --d: 0.2s; }
+  .duo .duo-panel.leaf { translate: 48px 0; --d: 0.4s; }
+  .duo.is-visible .duo-panel { opacity: 1; translate: 0 0; }
+  @media (prefers-reduced-motion: reduce) { .duo .duo-panel { opacity: 1; translate: none; transition: flex 800ms var(--ease), box-shadow 600ms var(--ease); } }
   .duo-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: auto; padding-bottom: 28px; }
   .duo-logo { width: auto; height: clamp(70px, 7vw, 92px); padding: 8px 16px; border-radius: 12px; background: #fff; }
   .hours { padding: 9px 18px; border-radius: 999px; background: rgba(4, 15, 42, 0.28); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
@@ -1102,6 +1122,9 @@
   @keyframes am-pulse { 50% { transform: scale(1.14); opacity: 0.75; } }
   .am-vis .ring { position: absolute; border-radius: 50%; border: 1.5px dashed rgba(230, 190, 106, 0.4); }
   .am-vis .ring.r1 { inset: 4%; } .am-vis .ring.r2 { inset: -6%; border-style: solid; border-color: rgba(255, 255, 255, 0.12); }
+  .am-halo { position: absolute; left: 50%; top: 48.5%; width: 84%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: conic-gradient(from 0deg, rgba(230, 190, 106, 0), rgba(230, 190, 106, 0.45), rgba(230, 190, 106, 0) 60%); filter: blur(8px); animation: am-halo-spin 8s linear infinite; pointer-events: none; }
+  @keyframes am-halo-spin { to { rotate: 360deg; } }
+  @media (prefers-reduced-motion: reduce) { .am-halo { animation: none; } }
   .am-hero-bear { position: absolute; left: 24%; top: 20%; width: 52%; height: 57%; transform: translate(calc(var(--mx, 0) * 16px), calc(var(--my, 0) * 16px)); transition: transform 250ms ease-out; }
   .am-hero-bear .am-bob { width: 100%; height: 100%; filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.45)); }
   .am-orbit { position: absolute; inset: 0; animation: am-spin 30s linear infinite; }
@@ -1582,12 +1605,15 @@
 
   <!-- ============ BILÍNGUE ============ -->
   <section class="bilingue on-dark" id="bilingue" aria-labelledby="en-title">
+    <span class="en-blob b1" aria-hidden="true"></span><span class="en-blob b2" aria-hidden="true"></span>
     <div class="shell">
       <div class="en-stage">
         <div class="en-art" aria-hidden="false">
-          <figure class="en-photo reveal" style="--i:1">
-            <img src="assets/bilingue-foto.jpg" width="960" height="1280" alt="Aluna colocando cartões de vocabulário em inglês sobre o clima no mural da sala" loading="lazy" />
-          </figure>
+          <div class="en-tilt">
+            <figure class="en-photo reveal" style="--i:1">
+              <img src="assets/bilingue-foto.jpg" width="960" height="1280" alt="Aluna colocando cartões de vocabulário em inglês sobre o clima no mural da sala" loading="lazy" />
+            </figure>
+          </div>
           <h2 id="en-title" class="en-title">
             <span class="en-t1 reveal" style="--i:2">Inglês</span>
             <span class="en-t2 reveal" style="--i:3">no dia a dia</span>
@@ -1922,6 +1948,7 @@
               <div class="am-slot" style="--a:110deg;--r:min(185px,35vw)"><div class="cc"><div class="up"><span class="am-chip">Posso visitar?</span></div></div></div>
               <div class="am-slot" style="--a:200deg;--r:min(205px,39vw)"><div class="cc"><div class="up"><span class="am-chip gold">Tem inglês?</span></div></div></div>
             </div>
+            <div class="am-halo"></div>
             <div class="am-hero-bear"><div class="am-bob" data-am-bear></div></div>
             <i class="am-spark" style="left:8%;top:18%;--sz:16px"></i><i class="am-spark" style="right:10%;top:10%;--dl:.8s"></i><i class="am-spark" style="right:4%;bottom:26%;--sz:18px;--dl:1.5s"></i><i class="am-spark" style="left:16%;bottom:14%;--sz:10px;--dl:.4s"></i>
           </div>
@@ -2192,6 +2219,17 @@
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* ---- inglês: a foto acompanha o mouse ---- */
+  const enArt = $('#bilingue .en-art');
+  if (enArt && !reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    enArt.addEventListener('mousemove', e => {
+      const r = enArt.getBoundingClientRect();
+      enArt.style.setProperty('--tx', ((e.clientX - r.left) / r.width - 0.5) * 2);
+      enArt.style.setProperty('--ty', ((e.clientY - r.top) / r.height - 0.5) * 2);
+    });
+    enArt.addEventListener('mouseleave', () => { enArt.style.setProperty('--tx', 0); enArt.style.setProperty('--ty', 0); });
   }
 
   /* ---- capa: slides de fotos ---- */
